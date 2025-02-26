@@ -2,7 +2,7 @@ module com.egcmusicapp {
     requires javafx.controls;
     requires javafx.fxml;
     requires json.simple;
-
+    requires jfugue;
     opens com.egcmusicapp to javafx.fxml;
     exports com.egcmusicapp;
 
