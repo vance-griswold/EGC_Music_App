@@ -37,5 +37,8 @@ public class User {
         this.xpPoints += xp;
     }
 
+    public String getUsername() {
+        return username;
+    }
     // Getters and setters omitted for brevity
 }
