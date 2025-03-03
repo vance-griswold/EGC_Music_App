@@ -2,12 +2,14 @@ package com.model;
 
 import java.util.ArrayList;
 
+import javafx.scene.chart.PieChart.Data;
+
 public class UserList {
     private ArrayList<User> users;
     private static UserList instance;
 
     private UserList() {
-        this.users = new ArrayList<>();
+        //this.users = DataLoader.getUsers();
     }
 
     public static UserList getInstance(UserList users) {
@@ -40,6 +42,7 @@ public class UserList {
     }
 
     public void save() {
+        //DataWriter.saveUsers();
         System.out.println("User list saved.");
     }
 
