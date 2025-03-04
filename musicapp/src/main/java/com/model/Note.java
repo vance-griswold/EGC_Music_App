@@ -4,19 +4,21 @@ package com.model;
  * @author Evil Gnome Clan
  */
 public class Note {
-    private int durationTop;
-    private int durationBottom;
+    private String duration;
     private boolean rest;
     private Scale scale;
-    private boolean sharp;
-    private boolean flat;
 
-    public Note(int durationTop, int durationBottom, boolean rest, Scale scale, boolean sharp, boolean flat) {
-        this.durationTop = durationTop;
-        this.durationBottom = durationBottom;
+    public Note(String duration, boolean rest, Scale scale) {
+        this.duration = duration;
         this.rest = rest;
         this.scale = scale;
-        this.sharp = sharp;
-        this.flat = flat;
+    }
+
+    public String getNote() {
+        if (this.rest == true) {
+            return "R" + this.duration;
+        }else {
+            return this.scale + this.duration;
+        }
     }
 }
