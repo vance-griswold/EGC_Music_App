@@ -2,8 +2,6 @@ package com.model;
 
 import java.util.ArrayList;
 
-import javafx.scene.chart.PieChart.Data;
-
 public class UserList {
     private ArrayList<User> users;
     private static UserList instance;
@@ -29,7 +27,7 @@ public class UserList {
 
     public void read() {
         for (User user : users) {
-            System.out.println(user.getUsername());
+            System.out.println(user.getUserName());
         }
     }
 

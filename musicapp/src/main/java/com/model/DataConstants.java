@@ -6,12 +6,15 @@ public class DataConstants {
     protected static final String USER_ROLE = "userRole";
     protected static final String USER_FIRST_NAME = "firstName";
     protected static final String USER_LAST_NAME = "lastName";
+    protected static final String USER_AGE = "age";
     protected static final String USER_USERNAME = "username";
     protected static final String USER_PLAYLISTS = "playlists";
     protected static final String USER_EMAIL_ADDRESS = "emailAddress";
     protected static final String USER_LEVEL = "experienceLevel";
     protected static final String USER_XP = "xpPoints";
     protected static final String USER_SONGS = "mySongs";
+    protected static final String USER_EXPERIENCE_LEVEL = "experienceLevel";
+    public static final String USER_XP_POINTS = "xpPoints";
 
 
 }
