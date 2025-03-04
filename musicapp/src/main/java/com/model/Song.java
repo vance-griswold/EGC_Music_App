@@ -13,23 +13,26 @@ public class Song {
     private Difficulty difficulty;
     private Genre genre;
     private SheetMusic sheetMusic;
+    private int rating;
 
     /**
      * Constructor for Song class
-     * @param songTitle
-     * @param Author
-     * @param difficulty
-     * @param genre
-     * @param sheetMusic
+     * @param songTitle title of the song
+     * @param Author author/creator of the song
+     * @param difficulty difficulty of the song
+     * @param genre genre of the song
+     * @param sheetMusic sheet music for the song
+     * @param rating rating of the song
      */
-    public Song(String songTitle, String Author, Difficulty difficulty, Genre genre, SheetMusic sheetMusic)
+    public Song(String songTitle, String author, Difficulty difficulty, Genre genre, SheetMusic sheetMusic, int rating)
     {
         this.id = UUID.randomUUID();
         this.songTitle = songTitle;
-        this.author = Author;
+        this.author = author;
         this.difficulty = difficulty;
         this.genre = genre;
         this.sheetMusic = sheetMusic;
+        this.rating = 0;
     }
 
     /**
@@ -38,27 +41,105 @@ public class Song {
      */
     public UUID getId()
     {
-        return null;
+        return id;
+    }
+
+    /**
+     * Gets song title
+     * @return title of song
+     */
+    public String getSongTitle()
+    {
+        return songTitle;
+    }
+
+    /**
+     * Gets song author
+     * @return author of song
+     */
+    public String getAuthor()
+    {
+        return author;
+    }
+
+    /**
+     * Gets song genre
+     * @return song genre
+     */
+    public Genre getGenre()
+    {
+        return genre;
+    }
+
+    /**
+     * Gets difficulty of song
+     * @return song difficulty
+     */
+    public Difficulty getDifficulty()
+    {
+        return difficulty;
+    }
+
+    /**
+     * Gets sheet music for the song
+     * @return sheet music object
+     */
+    public SheetMusic getSheetMusic()
+    {
+        return sheetMusic;
     }
 
     /**
      * Filters songs by their rating
-     * @param minRating
-     * @return
+     * @param minRating minimum rating to filter by
+     * @return true if song meets the rating criteria
      */
     public boolean filterByRating(int minRating)
     {
-        return false;
+        return this.rating >= minRating;
     }
 
     /**
      * Searches for a song by its title
-     * @param songTitle
-     * @return
+     * @param songTitle title of the song to search for
+     * @return true if the song title matches, false if it does not
      */
     public boolean searchByName(String songTitle)
     {
-        return false;
+        if(songTitle != null && songTitle.equalsIgnoreCase(this.songTitle))
+        {
+            return true;
+        }
+        else
+        {
+            System.out.println(songTitle + " not found.");
+            return false;
+        }
+    }
+
+    /**
+     * Sets rating of the song
+     * @param rating rating value
+     */
+    public void setRating(int rating)
+    {
+        if(rating >= 0 && rating <= 5)
+        {
+            this.rating = rating;
+        }
+        else
+        {
+            System.out.println("Invalid rating. Please enter a rating between 0 and 5.");
+        }
+    }
+
+    /**
+     * Gets the rating of the song
+     * @return rating value
+     */
+    public int getRating()
+    {
+        return rating;
     }
 }
 
