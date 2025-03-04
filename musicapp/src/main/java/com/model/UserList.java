@@ -18,7 +18,7 @@ public class UserList {
     }
 
     public User getUsers(String username) {
-        return null;
+        return UserList;
     }
 
     public void create(User user) {
