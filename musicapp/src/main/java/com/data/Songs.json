@@ -1,0 +1,26 @@
+[
+	{
+		"id" : "UUID NUMBER",
+		"songTitle" : "Everlong",
+		"author" : "Foo Fighters",
+		"difficulty" : "HARD",
+		"genre" : "ROCK",
+		"sheetMusic" : "EverlongSheetMusic"
+	},
+	{
+		"id" : "UUID NUMBER",
+		"songTitle" : "Nocturne Op. 9 No. 2",
+		"author" : "Frederic Chopin",
+		"difficulty" : "EASY",
+		"genre" : "CLASSICAL",
+		"sheetMusic" : "Nocturne9SheetMusic"
+	},
+	{
+		"id" : "UUID NUMBER",
+		"songTitle" : "APT.",
+		"author" : "ROSE",
+		"difficulty" : "MEDIUM",
+		"genre" : "POP",
+		"sheetMusic" : "APTSheetMusic"
+    }
+    ]
