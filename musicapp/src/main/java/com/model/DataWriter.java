@@ -9,7 +9,7 @@ import org.json.simple.JSONObject;
 
 public class DataWriter extends DataConstants{
 
-    public static void saveUser(){
+    public static void saveUsers(){
         Users users = Users.getInstance();
         ArrayList<User> userList = users.getUsers();
 
@@ -42,6 +42,9 @@ public class DataWriter extends DataConstants{
 		
         
         return userDetails;
+	}
+    public static void main(String[] args){
+		DataWriter.saveUsers();
 	}
 }
 
