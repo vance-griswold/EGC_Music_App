@@ -7,7 +7,9 @@ import java.util.UUID;
  * @author Evil Gnome Clan
  */
 public class SongLibrary {
+
     private ArrayList<Song> library;
+    private static SongLibrary instance;
 
     /**
      * Constructor for SongLibrary class
@@ -19,98 +21,170 @@ public class SongLibrary {
 
     /**
      * Singleton pattern for SongLibrary
-     * @param library
-     * @return
+     * @return instance of SongLibrary
      */
     public static SongLibrary getInstance()
     {
-        return null;
+        if(instance == null)
+        {
+            instance = new SongLibrary();
+        }
+        return instance;
     }
 
     /**
      * Gets a song by its ID
-     * @param id
-     * @return
+     * @param id unique song id
      */
     public Song getSong(UUID id)
     {
+        for(Song song : library)
+        {
+            if(song.getId().equals(id))
+            {
+                return song;
+            }
+        }
         return null;
     }
 
     /**
      * Searches for a song by its title
-     * @param name
-     * @return
+     * @param name title of the song
      */
     public Song searchSong(String name)
     {
-       return null;
+        for(Song song : library)
+        {
+            if(song.getSongTitle().equalsIgnoreCase(name))
+            {
+                return song;
+            }
+        }
+        return null;
     }
 
     /**
      * Sorts songs by genre
-     * @param genre
+     * @param genre genre of the song
      */
     public void sortByGenre(Genre genre)
     {
-        //sorting logic
+        for(int i = 0; i < library.size() - 1; i++)
+        {
+            for(int j = i + 1; j < library.size(); j++)
+            {
+                if(library.get(i).getGenre().compareTo(library.get(j).getGenre()) > 0)
+                {
+                    Song temp = library.get(i);
+                    library.set(i, library.get(j));
+                    library.set(j, temp);
+                }
+            }
+        }
     }
 
     /**
      * Sorts songs by difficulty
-     * @param difficulty
+     * @param difficulty difficulty of the song
      */
     public void sortByDifficulty(Difficulty difficulty)
     {
-        //sorting logic
+        for(int i = 0; i < library.size() - 1; i++)
+        {
+            for(int j = i + 1; j < library.size(); j++)
+            {
+                if(library.get(i).getDifficulty().compareTo(library.get(j).getDifficulty()) > 0)
+                {
+                    Song temp = library.get(i);
+                    library.set(i, library.get(j));
+                    library.set(j, temp);
+                }
+            }
+        }
     }
 
     /**
      * Sorts songs by author
-     * @param author
+     * @param author author of the song
      */
     public void sortByAuthor(String author)
     {
-        //sorting logic
+        for(int i = 0; i < library.size() - 1; i++)
+        {
+            for(int j = i + 1; j < library.size(); j++)
+            {
+                if(library.get(i).getAuthor().compareToIgnoreCase(library.get(j).getAuthor()) > 0)
+                {
+                    Song temp = library.get(i);
+                    library.set(i, library.get(j));
+                    library.set(j, temp);
+                }
+            }
+        }
     }
 
     /**
      * Filters songs by genre
-     * @param genre
-     * @return
+     * @param genre genre of the song
+     * @return filtered list of songs by genre
      */
     public ArrayList<Song> filterByGenre(Genre genre)
     {
-        return null;
+        ArrayList<Song> filteredSongs = new ArrayList<>();
+        for(Song song : library)
+        {
+            if(song.getGenre() == genre)
+            {
+                filteredSongs.add(song);
+            }
+        }
+        return filteredSongs;
     }
 
     /**
      * Filters songs by difficulty
-     * @param difficulty
-     * @return
+     * @param difficulty difficulty of the song
+     * @return filtered list of songs by difficulty
      */
     public ArrayList<Song> filterByDifficulty(Difficulty difficulty)
     {
-        return null;
+        ArrayList<Song> filteredSongs = new ArrayList<>();
+        for(Song song : library)
+        {
+            if(song.getDifficulty() == difficulty)
+            {
+                filteredSongs.add(song);
+            }
+        }
+        return filteredSongs;
     }
 
     /**
      * Filters songs by author
-     * @param author
-     * @return
+     * @param author author of the song
+     * @return filtered list of songs by author
      */
     public ArrayList<Song> filterByAuthor(String author)
     {
-        return null;
+        ArrayList<Song> filteredSongs = new ArrayList<>();
+        for(Song song : library)
+        {
+            if(song.getAuthor().equalsIgnoreCase(author))
+            {
+                filteredSongs.add(song);
+            }
+        }
+        return filteredSongs;
     }
 
     /**
-     * Creates a new song
-     * @param song
+     * Creates a new song and adds it to the library
+     * @param song song to be created
      */
     public void create(Song song)
     {
-
+        library.add(song);
     }
 
     /**
@@ -118,25 +192,32 @@ public class SongLibrary {
      */
     public void read()
     {
-
+        //file reading functionality
     }
 
     /**
      * Updates existing song in library
-     * @param song
+     * @param song song to be updated
      */
     public void update(Song song)
     {
-
+        for(int i = 0; i < library.size(); i++)
+        {
+            if(library.get(i).getId().equals(song.getId()))
+            {
+                library.set(i, song);
+                break;
+            }
+        }
     }
 
     /**
      * Deletes a song from the library
-     * @param song
+     * @param song song to be deleted
      */
     public void delete(Song song)
     {
-
+        library.remove(song);
     }
 
     /**
@@ -144,6 +225,6 @@ public class SongLibrary {
      */
     public void save()
     {
-
+        //file saving functionality
     }
 }
