@@ -17,7 +17,7 @@ public class UserList {
         return instance;
     }
 
-    public User getUser(String username) {
+    public User getUsers(String username) {
         return null;
     }
 

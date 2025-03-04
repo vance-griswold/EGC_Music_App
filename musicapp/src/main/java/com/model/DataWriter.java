@@ -10,7 +10,7 @@ import org.json.simple.JSONObject;
 public class DataWriter extends DataConstants{
 
     public static void saveUsers(){
-        Users users = Users.getInstance();
+        User users = User.getInstance();
         ArrayList<User> userList = users.getUsers();
 
         JSONArray jsonUsers = new JSONArray();
@@ -19,7 +19,7 @@ public class DataWriter extends DataConstants{
 			jsonUsers.add(getUserJSON(userList.get(i)));
 		}
 
-        try (FileWriter file = new FileWriter(temp)) {
+        try (FileWriter file = new FileWriter("users.json")) {
  
             file.write(jsonUsers.toJSONString());
             file.flush();
@@ -30,7 +30,7 @@ public class DataWriter extends DataConstants{
 	}
 
     public static JSONObject getUserJSON(User user) {
-		JSONObject userDetails = new JSONObject();
+        JSONObject userDetails = new JSONObject();
 		userDetails.put(USER_ID, user.getId().toString());
         userDetails.put(USER_ROLE, user.getRole());
 		userDetails.put(USER_USERNAME, user.getUserName());
