@@ -37,8 +37,37 @@ public class User {
         this.xpPoints += xp;
     }
 
-    public String getUsername() {
+    public String getId() {
+        return id.toString();
+    }
+
+    public String getRole() {
+        return userRole;
+    }
+
+    public String getUserName() {
         return username;
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public int getExperienceLevel() {
+        return experienceLevel;
+    }
+
+    public int getXpPoints() {
+        return xpPoints;
+    }
+
 
 }
