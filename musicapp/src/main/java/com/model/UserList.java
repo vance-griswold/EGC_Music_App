@@ -17,8 +17,8 @@ public class UserList {
         return instance;
     }
 
-    public User getUser(String username) {
-        return null;
+    public User getUsers(String username) {
+        return UserList;
     }
 
     public void create(User user) {
