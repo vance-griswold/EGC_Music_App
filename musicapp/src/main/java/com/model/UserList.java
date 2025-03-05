@@ -10,15 +10,15 @@ public class UserList {
         //this.users = DataLoader.getUsers();
     }
 
-    public static UserList getInstance(UserList users) {
+    public static UserList getInstance() {
         if (instance == null) {
-            instance = users;
+            instance = new UserList();
         }
         return instance;
     }
 
-    public User getUsers(String username) {
-        return UserList;
+    public ArrayList<User> getUsers() {
+        return users;
     }
 
     public void create(User user) {
