@@ -2,8 +2,6 @@ package com.model;
 
 import java.util.ArrayList;
 
-import javafx.scene.chart.PieChart.Data;
-
 public class UserList {
     private ArrayList<User> users;
     private static UserList instance;
@@ -12,15 +10,15 @@ public class UserList {
         //this.users = DataLoader.getUsers();
     }
 
-    public static UserList getInstance(UserList users) {
+    public static UserList getInstance() {
         if (instance == null) {
-            instance = users;
+            instance = new UserList();
         }
         return instance;
     }
 
-    public User getUser(String username) {
-        return null;
+    public ArrayList<User> getUsers() {
+        return users;
     }
 
     public void create(User user) {
@@ -29,7 +27,7 @@ public class UserList {
 
     public void read() {
         for (User user : users) {
-            System.out.println(user.getUsername());
+            System.out.println(user.getUserName());
         }
     }
 

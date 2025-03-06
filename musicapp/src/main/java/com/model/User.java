@@ -29,6 +29,19 @@ public class User {
         this.mySongs = new Playlist();
     }
 
+    public User(UUID id, String role, String firstName, String lastName,  String userName, ArrayList<Playlist> playlists, String emailAddress, int level, int xpPoints, Playlist songs){
+        this.id = id;
+        this.userRole = role;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = userName;
+        this.playlists = playlists;
+        this.emailAddress = emailAddress;
+        this.experienceLevel = level;
+        this.xpPoints = xpPoints;
+        this.mySongs = songs;
+    }
+
     public void increaseLevel(int xp) {
         
     }
@@ -37,8 +50,37 @@ public class User {
         this.xpPoints += xp;
     }
 
-    public String getUsername() {
+    public String getId() {
+        return id.toString();
+    }
+
+    public String getRole() {
+        return userRole;
+    }
+
+    public String getUserName() {
         return username;
     }
-    // Getters and setters omitted for brevity
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public int getExperienceLevel() {
+        return experienceLevel;
+    }
+
+    public int getXpPoints() {
+        return xpPoints;
+    }
+
+
 }
