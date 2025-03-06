@@ -14,7 +14,7 @@ import org.json.simple.parser.JSONParser;
  */
 public class DataLoader extends DataConstants {
     
-    public ArrayList<User> getUsers() {
+    public static ArrayList<User> getUsers() {
         ArrayList<User> users = new ArrayList<User>();
 		
 		try {
@@ -47,5 +47,10 @@ public class DataLoader extends DataConstants {
 
     public void getSongs() {
         // Load songs from json
+    }
+
+	public static void main(String[] args) {
+		UserList list = UserList.getInstance();
+		list.read();
     }
 }

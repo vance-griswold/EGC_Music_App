@@ -5,18 +5,19 @@ import java.util.ArrayList;
 public class UserList {
     // Instance variable to hold the list of users
     private ArrayList<User> users;
+    private static UserList instance;
 
     // Constructor initializes the list of users
-    public UserList() {
-        this.users = new ArrayList<User>();
+    private UserList() {
+        users = DataLoader.getUsers();
     }
 
     // Method to get an instance
-    public static UserList getInstance(UserList users) {
-        if (users == null) {
-            users = new UserList(); 
+    public static UserList getInstance() {
+        if ( instance == null) {
+            instance = new UserList();
         }
-        return users;
+        return instance;
     }
 
     // Get a user by username
@@ -27,6 +28,11 @@ public class UserList {
             }
         }
         return null; 
+    }
+
+    // Get the list of users
+    public ArrayList<User> getUsers() {
+        return users;
     }
 
     // Create a new user and add them to the list
