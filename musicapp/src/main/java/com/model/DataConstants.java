@@ -1,7 +1,7 @@
 package com.model;
 
 public class DataConstants {
-    protected static final String USER_FILE_NAME = "src/main/java/com/data/users.json";
+    protected static final String USER_FILE_NAME = "musicapp/src/main/java/com/data/users.json";
     protected static final String USER_ID = "id";
     protected static final String USER_ROLE = "userRole";
     protected static final String USER_FIRST_NAME = "firstName";
@@ -11,7 +11,7 @@ public class DataConstants {
     protected static final String USER_EMAIL_ADDRESS = "emailAddress";
     protected static final String USER_LEVEL = "experienceLevel";
     protected static final String USER_XP = "xpPoints";
-    protected static final String USER_SONGS = "mySongs";
+ 
 
 
 }
