@@ -3,9 +3,12 @@ import java.util.ArrayList;
 
 public class Playlist {
     private ArrayList<Song> playlist;
+    private String title;
+
 
     public Playlist() {
         this.playlist = new ArrayList<>();
+        this.title = "Untitled Playlist";
     }
 
     public void addSong(Song song) {

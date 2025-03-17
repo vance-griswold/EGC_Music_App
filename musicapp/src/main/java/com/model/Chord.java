@@ -22,4 +22,11 @@ public class Chord {
     public ArrayList<Note> getNotes() {
         return notes;
     }
+
+    /**
+     * 
+     */
+    public String toString() {
+        return "";
+    }
 }

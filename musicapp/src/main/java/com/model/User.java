@@ -13,7 +13,6 @@ public class User {
     private String userRole;
     private int experienceLevel;
     private int xpPoints;
-    private Playlist mySongs;
 
     public User(String firstName, String lastName, String emailAddress, String username, String password, String userRole) {
         this.id = UUID.randomUUID();
@@ -26,10 +25,9 @@ public class User {
         this.experienceLevel = 1;
         this.xpPoints = 0;
         this.playlists = new ArrayList<>();
-        this.mySongs = new Playlist();
     }
 
-    public User(UUID id, String role, String firstName, String lastName,  String userName, ArrayList<Playlist> playlists, String emailAddress, int level, int xpPoints, Playlist songs){
+    public User(UUID id, String role, String firstName, String lastName,  String userName, ArrayList<Playlist> playlists, String emailAddress, int level, int xpPoints){
         this.id = id;
         this.userRole = role;
         this.firstName = firstName;
@@ -39,7 +37,6 @@ public class User {
         this.emailAddress = emailAddress;
         this.experienceLevel = level;
         this.xpPoints = xpPoints;
-        this.mySongs = songs;
     }
 
     public void increaseLevel(int xp) {

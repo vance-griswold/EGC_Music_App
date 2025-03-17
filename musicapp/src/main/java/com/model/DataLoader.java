@@ -32,9 +32,8 @@ public class DataLoader extends DataConstants {
                 String emailAddress = (String)personJSON.get(USER_EMAIL_ADDRESS);
                 int level = ((Long)personJSON.get(USER_LEVEL)).intValue();
                 int xpPoints = ((Long)personJSON.get(USER_XP)).intValue();
-                Playlist songs = (Playlist)personJSON.get(USER_SONGS);
 				
-				users.add(new User(id, role, firstName, lastName,  userName, playlists, emailAddress, level, xpPoints, songs));
+				users.add(new User(id, role, firstName, lastName,  userName, playlists, emailAddress, level, xpPoints));
 			}
 			
 			return users;
