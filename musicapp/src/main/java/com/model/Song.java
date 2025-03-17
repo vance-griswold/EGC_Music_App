@@ -32,7 +32,28 @@ public class Song {
         this.difficulty = difficulty;
         this.genre = genre;
         this.sheetMusic = sheetMusic;
-        this.rating = 0;
+        this.rating = rating;
+    }
+
+    /**
+     * Constructor for Song class
+     * @param id unique song id
+     * @param songTitle title of the song
+     * @param Author author/creator of the song
+     * @param difficulty difficulty of the song
+     * @param genre genre of the song
+     * @param sheetMusic sheet music for the song
+     * @param rating rating of the song
+     */
+    public Song(UUID id, String songTitle, String author, Difficulty difficulty, Genre genre, SheetMusic sheetMusic, int rating)
+    {
+        this.id = id;
+        this.songTitle = songTitle;
+        this.author = author;
+        this.difficulty = difficulty;
+        this.genre = genre;
+        this.sheetMusic = sheetMusic;
+        this.rating = rating;
     }
 
     /**

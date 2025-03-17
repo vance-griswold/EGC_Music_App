@@ -44,9 +44,33 @@ public class DataLoader extends DataConstants {
 		return users;
 	}
 
-    public void getSongs() {
-        // Load songs from json
-    }
+    public static ArrayList<Song> getSongs() {
+		ArrayList<Song> songs = new ArrayList<Song>();
+		
+		try {
+			FileReader reader = new FileReader(SONG_FILE_NAME);
+			JSONArray peopleJSON = (JSONArray)new JSONParser().parse(reader);
+			
+			for(int i=0; i < peopleJSON.size(); i++) {
+				JSONObject personJSON = (JSONObject)peopleJSON.get(i);
+				UUID id = UUID.fromString((String)personJSON.get(SONG_ID));
+                String title = (String)personJSON.get(SONG_TITLE);
+				String author = (String)personJSON.get(SONG_AUTHOR);
+				Difficulty difficulty = (Difficulty)personJSON.get(SONG_DIFFICULTY);
+                Genre genre = (Genre)personJSON.get(SONG_GENRE);
+                SheetMusic sheetMusic = (SheetMusic)personJSON.get(SONG_SHEETMUSIC);
+				int rating = ((Long)personJSON.get(SONG_RATING)).intValue();
+				
+				songs.add(new Song(id, title, author, difficulty, genre, sheetMusic, rating));
+			}
+			
+			return songs;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return songs;
+	}
 
 	public static void main(String[] args) {
 		UserList list = UserList.getInstance();

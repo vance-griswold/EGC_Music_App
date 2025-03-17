@@ -19,4 +19,5 @@ public class DataConstants {
     protected static final String SONG_DIFFICULTY = "difficulty";
     protected static final String SONG_GENRE = "genre";
     protected static final String SONG_SHEETMUSIC = "sheetMusic";
+    protected static final String SONG_RATING = "rating";
 }
