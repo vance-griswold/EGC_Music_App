@@ -15,7 +15,7 @@ public class Instrument {
 
     /**
      * Constructs an Instrument object with the specified properties.
-     * Hellos
+     * 
      * @param type The type of the instrument (e.g., "Guitar").
      * @param hasTabs Whether the instrument has tabs.
      * @param hasSheetMusic Whether the instrument has sheet music.
