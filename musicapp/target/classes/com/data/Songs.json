@@ -5,7 +5,8 @@
 		"author" : "Foo Fighters",
 		"difficulty" : "HARD",
 		"genre" : "ROCK",
-		"sheetMusic" : "EverlongSheetMusic"
+		"sheetMusic" : "EverlongSheetMusic",
+		"rating" : 5
 	},
 	{
 		"id" : "UUID NUMBER",
@@ -13,7 +14,8 @@
 		"author" : "Frederic Chopin",
 		"difficulty" : "EASY",
 		"genre" : "CLASSICAL",
-		"sheetMusic" : "Nocturne9SheetMusic"
+		"sheetMusic" : "Nocturne9SheetMusic",
+		"rating" : 4
 	},
 	{
 		"id" : "UUID NUMBER",
@@ -21,6 +23,7 @@
 		"author" : "ROSE",
 		"difficulty" : "MEDIUM",
 		"genre" : "POP",
-		"sheetMusic" : "APTSheetMusic"
+		"sheetMusic" : "APTSheetMusic",
+		"rating" : 3
     }
     ]
