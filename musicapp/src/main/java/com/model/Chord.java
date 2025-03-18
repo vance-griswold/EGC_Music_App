@@ -5,28 +5,33 @@ import java.util.ArrayList;
  * @author Evil Gnome Clan
  */
 public class Chord {
-    private ArrayList<Note> notes;
+    private Note note;
+    private boolean major;
+    private boolean minor;
 
     /**
      * 
      * @param notes
      */
-    public Chord(ArrayList<Note> notes) {
-        this.notes = notes;
+    public Chord(Note note, boolean major, boolean minor) {
+        this.note = note;
+        this.major = major;
+        this.minor = minor;
     }
 
     /**
      * 
      * @return
      */
-    public ArrayList<Note> getNotes() {
-        return notes;
-    }
-
-    /**
-     * 
-     */
-    public String toString() {
-        return "";
+    public String getChord() {
+        String chord = this.note.getNote();
+        if(chord.contains("R")) {
+            return chord;
+        } else if (this.major == true) {
+            chord = chord + "maj";
+        } else if (this.minor == true) {
+            chord = chord + "min";
+        }
+        return chord;
     }
 }
