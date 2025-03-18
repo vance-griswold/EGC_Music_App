@@ -40,4 +40,12 @@ public class SheetMusic {
     public void addToLibrary(SheetMusic sheetMusic) {
     
     }
+
+    public String getSong() {
+        String song = "";
+        for (Measure measure : measures) {
+            song += measure.getMeasure() + " ";
+        }
+        return song;
+    }
 }

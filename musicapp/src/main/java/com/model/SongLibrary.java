@@ -16,7 +16,7 @@ public class SongLibrary {
      */
     private SongLibrary()
     {
-        this.library = new ArrayList<Song>();
+        library = DataLoader.getSongs();
     }
 
     /**

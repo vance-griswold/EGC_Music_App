@@ -56,12 +56,14 @@ public class DataLoader extends DataConstants {
 				UUID id = UUID.fromString((String)personJSON.get(SONG_ID));
                 String title = (String)personJSON.get(SONG_TITLE);
 				String author = (String)personJSON.get(SONG_AUTHOR);
-				Difficulty difficulty = (Difficulty)personJSON.get(SONG_DIFFICULTY);
-                Genre genre = (Genre)personJSON.get(SONG_GENRE);
-                SheetMusic sheetMusic = (SheetMusic)personJSON.get(SONG_SHEETMUSIC);
+				String difficulty = (String)personJSON.get(SONG_DIFFICULTY);
+                String genre = (String)personJSON.get(SONG_GENRE);
+                String sheetMusic = (String)personJSON.get(SONG_SHEETMUSIC);
 				int rating = ((Long)personJSON.get(SONG_RATING)).intValue();
 				
-				songs.add(new Song(id, title, author, difficulty, genre, sheetMusic, rating));
+				Difficulty diff = Difficulty.valueOf(difficulty);
+				Genre gen = Genre.valueOf(genre);
+				songs.add(new Song(id, title, author, diff, gen, sheetMusic, rating));
 			}
 			
 			return songs;
@@ -73,7 +75,9 @@ public class DataLoader extends DataConstants {
 	}
 
 	public static void main(String[] args) {
-		UserList list = UserList.getInstance();
-		list.read();
+		SongLibrary list = SongLibrary.getInstance();
+		UUID id = UUID.fromString("9e42d9ac-7380-4ced-989b-ddb196ea7913");
+		Song hcb = list.getSong(id);
+		//System.out.println(hcb.getSheetMusic());
     }
 }
