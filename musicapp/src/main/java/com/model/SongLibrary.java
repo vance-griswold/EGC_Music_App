@@ -33,6 +33,15 @@ public class SongLibrary {
     }
 
     /**
+     * Gets the list of songs in the library
+     * @return list of songs
+     */
+    public ArrayList<Song> getSongs()
+    {
+        return library;
+    }
+
+    /**
      * Gets a song by its ID
      * @param id unique song id
      */
