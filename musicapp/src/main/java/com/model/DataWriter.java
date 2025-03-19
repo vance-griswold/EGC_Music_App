@@ -41,10 +41,6 @@ public class DataWriter extends DataConstants {
         return userDetails;
     }
 
-    public static void main(String[] args) {
-        saveUsers();
-    }
-
     public static void saveSongs()
     {
         SongLibrary songLibraryInstance = SongLibrary.getInstance();
@@ -66,14 +62,20 @@ public class DataWriter extends DataConstants {
 
     private static JSONObject getSongJSON(Song song) {
         JSONObject songDetails = new JSONObject();
-        songDetails.put(SONG_ID, song.getId());
+        songDetails.put(SONG_ID, song.getId().toString());
         songDetails.put(SONG_TITLE, song.getSongTitle());
         songDetails.put(SONG_AUTHOR, song.getAuthor());
-        songDetails.put(SONG_DIFFICULTY, song.getDifficulty());
-        songDetails.put(SONG_GENRE, song.getGenre());
+        songDetails.put(SONG_DIFFICULTY, song.getDifficulty().toString());
+        songDetails.put(SONG_GENRE, song.getGenre().toString());
         songDetails.put(SONG_SHEETMUSIC, song.getSheetMusic());
         songDetails.put(SONG_RATING, song.getRating());
 
         return songDetails;
+    }
+
+    
+    public static void main(String[] args) {
+        saveUsers();
+        saveSongs();
     }
 }

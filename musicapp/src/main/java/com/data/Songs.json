@@ -1,29 +1,29 @@
 [
 	{
-		"id" : "9e42d9ac-7380-4ced-989b-ddb196ea7913",
-		"songTitle" : "Everlong",
-		"author" : "Foo Fighters",
-		"difficulty" : "HARD",
-		"genre" : "ROCK",
-		"sheetMusic" : "C4i C4i G4i G4i A4i A4i G4i G4i",
-		"rating" : 5
+		"difficulty": "HARD",
+		"songTitle": "Everlong",
+		"author": "Foo Fighters",
+		"genre": "ROCK",
+		"rating": 5,
+		"id": "9e42d9ac-7380-4ced-989b-ddb196ea7913",
+		"sheetMusic": "Bh  Ah | Rh  Rq  Fq. | Gq  Fqq  Fqq Fqq Eq Fqq | Fh Rh | Rh Dq. Cqq | Cq Bh."
 	},
 	{
-		"id" : "98861408-c98d-4f28-8ee0-57f3d63b45c0",
-		"songTitle" : "Nocturne Op. 9 No. 2",
-		"author" : "Frederic Chopin",
-		"difficulty" : "EASY",
-		"genre" : "CLASSICAL",
-		"sheetMusic" : "C4i C4i G4i G4i A4i A4i G4i G4i",
-		"rating" : 4
+		"difficulty": "EASY",
+		"songTitle": "Nocturne Op. 9 No. 2",
+		"author": "Frederic Chopin",
+		"genre": "CLASSICAL",
+		"rating": 4,
+		"id": "98861408-c98d-4f28-8ee0-57f3d63b45c0",
+		"sheetMusic": "Cq Cq Ch | Rqq B4qq A4qq B4qq Cq Dq | Rqq Eqq Eq Eh | Rqq Dqq Cqq Dqq Eq Fq | Rqq Gq. Ch | Rqq Fqq Eqq Dqq Ch | B4h A4h | G4h E4h | G4qh A4h | B4w"
 	},
 	{
-		"id" : "c361b262-4ae5-4bef-bc23-23e81e2e949e",
-		"songTitle" : "APT.",
-		"author" : "ROSE",
-		"difficulty" : "MEDIUM",
-		"genre" : "POP",
-		"sheetMusic" : "C4i C4i G4i G4i A4i A4i G4i G4i",
-		"rating" : 3
-    }
-    ]
+		"difficulty": "MEDIUM",
+		"songTitle": "APT.",
+		"author": "ROSE",
+		"genre": "POP",
+		"rating": 3,
+		"id": "c361b262-4ae5-4bef-bc23-23e81e2e949e",
+		"sheetMusic": "Rqq C6q. Fh | Rqq D6qq C6qq Bqq Aq Gh | Fh Eh Dh Ch B4h Ch Dh Ew"
+	}
+]
