@@ -9,7 +9,6 @@ import java.util.ArrayList;
 public class SheetMusic {
     private String name;
     private ArrayList<Measure> measures;
-    private Instrument instrument;
 
     /**
      * 
@@ -17,10 +16,28 @@ public class SheetMusic {
      * @param measures
      * @param instrument
      */
-    public SheetMusic(String name, ArrayList<Measure> measures, Instrument instrument) {
+    public SheetMusic(String name, ArrayList<Measure> measures) {
         this.name = name;
         this.measures = measures;
-        this.instrument = instrument;
+    }
+
+    /**
+     * Takes the song as the String and remakes it into an ArrayList of Measures
+     * @param name
+     * @param song
+     */
+    public SheetMusic(String name, String song ){
+        this.name = name;
+        this.measures = new ArrayList<Measure>();
+        String[] measureArray = song.split("\\|");
+        for (String measure : measureArray) {
+            ArrayList<Chord> chords = new ArrayList<Chord>();
+            String[] chordArray = measure.split(" ");
+            for (String chord : chordArray) {
+                chords.add(new Chord(chord));
+            }
+            measures.add(new Measure(chords));
+        }
     }
     
     /**
@@ -44,8 +61,14 @@ public class SheetMusic {
     public String getSong() {
         String song = "";
         for (Measure measure : measures) {
-            song += measure.getMeasure() + " ";
+            song += measure.getMeasure() + " | ";
         }
         return song;
+    }
+
+    public void displayMeasures() {
+        for (Measure measure : measures) {
+            System.out.println(measure.getMeasure());
+        }
     }
 }

@@ -7,11 +7,12 @@ public class Driver {
     public static void main(String[] args) {
         //Import Song from JSON and play using Jfugue
         SongLibrary songLibrary = SongLibrary.getInstance();
-        Song song = songLibrary.getSong(UUID.fromString("98861408-c98d-4f28-8ee0-57f3d63b45c0"));
-        playSong(song.getSheetMusic());
-        playSong(song.getSheetMusic());
-        playSong(song.getSheetMusic());
+        //Song song = songLibrary.getSong(UUID.fromString("c361b262-4ae5-4bef-bc23-23e81e2e949e"));
+        //playSong(song.getSheetMusic());
 
+        Song song2 = songLibrary.getSong(UUID.fromString("c361b262-4ae5-4bef-bc23-23e81e2e949e"));
+        SheetMusic sheetMusic = new SheetMusic(song2.getSongTitle(), song2.getSheetMusic());
+        sheetMusic.displayMeasures();
     }
 
     public static void playSong(String song){
