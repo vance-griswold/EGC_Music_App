@@ -25,7 +25,10 @@ public class MistakeIndicator {
      */
     public void trackMistake(Note playedNote, Note expectedNote)
     {
-
+        if(playedNote != expectedNote)
+        {
+            addMistake();
+        }
     }
 
     /**
@@ -33,7 +36,7 @@ public class MistakeIndicator {
      */
     public void resetMistakes()
     {
-
+        this.currentMistakes = 0;
     }
 
     /**
@@ -41,8 +44,25 @@ public class MistakeIndicator {
      */
     public void addMistake()
     {
-
+        this.currentMistakes++;
+        this.totalMistakes++;
     }
 
+    /**
+     * Gets the current mistakes the user has
+     * @return current mistakes
+     */
+    public int getCurrentMistakes()
+    {
+        return currentMistakes;
+    }
 
+    /**
+     * Gets the total mistakes the user has
+     * @return total mistakes
+     */
+    public int getTotalMistakes()
+    {
+        return totalMistakes;
+    }
 }
