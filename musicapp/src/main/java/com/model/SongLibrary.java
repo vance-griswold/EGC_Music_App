@@ -16,7 +16,7 @@ public class SongLibrary {
      */
     private SongLibrary()
     {
-        this.library = new ArrayList<Song>();
+        library = DataLoader.getSongs();
     }
 
     /**
@@ -30,6 +30,15 @@ public class SongLibrary {
             instance = new SongLibrary();
         }
         return instance;
+    }
+
+    /**
+     * Gets the list of songs in the library
+     * @return list of songs
+     */
+    public ArrayList<Song> getSongs()
+    {
+        return library;
     }
 
     /**

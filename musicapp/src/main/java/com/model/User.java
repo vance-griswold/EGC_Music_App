@@ -13,7 +13,6 @@ public class User {
     private String userRole;
     private int experienceLevel;
     private int xpPoints;
-    private Playlist mySongs;
 
     public User(String firstName, String lastName, String emailAddress, String username, String password, String userRole) {
         this.id = UUID.randomUUID();
@@ -26,7 +25,18 @@ public class User {
         this.experienceLevel = 1;
         this.xpPoints = 0;
         this.playlists = new ArrayList<>();
-        this.mySongs = new Playlist();
+    }
+
+    public User(UUID id, String role, String firstName, String lastName,  String userName, ArrayList<Playlist> playlists, String emailAddress, int level, int xpPoints){
+        this.id = id;
+        this.userRole = role;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = userName;
+        this.playlists = playlists;
+        this.emailAddress = emailAddress;
+        this.experienceLevel = level;
+        this.xpPoints = xpPoints;
     }
 
     public void increaseLevel(int xp) {
@@ -37,8 +47,37 @@ public class User {
         this.xpPoints += xp;
     }
 
-    public String getUsername() {
+    public String getId() {
+        return id.toString();
+    }
+
+    public String getRole() {
+        return userRole;
+    }
+
+    public String getUserName() {
         return username;
     }
-    // Getters and setters omitted for brevity
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public int getExperienceLevel() {
+        return experienceLevel;
+    }
+
+    public int getXpPoints() {
+        return xpPoints;
+    }
+
+
 }

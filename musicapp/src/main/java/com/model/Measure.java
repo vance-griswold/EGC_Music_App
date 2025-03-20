@@ -6,29 +6,21 @@ import java.util.ArrayList;
  */
 public class Measure {
     private ArrayList<Chord> chords;
-    private int timeSignatureTop;
-    private int timeSignatureBottom;
-    private String clef;
 
     /**
      * 
      * @param chords
-     * @param timeSignatureTop
-     * @param timeSignatureBottom
-     * @param clef
      */
-    public Measure(ArrayList<Chord> chords, int timeSignatureTop, int timeSignatureBottom, String clef) {
+    public Measure(ArrayList<Chord> chords) {
         this.chords = chords;
-        this.timeSignatureTop = timeSignatureTop;
-        this.timeSignatureBottom = timeSignatureBottom;
-        this.clef = clef;
     }
 
-    /**
-     * 
-     * @return
-     */
-    public boolean isFull(){
-        return chords.size() == timeSignatureTop;
+
+    public String getMeasure() {
+        String measure = "";
+        for (Chord chord : chords) {
+            measure += chord.toString() + " ";
+        }
+        return measure;
     }
 }

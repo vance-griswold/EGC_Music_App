@@ -12,7 +12,7 @@ public class Song {
     private String author;
     private Difficulty difficulty;
     private Genre genre;
-    private SheetMusic sheetMusic;
+    private String sheetMusic;
     private int rating;
 
     /**
@@ -24,7 +24,7 @@ public class Song {
      * @param sheetMusic sheet music for the song
      * @param rating rating of the song
      */
-    public Song(String songTitle, String author, Difficulty difficulty, Genre genre, SheetMusic sheetMusic, int rating)
+    public Song(String songTitle, String author, Difficulty difficulty, Genre genre, String sheetMusic, int rating)
     {
         this.id = UUID.randomUUID();
         this.songTitle = songTitle;
@@ -32,7 +32,28 @@ public class Song {
         this.difficulty = difficulty;
         this.genre = genre;
         this.sheetMusic = sheetMusic;
-        this.rating = 0;
+        this.rating = rating;
+    }
+
+    /**
+     * Constructor for Song class
+     * @param id unique song id
+     * @param songTitle title of the song
+     * @param Author author/creator of the song
+     * @param difficulty difficulty of the song
+     * @param genre genre of the song
+     * @param sheetMusic sheet music for the song
+     * @param rating rating of the song
+     */
+    public Song(UUID id, String songTitle, String author, Difficulty difficulty, Genre genre, String sheetMusic, int rating)
+    {
+        this.id = id;
+        this.songTitle = songTitle;
+        this.author = author;
+        this.difficulty = difficulty;
+        this.genre = genre;
+        this.sheetMusic = sheetMusic;
+        this.rating = rating;
     }
 
     /**
@@ -84,7 +105,7 @@ public class Song {
      * Gets sheet music for the song
      * @return sheet music object
      */
-    public SheetMusic getSheetMusic()
+    public String getSheetMusic()
     {
         return sheetMusic;
     }
