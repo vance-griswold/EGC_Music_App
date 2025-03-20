@@ -7,6 +7,7 @@ public class Note {
     private String duration;
     private boolean rest;
     private Scale scale;
+    private int octave;
 
     /**
      * Constructor for class
@@ -14,10 +15,19 @@ public class Note {
      * @param rest is a boolean to determine if the note is a rest
      * @param scale deteriminesthe scale of the note
      */
-    public Note(String duration, boolean rest, Scale scale) {
+    public Note(String duration, boolean rest, Scale scale, int octave) {
         this.duration = duration;
         this.rest = rest;
         this.scale = scale;
+        this.octave = octave;
+    }
+
+    /**
+     * Get the scale of the note
+     * @return String of the scale
+     */
+    public String getScale() {
+        return this.scale.toString();
     }
 
     /**
@@ -26,9 +36,9 @@ public class Note {
      */
     public String getNote() {
         if (this.rest == true) {
-            return "R" + this.duration;
+            return "R" + this.octave + this.duration;
         }else {
-            return this.scale + this.duration;
+            return this.getScale() + this.octave + this.duration;
         }
     }
 }

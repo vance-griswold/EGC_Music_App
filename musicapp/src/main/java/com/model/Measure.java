@@ -8,8 +8,8 @@ public class Measure {
     private ArrayList<Chord> chords;
 
     /**
-     * 
-     * @param chords
+     * Constructor for class
+     * @param chords is an ArrayList of Chords that make up the measure
      */
     public Measure(ArrayList<Chord> chords) {
         this.chords = chords;
@@ -19,7 +19,7 @@ public class Measure {
     public String getMeasure() {
         String measure = "";
         for (Chord chord : chords) {
-            measure += chord.toString() + " ";
+            measure += chord.getChord() + " ";
         }
         return measure;
     }
