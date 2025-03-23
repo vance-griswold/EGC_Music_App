@@ -1,5 +1,6 @@
 package com.model;
 import java.util.ArrayList;
+import java.util.Scanner;
 /**
  * Chord class is used to represent a chord in a music sheet.
  * @author Evil Gnome Clan
@@ -11,6 +12,18 @@ public class Chord {
     private int octave;
     private boolean major;
     private boolean minor;
+
+    /**
+     * Default constructor for class
+     */
+    public Chord() {
+        this.duration = "q";
+        this.rest = false;
+        this.scale = Scale.C;
+        this.octave = 4;
+        this.major = false;
+        this.minor = false;
+    }
 
     /**
       * Constructor for class
@@ -35,6 +48,11 @@ public class Chord {
      * @return
      */
     public Chord(String chord) {
+        if (chord.equals("")){
+            this.rest = true;
+            this.duration = "q";
+            return;
+        }
         if( chord.charAt(0) == 'R') {
             this.rest = true;
             this.duration = chord.substring(1);
@@ -52,6 +70,67 @@ public class Chord {
             }
         }
     }
+
+    /**
+     * Constructor for Chord made through input
+     * @return
+     */
+    public Chord chordInput() {
+        Chord newC = new Chord();
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Note or Chord? (n / c)");
+        String ans1 = keyboard.nextLine();
+        if(ans1.toLowerCase().equals("c")){
+            System.out.println("Major or Minor? (major / minor)");
+            String ansM = keyboard.nextLine();
+            if(ansM.toLowerCase().equals("major")) {
+                newC.major = true;
+                newC.minor = false;
+            }else if(ansM.toLowerCase().equals("minor")){
+                newC.major = false;
+                newC.minor = true;
+            }else{
+                System.out.println("Response invalid");
+                newC = chordInput();
+                return newC;
+            }
+        }else if(ans1.equals("n")){
+
+        }else{
+            System.out.println("Response invalid");
+            newC = chordInput();
+            return newC; 
+        }
+
+        System.out.println("Which note? (a-g)");
+        String scale = keyboard.nextLine();
+        if(scale.toLowerCase().equals("a") || scale.toLowerCase().equals("b") || scale.toLowerCase().equals("c") || scale.toLowerCase().equals("d") || scale.toLowerCase().equals("e") || scale.toLowerCase().equals("f") || scale.toLowerCase().equals("g")) {
+            newC.scale = Scale.valueOf(scale.toUpperCase());
+        }else {
+            System.out.println("Response invalid");
+            newC = chordInput();
+            return newC; 
+        }
+        System.out.println("Which octave? (0-10)");
+        String oct = keyboard.nextLine();
+        if(oct.equals("0") || oct.equals("1") || oct.equals("2") || oct.equals("3") || oct.equals("4") || oct.equals("5") || oct.equals("6") || oct.equals("7") || oct.equals("8") || oct.equals("9") || oct.equals("10")) {
+            newC.octave = Integer.parseInt(oct);
+        }else {
+            System.out.println("Response invalid");
+            newC = chordInput();
+            return newC; 
+        }
+        System.out.println("Note duration? (w,h,q,qq,qqq)");
+        String dur = keyboard.nextLine();
+        if(dur.toLowerCase().equals("w") || dur.toLowerCase().equals("h") || dur.toLowerCase().equals("q") || dur.toLowerCase().equals("qq") || dur.toLowerCase().equals("qqq")) {
+            newC.duration = dur;
+        }else {
+            System.out.println("Response invalid");
+            newC = chordInput();
+            return newC; 
+        }
+        return newC;
+}
 
     /**
      * Get the scale of the chord
