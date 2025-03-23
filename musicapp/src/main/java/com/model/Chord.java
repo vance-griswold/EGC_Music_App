@@ -94,9 +94,22 @@ public class Chord {
                 newC = chordInput();
                 return newC;
             }
-        }else if(ans1.equals("n")){
+        }else if(ans1.toLowerCase().equals("n")){
 
-        }else{
+        }else if(ans1.toLowerCase().equals("r")){
+            newC.rest = true;
+            System.out.println("Note duration? (w,h,q,qq,qqq)");
+            String dur = keyboard.nextLine();
+            if(dur.toLowerCase().equals("w") || dur.toLowerCase().equals("h") || dur.toLowerCase().equals("q") || dur.toLowerCase().equals("qq") || dur.toLowerCase().equals("qqq")) {
+                newC.duration = dur;
+            }else {
+                System.out.println("Response invalid");
+                newC = chordInput();
+                return newC; 
+            }
+            return newC;
+        
+        } else{
             System.out.println("Response invalid");
             newC = chordInput();
             return newC; 
