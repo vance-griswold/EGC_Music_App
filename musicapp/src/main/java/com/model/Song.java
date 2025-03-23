@@ -110,6 +110,15 @@ public class Song {
         return sheetMusic;
     }
 
+    /** 
+     * Sets sheet music for the song
+     * @param sheetMusic sheet music object
+    */
+    public void setSheetMusic(SheetMusic sheetMusic)
+    {
+        String s = sheetMusic.getSong();
+        this.sheetMusic = s;
+    }
     /**
      * Filters songs by their rating
      * @param minRating minimum rating to filter by

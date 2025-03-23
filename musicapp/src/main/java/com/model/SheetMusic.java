@@ -1,6 +1,7 @@
 package com.model;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * 
@@ -40,18 +41,30 @@ public class SheetMusic {
         }
     }
     
-    /**
-     * 
-     */
-    public void addNote() {
-    
-    }
+   /**
+    * 
+    * @param measure
+    */
+    public void addMeasure() {
+        ArrayList<Chord> chords = new ArrayList<Chord>();
+        Boolean addMore = true;
+        while( addMore == true) {
+            System.out.println("Would you like to add a chord? (Y/N)");
+            Scanner scanner = new Scanner(System.in);
+            String input = scanner.nextLine();
+            if (input.toUpperCase().equals("Y")) {
+                addMore = true;
+            } else {
+                addMore = false;
 
-    /**
-     * 
-     */
-    public void removeNote() {
-    
+            }
+            if(addMore == true) {
+                Chord newChord = new Chord();
+                newChord = newChord.chordInput();
+                chords.add(newChord);
+            }
+        }     
+        measures.add(new Measure(chords));
     }
 
     public void addToLibrary(SheetMusic sheetMusic) {
@@ -61,7 +74,7 @@ public class SheetMusic {
     public String getSong() {
         String song = "";
         for (Measure measure : measures) {
-            song += measure.getMeasure() + " | ";
+            song += measure.getMeasure() + "|";
         }
         return song;
     }

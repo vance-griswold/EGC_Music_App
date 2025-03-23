@@ -15,11 +15,31 @@ public class Measure {
         this.chords = chords;
     }
 
+     /**
+     * add a chord to the sheet music
+     */
+    public void addChord(int index) {
+    Chord chord = new Chord();
+    chord = chord.chordInput();
+    chords.add(index, chord);
+    }
 
+    /**
+     * remove a chord from the sheet music
+     */
+    public void removeChord   () {
+    
+    }
+    
     public String getMeasure() {
         String measure = "";
+        boolean fs = false;
         for (Chord chord : chords) {
+            fs = true;
             measure += chord.getChord() + " ";
+        }
+        if (fs){
+            measure = measure.substring(0, measure.length() - 1);
         }
         return measure;
     }
