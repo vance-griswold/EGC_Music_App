@@ -3,6 +3,8 @@ package com.model;
 import java.util.HashMap;
 import java.util.Map;
 
+import javafx.scene.chart.PieChart.Data;
+
 public class MusicApp {
 
     private User currentUser;
@@ -14,7 +16,7 @@ public class MusicApp {
      */
     public MusicApp() {
         this.userDatabase = new HashMap<>();
-        this.library = new SongLibrary(); 
+        this.library = SongLibrary.getInstance(); 
     }
 
     /**
@@ -67,6 +69,8 @@ public class MusicApp {
         if (currentUser != null) {
             System.out.println("Logged out successfully. Goodbye, " + currentUser.getFirstName() + "!");
             currentUser = null;
+            DataWriter.saveUsers();
+            DataWriter.saveSongs();
         } else {
             System.out.println("No user is currently logged in.");
         }
@@ -130,8 +134,9 @@ public class MusicApp {
     public void playSong(Song song) {
         if (song != null) {
             System.out.println("Now playing: " + song.getSongTitle() + " by " + song.getAuthor());
+            SongLibrary.playSong(song.getSheetMusic());
         } else {
-            System.out.println("Error: No song selected.");
+            System.out.println("Error: Song not found.");
         }
     }
 
@@ -184,6 +189,8 @@ public class MusicApp {
      */
     public void exit() {
         System.out.println("Exiting MusicApp. See you next time!");
+        DataWriter.saveSongs();
+        DataWriter.saveUsers();
         System.exit(0);
     }
 }
