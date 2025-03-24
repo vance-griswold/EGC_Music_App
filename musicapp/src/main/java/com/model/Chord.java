@@ -19,8 +19,8 @@ public class Chord {
     public Chord() {
         this.duration = "q";
         this.rest = false;
-        this.scale = Scale.C;
-        this.octave = 4;
+        this.scale = Scale.REST;
+        this.octave = 5;
         this.major = false;
         this.minor = false;
     }
@@ -49,13 +49,13 @@ public class Chord {
      */
     public Chord(String chord) {
         if (chord.equals("")){
-            this.rest = true;
-            this.duration = "q";
+
             return;
         }
         if( chord.charAt(0) == 'R') {
             this.rest = true;
             this.duration = chord.substring(1);
+            this.scale = Scale.REST;
         }else {
             this.scale = Scale.valueOf(chord.substring(0, 1));
             this.octave = Integer.parseInt(chord.substring(1, 2));

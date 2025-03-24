@@ -2,6 +2,8 @@ package com.model;
 import java.util.ArrayList;
 import java.util.UUID;
 
+import org.jfugue.player.Player;
+
 /**
  * SongLibrary class to represent a library of songs in the music app
  * @author Evil Gnome Clan
@@ -187,6 +189,14 @@ public class SongLibrary {
         return filteredSongs;
     }
 
+    /**
+     *@param song
+     */
+    public static void playSong(String song){
+        Player player = new Player();
+        player.play(song);
+    }
+    
     /**
      * Creates a new song and adds it to the library
      * @param song song to be created

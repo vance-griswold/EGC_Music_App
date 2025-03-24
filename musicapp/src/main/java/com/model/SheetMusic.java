@@ -1,5 +1,7 @@
 package com.model;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -67,10 +69,6 @@ public class SheetMusic {
         measures.add(new Measure(chords));
     }
 
-    public void addToLibrary(SheetMusic sheetMusic) {
-    
-    }
-
     public String getSong() {
         String song = "";
         for (Measure measure : measures) {
@@ -82,6 +80,30 @@ public class SheetMusic {
     public void displayMeasures() {
         for (Measure measure : measures) {
             System.out.println(measure.getMeasure());
+        }
+    }
+
+    public void toText() {
+        String fileName = name + ".txt";
+        try (FileWriter fileWriter = new FileWriter(fileName)) {
+            fileWriter.write("Song: " + name + "\n");
+            
+            ArrayList<char[][]> printedSong = new ArrayList<char[][]>();
+            for (Measure measure : measures) {
+                printedSong.add(measure.getMeasureArray());
+            }
+
+            for (int k = 0; k < printedSong.size(); k++) {
+                for (int i = 0; i < 8; i++) {
+                    for (int j = 0; j < printedSong.get(k).length; j++) {
+                        fileWriter.write(printedSong.get(k)[j][i]);
+                    }
+                    fileWriter.write("\n");
+                }
+                fileWriter.write("\n\n");
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred while writing to the file: " + e.getMessage());
         }
     }
 }

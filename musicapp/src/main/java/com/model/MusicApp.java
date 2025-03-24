@@ -115,13 +115,15 @@ public class MusicApp {
      * @param rating The rating of the song.
      * @return The newly created Song object.
      */
-    public Song newSong(String title, String artist, int duration, Difficulty difficulty, Genre genre, String sheetMusic, int rating) {
+    public Song newSong(String title, Difficulty difficulty, Genre genre, String sheetMusic, int rating) {
         if (currentUser == null) {
             System.out.println("Error: Please log in to add a song.");
             return null;
         }
+        String artist = currentUser.getUserName();
         Song song = new Song(title, artist, difficulty, genre, sheetMusic, rating);
-        library.addSong(song); 
+        SongLibrary lib = SongLibrary.getInstance();
+        lib.create(song);
         System.out.println("New song added: " + title + " by " + artist);
         return song;
     }
@@ -131,7 +133,7 @@ public class MusicApp {
      * 
      * @param song The song to play.
      */
-    public void playSong(Song song) {
+    public static void playSong(Song song) {
         if (song != null) {
             System.out.println("Now playing: " + song.getSongTitle() + " by " + song.getAuthor());
             SongLibrary.playSong(song.getSheetMusic());

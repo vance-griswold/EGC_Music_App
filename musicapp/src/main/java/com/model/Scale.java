@@ -4,5 +4,5 @@ package com.model;
  * @author Evil Gnome Clan
  */
 public enum Scale {
-    A, B, C, D, E, F, G
+    A, B, C, D, E, F, G, REST
 }

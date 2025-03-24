@@ -171,6 +171,15 @@ public class Song {
     {
         return rating;
     }
+
+    public void editSong(){
+        //if()
+    }
+
+    public void printToText() {
+        SheetMusic sheetMusic = new SheetMusic(this.songTitle, this.sheetMusic);
+        sheetMusic.toText();
+    }
 }
 
 
