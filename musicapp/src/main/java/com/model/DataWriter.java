@@ -37,6 +37,7 @@ public class DataWriter extends DataConstants {
         userDetails.put(USER_EMAIL_ADDRESS, user.getEmailAddress());
         userDetails.put(USER_LEVEL, user.getExperienceLevel());
         userDetails.put(USER_XP, user.getXpPoints());
+        userDetails.put(USER_PASSWORD, user.getPassword());
 
         return userDetails;
     }

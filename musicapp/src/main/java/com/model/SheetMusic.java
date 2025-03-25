@@ -31,6 +31,10 @@ public class SheetMusic {
      */
     public SheetMusic(String name, String song ){
         this.name = name;
+        if (song.equals("")) {
+            this.measures = new ArrayList<Measure>();
+            return;
+        }
         this.measures = new ArrayList<Measure>();
         String[] measureArray = song.split("\\|");
         for (String measure : measureArray) {

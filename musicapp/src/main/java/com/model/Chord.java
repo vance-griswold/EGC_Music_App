@@ -78,7 +78,7 @@ public class Chord {
     public Chord chordInput() {
         Chord newC = new Chord();
         Scanner keyboard = new Scanner(System.in);
-        System.out.println("Note or Chord? (n / c)");
+        System.out.println("Note, Rest, or Chord? (n / c / r)");
         String ans1 = keyboard.nextLine();
         if(ans1.toLowerCase().equals("c")){
             System.out.println("Major or Minor? (major / minor)");
@@ -98,6 +98,7 @@ public class Chord {
 
         }else if(ans1.toLowerCase().equals("r")){
             newC.rest = true;
+            newC.scale = Scale.REST;
             System.out.println("Note duration? (w,h,q,qq,qqq)");
             String dur = keyboard.nextLine();
             if(dur.toLowerCase().equals("w") || dur.toLowerCase().equals("h") || dur.toLowerCase().equals("q") || dur.toLowerCase().equals("qq") || dur.toLowerCase().equals("qqq")) {

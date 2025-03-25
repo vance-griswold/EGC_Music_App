@@ -173,7 +173,13 @@ public class Song {
     }
 
     public void editSong(){
-        //if()
+        if(this.author.equals(MusicApp.getCurrentUser().getUserName())) {
+            SheetMusic sheetMusic = new SheetMusic(this.songTitle, this.sheetMusic);
+            sheetMusic.addMeasure();
+            this.setSheetMusic(sheetMusic);
+        }else {
+            System.out.println("You are not the author of this song.");
+        }
     }
 
     public void printToText() {

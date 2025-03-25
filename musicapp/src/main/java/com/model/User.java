@@ -27,7 +27,7 @@ public class User {
         this.playlists = new ArrayList<>();
     }
 
-    public User(UUID id, String role, String firstName, String lastName,  String userName, ArrayList<Playlist> playlists, String emailAddress, int level, int xpPoints){
+    public User(UUID id, String role, String firstName, String lastName,  String userName, ArrayList<Playlist> playlists, String emailAddress, int level, int xpPoints, String password){
         this.id = id;
         this.userRole = role;
         this.firstName = firstName;
@@ -37,6 +37,7 @@ public class User {
         this.emailAddress = emailAddress;
         this.experienceLevel = level;
         this.xpPoints = xpPoints;
+        this.password = password;
     }
 
     public void increaseLevel(int xp) {
@@ -79,5 +80,7 @@ public class User {
         return xpPoints;
     }
 
-
+    public String getPassword() {
+        return password;
+    }
 }

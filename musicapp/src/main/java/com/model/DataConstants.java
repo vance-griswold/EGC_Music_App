@@ -11,6 +11,7 @@ public class DataConstants {
     protected static final String USER_EMAIL_ADDRESS = "emailAddress";
     protected static final String USER_LEVEL = "experienceLevel";
     protected static final String USER_XP = "xpPoints";
+    protected static final String USER_PASSWORD = "password";
  
     protected static final String SONG_FILE_NAME = "musicapp/src/main/java/com/data/songs.json";
     protected static final String SONG_ID = "id";

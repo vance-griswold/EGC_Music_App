@@ -7,7 +7,7 @@ import javafx.scene.chart.PieChart.Data;
 
 public class MusicApp {
 
-    private User currentUser;
+    private static User currentUser;
     private Map<String, User> userDatabase;
     private SongLibrary library;
 
@@ -16,7 +16,20 @@ public class MusicApp {
      */
     public MusicApp() {
         this.userDatabase = new HashMap<>();
+        UserList userList = UserList.getInstance();
+        for (User user : userList.getUsers()) {
+            userDatabase.put(user.getEmailAddress(), user);
+        }
         this.library = SongLibrary.getInstance(); 
+    }
+
+    /**
+     * Getter for the current user.
+     * 
+     * @return The current user.
+     */
+    public static User getCurrentUser() {
+        return MusicApp.currentUser;
     }
 
     /**
@@ -28,12 +41,12 @@ public class MusicApp {
      * @param password The password for the new account.
      * @return The newly created User object if sign-up is successful, otherwise null.
      */
-    public User signUp(String firstName, String lastName, String email, String password) {
+    public User signUp(String firstName, String lastName, String email, String username, String password) {
         if (userDatabase.containsKey(email)) {
             System.out.println("Error: A user with this email already exists.");
             return null;
         }
-        User newUser = new User(firstName, lastName, email, password, "User"); 
+        User newUser = new User(firstName, lastName, email, username, password, "User"); 
         userDatabase.put(email, newUser);
         System.out.println("Sign-up successful! Welcome, " + firstName);
         return newUser;
