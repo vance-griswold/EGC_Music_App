@@ -25,7 +25,7 @@ public class dailySong {
     }
 
     /**
-     * Assigns a daily song to the user
+     * Assigns a daily song to the user, resets
      * @param song
      */
     public void assignDailySong(Song song)
@@ -40,7 +40,15 @@ public class dailySong {
      */
     public void playDailySong(Song song)
     {
+       SongLibrary.playSong(song.getSheetMusic());
+       this.dailySongCompleted = true;
 
+       if(this.dailySongCompleted)
+       {
+        increaseStreak();
+        increaseXP(100); //actual xp amount tbd
+        System.out.println("You completed the daily song! Your current streak is " + streakCounter);
+       }
     }
 
     /**
@@ -48,7 +56,7 @@ public class dailySong {
      */
     public void resetStreak() 
     {
-
+        this.streakCounter = 0;
     }
 
     /**
@@ -56,7 +64,10 @@ public class dailySong {
      */
     public void increaseStreak()
     {
-
+        if(this.dailySongCompleted)
+        {
+            this.streakCounter ++;
+        }
     }
 
     /**
@@ -65,6 +76,14 @@ public class dailySong {
      */
     public void increaseXP(int amount)
     {
+        this.xpPoints += amount;
+    }
 
+    /**
+     * Gets the current streak counter
+     * @return user's streak count
+     */
+    public int getStreakCounter() {
+        return streakCounter;
     }
 }
