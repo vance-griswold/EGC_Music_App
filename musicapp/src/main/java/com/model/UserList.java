@@ -1,11 +1,16 @@
 package com.model;
 
 import java.util.ArrayList;
+import java.util.Map;
+
+
 
 public class UserList {
     // Instance variable to hold the list of users
     private ArrayList<User> users;
+    private Map<String, User> userDatabase;
     private static UserList instance;
+    private static User currentUser;
 
     // Constructor initializes the list of users
     private UserList() {
@@ -80,5 +85,25 @@ public class UserList {
     public void save() {
         
         System.out.println("User list saved.");
+    }
+
+    public boolean login(String emailAddress, String password) {
+        if (userDatabase.containsKey(emailAddress)) {
+            User user = userDatabase.get(emailAddress);
+            if (user.getPassword().equals(password)) {
+                currentUser = user;
+                System.out.println("Login successful! Welcome back, " + user.getFirstName());
+                return true;
+            } else {
+                System.out.println("Error: Incorrect password.");
+            }
+        } else {
+            System.out.println("Error: No account found with this email.");
+        }
+        return false;
+    }
+
+    public static User getCurrentUser() {
+        return currentUser;
     }
 }

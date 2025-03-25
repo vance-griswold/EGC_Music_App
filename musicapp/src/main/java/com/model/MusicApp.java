@@ -60,19 +60,13 @@ public class MusicApp {
      * @return true if login is successful, false otherwise.
      */
     public boolean login(String emailAddress, String password) {
-        if (userDatabase.containsKey(emailAddress)) {
-            User user = userDatabase.get(emailAddress);
-            if (user.getPassword().equals(password)) {
-                currentUser = user;
-                System.out.println("Login successful! Welcome back, " + user.getFirstName());
-                return true;
-            } else {
-                System.out.println("Error: Incorrect password.");
-            }
-        } else {
-            System.out.println("Error: No account found with this email.");
-        }
-        return false;
+        UserList userList = UserList.getInstance();
+        boolean loginSuccessful = userList.login(emailAddress, password);
+        if (loginSuccessful) {
+            currentUser = UserList.getCurrentUser();
+            System.out.println("Login successful! Welcome back, " + currentUser.getFirstName());
+    }
+        return loginSuccessful;
     }
 
     /**
