@@ -74,9 +74,5 @@ public class DataWriter extends DataConstants {
         return songDetails;
     }
 
-    
-    public static void main(String[] args) {
-        saveUsers();
-        saveSongs();
-    }
+   
 }
