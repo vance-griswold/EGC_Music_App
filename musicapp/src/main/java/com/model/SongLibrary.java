@@ -1,4 +1,5 @@
 package com.model;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -201,9 +202,19 @@ public class SongLibrary {
      * Creates a new song and adds it to the library
      * @param song song to be created
      */
-    public void create(Song song)
-    {
-        library.add(song);
+    public void create(Song song) {
+        boolean check = false;
+        for(Song s : library)
+        {
+            if(s.getId().equals(song.getId()))
+            {
+                this.update(song);
+                check = true;
+            }
+        }
+        if (check == false){
+            library.add(song);
+        }
     }
 
     /**
@@ -244,6 +255,6 @@ public class SongLibrary {
      */
     public void save()
     {
-        //file saving functionality
+        DataWriter.saveSongs();
     }
 }
