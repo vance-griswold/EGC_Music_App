@@ -191,7 +191,8 @@ public class SongLibrary {
     }
 
     /**
-     *@param song
+     * Plays a song from the library
+     *@param song song to be played
      */
     public static void playSong(String song){
         Player player = new Player();
@@ -222,7 +223,7 @@ public class SongLibrary {
      */
     public void read()
     {
-        //file reading functionality
+        DataLoader.getSongs();
     }
 
     /**
