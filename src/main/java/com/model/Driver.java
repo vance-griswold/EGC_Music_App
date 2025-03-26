@@ -1,11 +1,14 @@
 package com.model;
+
+import java.util.ArrayList;
+
 public class Driver {
     public static void main(String[] args) {
         MusicApp musicApp = new MusicApp(); 
         
 
         //Create an account and Login:
-
+        /*
         //signup
         System.out.println("Testing sign-up method:");
         User newUser = musicApp.signUp("Test", "User", "test@example.com", "TestUser", "password");
@@ -23,17 +26,17 @@ public class Driver {
         //logout
         System.out.println("Testing logout method:");
         musicApp.logOut();
-        /* 
+        */
         //Playing a song
         SongLibrary songLibrary = SongLibrary.getInstance();
-        ArrayList<Song> songs = songLibrary.filterByAuthor("Foo Fighters");
+        ArrayList<Song> songs = songLibrary.filterByAuthor("Frederic Chopin");
         Song song = songs.get(0);
-        //MusicApp.playSong(song);
+        MusicApp.playSong(song);
         song.printToText();
-
+        /*
         //Making a song
         musicApp.login("asmith@gmail.com", "password");
-        Song song2 = musicApp.newSong("A horses journey", Difficulty.EASY, Genre.CLASSICAL, "C5majh G5majh|A5minh F5majh|Rh Rh4", 5);
+        Song song2 = musicApp.newSong("A horses journey", Difficulty.EASY, Genre.CLASSICAL, "", 5);
         //song2.editSong();
         //MusicApp.playSong(song2);
         songLibrary.save();
