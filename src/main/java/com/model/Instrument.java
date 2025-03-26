@@ -9,21 +9,16 @@ package com.model;
 public class Instrument {
     
     private String type;
-    private boolean hasTabs;
     private boolean hasSheetMusic;
     private Instrument virtualInstrument;
 
     /**
      * Constructs an Instrument object with the specified properties.
      * 
-     * @param type The type of the instrument (e.g., "Guitar").
-     * @param hasTabs Whether the instrument has tabs.
-     * @param hasSheetMusic Whether the instrument has sheet music.
      * @param virtualInstrument A virtual instrument representation of this instrument.
      */
-    public Instrument(String type, boolean hasTabs, boolean hasSheetMusic, Instrument virtualInstrument) {
+    public Instrument(String type, boolean hasSheetMusic, Instrument virtualInstrument) {
         this.type = type;
-        this.hasTabs = hasTabs;
         this.hasSheetMusic = hasSheetMusic;
         this.virtualInstrument = virtualInstrument;
     }
@@ -44,24 +39,6 @@ public class Instrument {
      */
     public void setType(String type) {
         this.type = type;
-    }
-
-    /**
-     * Checks whether the instrument has tabs.
-     *
-     * @return true if the instrument has tabs, false otherwise.
-     */
-    public boolean isHasTabs() {
-        return hasTabs;
-    }
-
-    /**
-     * Sets whether the instrument has tabs.
-     *
-     * @param hasTabs true if the instrument has tabs, false otherwise.
-     */
-    public void setHasTabs(boolean hasTabs) {
-        this.hasTabs = hasTabs;
     }
 
     /**

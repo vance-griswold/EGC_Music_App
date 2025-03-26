@@ -1,4 +1,5 @@
 package com.model;
+import java.util.Scanner;
 import java.util.UUID;
 
 /**
@@ -180,7 +181,23 @@ public class Song {
     {
         if(this.author.equals(MusicApp.getCurrentUser().getUserName())) {
             SheetMusic sheetMusic = new SheetMusic(this.songTitle, this.sheetMusic);
-            sheetMusic.addMeasure();
+            Boolean addMore = true;
+        while( addMore == true) {
+            System.out.println("Would you like to add a measure? (Y/N)");
+            Scanner scanner = new Scanner(System.in);
+            String input = scanner.nextLine();
+            if (input.toUpperCase().equals("Y")) {
+                addMore = true;
+            } else if (input.toUpperCase().equals("N")){
+                addMore = false;
+            }else{
+                System.out.println(rating + " is not a valid input. Please enter Y or N.");
+                this.editSong();
+            }
+            if(addMore == true) {
+                sheetMusic.addMeasure();
+            }
+        }     
             this.setSheetMusic(sheetMusic);
         }else {
             System.out.println("You are not the author of this song.");

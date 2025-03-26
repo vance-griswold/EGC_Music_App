@@ -26,23 +26,24 @@ public class Driver {
         //logout
         System.out.println("Testing logout method:");
         musicApp.logOut();
-        */
+        
         //Playing a song
         SongLibrary songLibrary = SongLibrary.getInstance();
         ArrayList<Song> songs = songLibrary.filterByAuthor("Frederic Chopin");
         Song song = songs.get(0);
         MusicApp.playSong(song);
         song.printToText();
-        /*
+        */
         //Making a song
         musicApp.login("asmith@gmail.com", "password");
         Song song2 = musicApp.newSong("A horses journey", Difficulty.EASY, Genre.CLASSICAL, "", 5);
-        //song2.editSong();
-        //MusicApp.playSong(song2);
-        songLibrary.save();
-        //MusicApp.logout();
-        //MusicApp.login();
-        //Song song3 = songLibrary.searchSong("A horses journey");
-        //MusicApp.playSong(song3); */
+        song2.editSong();
+        MusicApp.playSong(song2);
+        SongLibrary songLibrary = SongLibrary.getInstance();
+        musicApp.logOut();
+        musicApp.login("JonnyBoy@gmail.com", "password");
+        Song song3 = songLibrary.searchSong("A horses journey");
+        song3.editSong();
+        MusicApp.playSong(song3); 
     } 
 }
