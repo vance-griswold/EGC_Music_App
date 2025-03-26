@@ -31,5 +31,27 @@
         "id": "337a50c5-5ca8-40c8-a788-a5390c207a35",
         "userRole": "student",
         "username": "witchgirl123"
+    },
+    {
+        "firstName": "Fellicia",
+        "lastName": "Fredrickson",
+        "emailAddress": "fellicia@example.com",
+        "password": "password123",
+        "experienceLevel": 3,
+        "xpPoints": 300,
+        "id": "123e4567-e89b-12d3-a456-426614174000",
+        "userRole": "student",
+        "username": "ffredrickson"
+    },
+    {
+        "firstName": "Fred",
+        "lastName": "Fredrickson",
+        "emailAddress": "fred@example.com",
+        "password": "password",
+        "experienceLevel": 1,
+        "xpPoints": 0,
+        "id": "65c787d9-03da-4f0d-8c96-f2dbdae9c452",
+        "userRole": "User",
+        "username": "ffred"
     }
 ]

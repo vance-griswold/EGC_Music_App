@@ -47,14 +47,18 @@ public class MusicApp {
             return null;
         }
     
-        User newUser = new User(firstName, lastName, email, username, password, "User");
-        
-        userDatabase.put(email, newUser);
-    
         UserList userList = UserList.getInstance();
+        if (userList.getUser(username) != null) {
+            System.out.println("Error: A user with this username already exists.");
+            return null;
+        }
+    
+        User newUser = new User(firstName, lastName, email, username, password, "User");
+    
+        userDatabase.put(email, newUser);
         userList.create(newUser);
         DataWriter.saveUsers();
-
+    
         System.out.println("Sign-up successful! Welcome, " + firstName);
         return newUser;
     }
