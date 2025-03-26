@@ -16,7 +16,7 @@ public class Measure {
     }
 
      /**
-     * add a chord to the sheet music
+     * add a chord to the measure
      */
     public void addChord(int index) {
     Chord chord = new Chord();
@@ -25,12 +25,16 @@ public class Measure {
     }
 
     /**
-     * remove a chord from the sheet music
+     * remove a chord from the measure
      */
-    public void removeChord   () {
-    
+    public void removeChord() {
+        chords.remove(chords.size() - 1);
     }
     
+    /**
+     * get the measure as a jfugue readable string
+     * @return measure as a string
+     */
     public String getMeasure() {
         String measure = "";
         boolean fs = false;
@@ -44,6 +48,10 @@ public class Measure {
         return measure;
     }
 
+    /**
+     * get the measure as a 2d array to print as readable sheet music
+     * @return measure as a 2D array of characters
+     */
     public char[][] getMeasureArray() {
         char[][]  printedMeasure = new char[16][8];
         for (int i = 0; i < 8; i++) {
@@ -85,11 +93,6 @@ public class Measure {
                 skip = skip +2;
             }
         }
-
-
-
-
-
         return printedMeasure;
     }
 }

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * 
+ * Sheet Music Object that holds the measures of the song as objects and can convert the song to a string and vice versa
  * @author Evil Gnome Clan
  */
 public class SheetMusic {
@@ -14,10 +14,9 @@ public class SheetMusic {
     private ArrayList<Measure> measures;
 
     /**
-     * 
-     * @param name
-     * @param measures
-     * @param instrument
+     * Constructor for class
+     * @param name is the name of the song
+     * @param measures is an ArrayList of Measures that make up the song
      */
     public SheetMusic(String name, ArrayList<Measure> measures) {
         this.name = name;
@@ -26,10 +25,10 @@ public class SheetMusic {
 
     /**
      * Takes the song as the String and remakes it into an ArrayList of Measures
-     * @param name
-     * @param song
+     * @param name is the name of the song
+     * @param song is the song as a jfugue readable string
      */
-    public SheetMusic(String name, String song ){
+    public SheetMusic(String name, String song){
         this.name = name;
         if (song.equals("")) {
             this.measures = new ArrayList<Measure>();
@@ -48,7 +47,7 @@ public class SheetMusic {
     }
     
    /**
-    * Adds a measure to the song
+    * Prompts the user to add chords to a new measure
     */
     public void addMeasure() {
         ArrayList<Chord> chords = new ArrayList<Chord>();
@@ -59,9 +58,12 @@ public class SheetMusic {
             String input = scanner.nextLine();
             if (input.toUpperCase().equals("Y")) {
                 addMore = true;
-            } else {
+            } else if (input.toUpperCase().equals("N")){
                 addMore = false;
-
+            }else{
+                System.out.println("Not a valid input. Please enter Y or N.");
+                this.addMeasure();
+                addMore = false;
             }
             if(addMore == true) {
                 Chord newChord = new Chord();
@@ -73,8 +75,8 @@ public class SheetMusic {
     }
 
     /**
-     * Gets a song
-     * @return the song
+     * Takes the sheet music object and turns it into a string
+     * @return returns the measures of the song in a jfugue readable string
      */
     public String getSong() {
         String song = "";
@@ -94,7 +96,7 @@ public class SheetMusic {
     }
 
     /**
-     * Prints the song to a text file
+     * Prints the sheet music to a text file
      */
     public void toText() {
         String fileName = name + ".txt";

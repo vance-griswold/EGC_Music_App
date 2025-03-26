@@ -44,8 +44,8 @@ public class Chord {
     }
 
     /**
-     * 
-     * @return
+     * Constructor for chord to create object from a string
+     * @param chord is the string to create the chord from
      */
     public Chord(String chord) {
         if (chord.equals("")){
@@ -73,7 +73,7 @@ public class Chord {
 
     /**
      * Constructor for Chord made through input
-     * @return
+     * @return Chord object of the user input chord
      */
     public Chord chordInput() {
         Chord newC = new Chord();
@@ -95,7 +95,6 @@ public class Chord {
                 return newC;
             }
         }else if(ans1.toLowerCase().equals("n")){
-
         }else if(ans1.toLowerCase().equals("r")){
             newC.rest = true;
             newC.scale = Scale.REST;
@@ -108,14 +107,12 @@ public class Chord {
                 newC = chordInput();
                 return newC; 
             }
-            return newC;
-        
+            return newC;   
         } else{
             System.out.println("Response invalid");
             newC = chordInput();
             return newC; 
         }
-
         System.out.println("Which note? (a-g)");
         String scale = keyboard.nextLine();
         if(scale.toLowerCase().equals("a") || scale.toLowerCase().equals("b") || scale.toLowerCase().equals("c") || scale.toLowerCase().equals("d") || scale.toLowerCase().equals("e") || scale.toLowerCase().equals("f") || scale.toLowerCase().equals("g")) {
