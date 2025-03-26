@@ -39,9 +39,9 @@ public class Driver {
         Song song2 = musicApp.newSong("A horses journey", Difficulty.EASY, Genre.CLASSICAL, "", 5);
         song2.editSong();
         MusicApp.playSong(song2);
-        SongLibrary songLibrary = SongLibrary.getInstance();
         musicApp.logOut();
         musicApp.login("JonnyBoy@gmail.com", "password");
+        SongLibrary songLibrary = SongLibrary.getInstance();
         Song song3 = songLibrary.searchSong("A horses journey");
         song3.editSong();
         MusicApp.playSong(song3); 

@@ -58,9 +58,12 @@ public class SheetMusic {
             String input = scanner.nextLine();
             if (input.toUpperCase().equals("Y")) {
                 addMore = true;
-            } else {
+            } else if (input.toUpperCase().equals("N")){
                 addMore = false;
-
+            }else{
+                System.out.println("Not a valid input. Please enter Y or N.");
+                this.addMeasure();
+                addMore = false;
             }
             if(addMore == true) {
                 Chord newChord = new Chord();

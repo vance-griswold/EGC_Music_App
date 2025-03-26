@@ -191,7 +191,7 @@ public class Song {
             } else if (input.toUpperCase().equals("N")){
                 addMore = false;
             }else{
-                System.out.println(rating + " is not a valid input. Please enter Y or N.");
+                System.out.println("Not a valid input. Please enter Y or N.");
                 this.editSong();
             }
             if(addMore == true) {
