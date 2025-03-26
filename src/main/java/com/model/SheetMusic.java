@@ -48,8 +48,7 @@ public class SheetMusic {
     }
     
    /**
-    * 
-    * @param measure
+    * Adds a measure to the song
     */
     public void addMeasure() {
         ArrayList<Chord> chords = new ArrayList<Chord>();
@@ -73,6 +72,10 @@ public class SheetMusic {
         measures.add(new Measure(chords));
     }
 
+    /**
+     * Gets a song
+     * @return the song
+     */
     public String getSong() {
         String song = "";
         for (Measure measure : measures) {
@@ -81,12 +84,18 @@ public class SheetMusic {
         return song;
     }
 
+    /**
+     * Displays the measures of the song
+     */
     public void displayMeasures() {
         for (Measure measure : measures) {
             System.out.println(measure.getMeasure());
         }
     }
 
+    /**
+     * Prints the song to a text file
+     */
     public void toText() {
         String fileName = name + ".txt";
         try (FileWriter fileWriter = new FileWriter(fileName)) {

@@ -7,8 +7,14 @@ import java.util.ArrayList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+/**
+ * A class to write data to JSON files
+ */
 public class DataWriter extends DataConstants {
 
+    /**
+     * Saves the users to the JSON file
+     */
     public static void saveUsers() {
         UserList userListInstance = UserList.getInstance();
         ArrayList<User> userList = userListInstance.getUsers();
@@ -27,6 +33,11 @@ public class DataWriter extends DataConstants {
         }
     }
 
+    /**
+     * Get the JSON object of the user
+     * @param user the user to get the JSON object of
+     * @return the JSON object of the user
+     */
     private static JSONObject getUserJSON(User user) {
         JSONObject userDetails = new JSONObject();
         userDetails.put(USER_ID, user.getId());
@@ -42,6 +53,9 @@ public class DataWriter extends DataConstants {
         return userDetails;
     }
 
+    /**
+     * Saves the songs to the JSON file
+     */
     public static void saveSongs()
     {
         SongLibrary songLibraryInstance = SongLibrary.getInstance();
@@ -61,6 +75,11 @@ public class DataWriter extends DataConstants {
         }
     }
 
+    /**
+     * Get the JSON object of the song
+     * @param song the song to get the JSON object of
+     * @return the JSON object of the song
+     */
     private static JSONObject getSongJSON(Song song) {
         JSONObject songDetails = new JSONObject();
         songDetails.put(SONG_ID, song.getId().toString());
