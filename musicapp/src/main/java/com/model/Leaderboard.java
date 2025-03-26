@@ -10,8 +10,8 @@ public class Leaderboard {
     
     private ArrayList<User> highestLevelUsers;
     private ArrayList<User> highestStreakUsers;
-   //private ArrayList<User> dailyTopScorers;
-    private static final int LEADERBOARD_SIZE = 20;
+    //private ArrayList<User> dailyTopScorers;
+    //private static final int LEADERBOARD_SIZE = 20;
 
     /**
      * Constructor for Leaderboard class, initializes the leaderboard lists

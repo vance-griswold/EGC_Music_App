@@ -26,7 +26,7 @@ public class dailySong {
 
     /**
      * Assigns a daily song to the user, resets
-     * @param song
+     * @param song daily song assigned
      */
     public void assignDailySong(Song song)
     {
@@ -36,7 +36,7 @@ public class dailySong {
 
     /**
      * Plays the daily song challenge
-     * @param song
+     * @param song song from library to be played
      */
     public void playDailySong(Song song)
     {
@@ -72,7 +72,7 @@ public class dailySong {
 
     /**
      * Increases the user's XP points
-     * @param amount
+     * @param amount XP points added
      */
     public void increaseXP(int amount)
     {

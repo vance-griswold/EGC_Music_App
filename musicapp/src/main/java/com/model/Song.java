@@ -172,7 +172,12 @@ public class Song {
         return rating;
     }
 
-    public void editSong(){
+    /**
+     * Allows the user to edit a song
+     * Checks to make sure user is the author, if not they cannot edit
+     */
+    public void editSong()
+    {
         if(this.author.equals(MusicApp.getCurrentUser().getUserName())) {
             SheetMusic sheetMusic = new SheetMusic(this.songTitle, this.sheetMusic);
             sheetMusic.addMeasure();
@@ -182,7 +187,11 @@ public class Song {
         }
     }
 
-    public void printToText() {
+    /**
+     * Prints the sheet music to text
+     */
+    public void printToText() 
+    {
         SheetMusic sheetMusic = new SheetMusic(this.songTitle, this.sheetMusic);
         sheetMusic.toText();
     }
