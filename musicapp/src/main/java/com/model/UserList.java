@@ -1,6 +1,7 @@
 package com.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 
@@ -14,8 +15,12 @@ public class UserList {
 
     // Constructor initializes the list of users
     private UserList() {
-        users = DataLoader.getUsers();
+    users = DataLoader.getUsers();
+    userDatabase = new HashMap<>(); // ✅ Fix added
+    for (User user : users) {
+        userDatabase.put(user.getEmailAddress(), user);
     }
+}
 
     // Method to get an instance
     public static UserList getInstance() {

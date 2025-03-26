@@ -1,5 +1,4 @@
 package com.model;
-import java.util.ArrayList;
 public class Driver {
     public static void main(String[] args) {
         MusicApp musicApp = new MusicApp(); 
@@ -11,16 +10,16 @@ public class Driver {
         System.out.println("Testing sign-up method:");
         User newUser = musicApp.signUp("Adam", "Smith", "asmith@gmail.com", "ASmithy", "1990-01-01");
         System.out.println("New user created: " + newUser.getUserName());
-
+        
         //login
         System.out.println("Testing login method:");
-        boolean loginSuccess = musicApp.login("asmith@gmail.com", "password");
+        boolean loginSuccess = musicApp.login("JonnyBoy@gmail.com", "password");
         if (loginSuccess) {
             System.out.println("Login successful.");
         } else {
             System.out.println("Login failed.");
         }
-
+        /* 
         //logout
         System.out.println("Testing logout method:");
         musicApp.logOut();
@@ -41,6 +40,6 @@ public class Driver {
         //MusicApp.logout();
         //MusicApp.login();
         //Song song3 = songLibrary.searchSong("A horses journey");
-        //MusicApp.playSong(song3);
-    }
+        //MusicApp.playSong(song3); */
+    } 
 }
