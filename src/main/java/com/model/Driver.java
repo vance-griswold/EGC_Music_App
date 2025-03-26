@@ -3,7 +3,45 @@ public class Driver {
     public static void main(String[] args) {
         MusicApp musicApp = new MusicApp(); 
         
+        /* 
+        System.out.println("Checking existing users...");
+        for (User user : UserList.getInstance().getUsers()) {
+            System.out.println("User in system: " + user.getFirstName() + " " + user.getLastName() + " (" + user.getUserName() + ")");
+        }
 
+        System.out.println("\nFred attempts to create an account with username 'ffredrickson'...");
+        UserList userList = UserList.getInstance();
+        User existingUser = userList.getUser("ffredrickson");
+        if (existingUser != null) {
+            System.out.println("Error: The username 'ffredrickson' is already taken by Fellicia.");
+        } else {
+            User attempt = musicApp.signUp("Fred", "Fredrickson", "fred@example.com", "ffredrickson", "password");
+        }
+
+        System.out.println("\nFred tries again with a new username 'ffred'...");
+        User fred = musicApp.signUp("Fred", "Fredrickson", "fred@example.com", "ffred", "password");
+        if (fred != null) {
+            System.out.println("Fred's account has been successfully created!");
+        }
+
+        System.out.println("\nFred logs out...");
+        musicApp.logOut();
+
+        System.out.println("\nUpdated user list after Fred's signup:");
+        for (User user : userList.getUsers()) {
+            System.out.println("User in system: " + user.getFirstName() + " " + user.getLastName() + " (" + user.getUserName() + ")");
+        }
+
+        System.out.println("\nFred logs back in...");
+        boolean login = musicApp.login("fred@example.com", "password");
+        if (login) {
+            System.out.println("Fred has logged in successfully!");
+        } else {
+            System.out.println("Login failed for Fred.");
+        }
+        
+        
+        /*
         //Create an account and Login:
 
         //signup
