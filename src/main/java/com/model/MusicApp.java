@@ -46,11 +46,19 @@ public class MusicApp {
             System.out.println("Error: A user with this email already exists.");
             return null;
         }
-        User newUser = new User(firstName, lastName, email, username, password, "User"); 
+    
+        User newUser = new User(firstName, lastName, email, username, password, "User");
+        
         userDatabase.put(email, newUser);
+    
+        UserList userList = UserList.getInstance();
+        userList.create(newUser);
+        DataWriter.saveUsers();
+
         System.out.println("Sign-up successful! Welcome, " + firstName);
         return newUser;
     }
+    
 
     /**
      * Logs a user in if the credentials match an existing account.
