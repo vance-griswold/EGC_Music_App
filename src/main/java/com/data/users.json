@@ -1,1 +1,35 @@
-[{"firstName":"Amy","lastName":"Smith","emailAddress":"asmith@gmail.com","password":"password","experienceLevel":4,"xpPoints":460,"id":"9f7e5df6-9c2e-4f04-916e-ac459fd38413","userRole":"student","username":"Granny_Smith"},{"firstName":"John","lastName":"Appleseed","emailAddress":"JonnyBoy@gmail.com","password":"password","experienceLevel":13,"xpPoints":1340,"id":"bd57bc24-3f69-4c10-8de7-f2832c05fa3c","userRole":"student","username":"Jonny_Appleseed"},{"firstName":"Jessica","lastName":"Green","emailAddress":"jgreen@gmail.com","password":"password","experienceLevel":8,"xpPoints":880,"id":"337a50c5-5ca8-40c8-a788-a5390c207a35","userRole":"student","username":"witchgirl123"}]
+[
+    {
+        "firstName": "Amy",
+        "lastName": "Smith",
+        "emailAddress": "asmith@gmail.com",
+        "password": "password",
+        "experienceLevel": 4,
+        "xpPoints": 460,
+        "id": "9f7e5df6-9c2e-4f04-916e-ac459fd38413",
+        "userRole": "student",
+        "username": "Granny_Smith"
+    },
+    {
+        "firstName": "John",
+        "lastName": "Appleseed",
+        "emailAddress": "JonnyBoy@gmail.com",
+        "password": "password",
+        "experienceLevel": 13,
+        "xpPoints": 1340,
+        "id": "bd57bc24-3f69-4c10-8de7-f2832c05fa3c",
+        "userRole": "student",
+        "username": "Jonny_Appleseed"
+    },
+    {
+        "firstName": "Jessica",
+        "lastName": "Green",
+        "emailAddress": "jgreen@gmail.com",
+        "password": "password",
+        "experienceLevel": 8,
+        "xpPoints": 880,
+        "id": "337a50c5-5ca8-40c8-a788-a5390c207a35",
+        "userRole": "student",
+        "username": "witchgirl123"
+    }
+]
