@@ -2,6 +2,7 @@ package com.model;
 
 public class DataConstants {
     protected static final String USER_FILE_NAME = "src/main/java/com/data/users.json";
+    protected static final String USER_FILE_NAME_JSON = "/data/users.json";
     protected static final String USER_ID = "id";
     protected static final String USER_ROLE = "userRole";
     protected static final String USER_FIRST_NAME = "firstName";
@@ -14,6 +15,7 @@ public class DataConstants {
     protected static final String USER_PASSWORD = "password";
  
     protected static final String SONG_FILE_NAME = "src/main/java/com/data/Songs.json";
+    protected static final String BOOK_FILE_NAME_JSON = "/data/Songs.json";
     protected static final String SONG_ID = "id";
     protected static final String SONG_TITLE = "songTitle";
     protected static final String SONG_AUTHOR = "author";

@@ -43,9 +43,8 @@ public class User {
      * @param xpPoints the experience points of the user
      * @param password the password of the user
      */
-    public User(UUID id, String role, String firstName, String lastName,  String userName, ArrayList<Playlist> playlists, String emailAddress, int level, int xpPoints, String password){
+    public User(UUID id, String firstName, String lastName,  String userName, ArrayList<Playlist> playlists, String emailAddress, int level, int xpPoints, String password){
         this.id = id;
-        this.userRole = role;
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = userName;

@@ -17,7 +17,7 @@ public class UserList {
     /**
      * Constructor for the UserList class
      */
-    private UserList() {
+    public UserList() {
     users = DataLoader.getUsers();
     userDatabase = new HashMap<>();
     for (User user : users) {
