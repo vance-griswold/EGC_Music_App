@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: library.UserListTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.020 s <<< FAILURE! -- in library.UserListTest
-library.UserListTest.initializationError -- Time elapsed: 0.004 s <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.014 s <<< FAILURE! -- in library.UserListTest
+library.UserListTest.initializationError -- Time elapsed: 0.003 s <<< ERROR!
 java.lang.reflect.InaccessibleObjectException: Unable to make public void library.UserListTest.testGetCurrentUserAfterFailedLogin() accessible: module com.egcmusicapp does not "exports library" to module junit
 	at java.base/java.lang.reflect.AccessibleObject.throwInaccessibleObjectException(AccessibleObject.java:391)
 	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:367)
