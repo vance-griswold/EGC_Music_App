@@ -1,6 +1,8 @@
 package com.model;
 
 public class DataConstants {
+    public static boolean TEST_MODE = false;
+
     protected static final String USER_FILE_NAME = "src/main/java/com/data/users.json";
     protected static final String USER_FILE_NAME_JSON = "/data/users.json";
     protected static final String USER_ID = "id";
