@@ -18,7 +18,7 @@ public class Chord {
      */
     public Chord() {
         this.duration = "q";
-        this.rest = false;
+        this.rest = true;
         this.scale = Scale.REST;
         this.octave = 5;
         this.major = false;
