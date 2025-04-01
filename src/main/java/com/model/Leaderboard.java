@@ -1,7 +1,8 @@
 package com.model;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Collections;
+import java.util.Comparator;
+
 /**
  * Leaderboard class to track top users in the music app
  * @author Evil Gnome Clan
@@ -9,9 +10,7 @@ import java.util.Collections;
 public class Leaderboard {
     
     private ArrayList<User> highestLevelUsers;
-    private ArrayList<User> highestStreakUsers;
-    //private ArrayList<User> dailyTopScorers;
-    //private static final int LEADERBOARD_SIZE = 20;
+    private static final int MAX_USERS = 30; //maximum users to display on the leaderboard
 
     /**
      * Constructor for Leaderboard class, initializes the leaderboard lists
@@ -19,16 +18,19 @@ public class Leaderboard {
     public Leaderboard()
     {
         this.highestLevelUsers = new ArrayList<User>();
-        this.highestStreakUsers = new ArrayList<User>();
-        //this.dailyTopScorers = new ArrayList<User>();
     }
 
     /**
      * Updates the leaderboard with the latest user data
-     * @param user
+     * @param user the user to be updated in the Leaderboard
      */
     public void updateLeaderboard(User user)
     {
+        if(user == null)
+        {
+            System.out.println("Error: User is null, cannot update Leaderboard");
+            return;
+        }
         updateHighestLevelUsers(user);
     }
 
@@ -43,72 +45,40 @@ public class Leaderboard {
             highestLevelUsers.add(user);
         }
         sortHighestLevelUsers();
-    }
 
-    /**
-     * Updates highest streak users
-     * @param user highest streak users
-     */
-    public void updateHighestStreakUsers(User user)
-    {
-        //TODO
-    }
-    
-    /**
-     * Updates users by daily top scorers
-     *
-    public void updateDailyTopScorers(User user)
-    {
-
-    }
-    */
-
-    /**
-     * Sorts highest level users using selection sort
-     */
-    public void sortHighestLevelUsers()
-    {
-        int n = highestLevelUsers.size();
-        for(int i = 0; i < n - 1; i++)
+        if(highestLevelUsers.size() > MAX_USERS)
         {
-            int maxIndex = i;
-            for(int j = i + 1; j < n; j++)
-            {
-                User user1 = highestLevelUsers.get(j);
-                User user2 = highestLevelUsers.get(maxIndex);
-
-                if(user1.getExperienceLevel() > user2.getExperienceLevel() ||
-                    (user1.getExperienceLevel() == user2.getExperienceLevel() && user1.getXpPoints() > user2.getXpPoints()))
-                    {
-                        maxIndex = j;
-                    }
-            }
-            if(maxIndex != i)
-            {
-                User temp = highestLevelUsers.get(i);
-                highestLevelUsers.set(i, highestLevelUsers.get(maxIndex));
-                highestLevelUsers.set(maxIndex, temp);
-            }
+            highestLevelUsers.remove(highestLevelUsers.size() - 1);
         }
     }
 
     /**
-     * Sorts users by number of daily songs completed
+     * Sorts highest level users
+     * Compares users by experience level first, if users have the same level then compares by xp points
      */
-    public void sortHighestStreakUsers()
+    public void sortHighestLevelUsers()
     {
-        //TODO
+        Collections.sort(highestLevelUsers, new Comparator<User>() {
+            @Override
+            public int compare(User user1, User user2) {
+                int levelComparison = Integer.compare(user2.getExperienceLevel(), user1.getExperienceLevel());
+                if(levelComparison != 0)
+                {
+                    return levelComparison;
+                }
+                return Integer.compare(user2.getXpPoints(), user1.getXpPoints());
+            }   
+        });
     }
 
     /**
-     * Sorts users by top daily scores
-     *
-    public void sortDailyTopScoreres()
+     * Gets the highest level users
+     * @return a copy of the list of highest level users (does not modify)
+     */
+    public ArrayList<User> getHighestLevelUsers()
     {
-        
+        return new ArrayList<>(highestLevelUsers);
     }
-    */
-
 
     /**
      * Displays the highest level users
@@ -116,9 +86,12 @@ public class Leaderboard {
     public void displayHighestLevelUsers()
     {
         System.out.println("Highest Level Users:" );
+        int rank = 1;
+
         for(User user : highestLevelUsers)
         {
-            System.out.println(user.getUserName() + " --- Level: " + user.getExperienceLevel());
+            System.out.println(rank + ". " + user.getUserName() + " --- Level: " + user.getExperienceLevel());
+            rank++;
         }
     }
 

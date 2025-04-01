@@ -23,7 +23,7 @@ public class MistakeIndicator {
      * @param playedNote
      * @param expectedNote
      */
-    public void trackMistake(Note playedNote, Note expectedNote)
+    public void trackMistake(Chord playedNote, Chord expectedNote)
     {
         if(playedNote != expectedNote)
         {
