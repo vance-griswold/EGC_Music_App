@@ -5,6 +5,12 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+/**
+ * @author Zachary DeYoung
+ */
 public class ChordTest {
 
     @Test
@@ -26,6 +32,24 @@ public class ChordTest {
     }
 
     @Test
+    public void testConstructorWithParametersRest() {
+        Chord chord = new Chord("q", true, Scale.REST, 5, false, false);
+        assertEquals("Rq", chord.getChord());
+    }
+
+    @Test
+    public void testConstructorWithParametersNegativeOctave() {
+        Chord chord = new Chord("q", false , Scale.C, -5, false, false);
+        assertEquals("C0q", chord.getScale());
+    }
+
+    @Test
+    public void testConstructorWithParametersEmptyDuration() {
+        Chord chord = new Chord("", false , Scale.C, 5, false, false);
+        assertEquals("C5q", chord.getChord());
+    }
+
+    @Test
     public void testStringConstructor() {
         Chord chord = new Chord("C5q");
         Chord chord2 = new Chord("q", false , Scale.C, 5, false, false);
@@ -36,6 +60,31 @@ public class ChordTest {
     public void testStringConstructorEmpty(){
         Chord chord = new Chord("");
         assertEquals(chord.getChord(), "");
+    }
+
+    @Test //TO TEST
+    public void testChordInput() {
+        InputStream sysInBackup = System.in;
+        String testInput = "n\nc\n5\nq\n";
+        ByteArrayInputStream in = new ByteArrayInputStream(testInput.getBytes());
+        System.setIn(in);
+        Chord chord = new Chord();
+        chord = chord.chordInput();
+        assertEquals("C5q", chord.getChord());
+        System.setIn(sysInBackup);
+
+    }
+
+    @Test
+    public void testGetScale() {
+        Chord chord = new Chord("C5q");
+        assertEquals(Scale.C.toString(), chord.getScale());
+    }
+
+    @Test
+    public void testGetScaleRest() {
+        Chord chord = new Chord("Rq");
+        assertEquals(Scale.REST.toString(), chord.getScale());
     }
 
     @Test
