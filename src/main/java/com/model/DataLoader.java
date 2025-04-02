@@ -18,7 +18,7 @@ public class DataLoader extends DataConstants {
         ArrayList<User> users = new ArrayList<User>();
 		
 		try {
-			FileReader reader = new FileReader(USER_FILE_NAME);
+			FileReader reader = new FileReader(TEST_MODE ? TEST_USER_FILE_NAME : USER_FILE_NAME);
 			JSONArray peopleJSON = (JSONArray)new JSONParser().parse(reader);
 			
 			for(int i=0; i < peopleJSON.size(); i++) {
@@ -48,7 +48,7 @@ public class DataLoader extends DataConstants {
 		ArrayList<Song> songs = new ArrayList<Song>();
 		
 		try {
-			FileReader reader = new FileReader(SONG_FILE_NAME);
+			FileReader reader = new FileReader(TEST_MODE ? TEST_SONG_FILE_NAME : SONG_FILE_NAME);
 			JSONArray peopleJSON = (JSONArray)new JSONParser().parse(reader);
 			
 			for(int i=0; i < peopleJSON.size(); i++) {
