@@ -1,12 +1,14 @@
 package library;
 
-import static org.junit.Assert.*;
-import org.junit.Before;
-import org.junit.Test;
-import java.util.ArrayList;
-import java.util.UUID;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.UUID;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import org.junit.Before;
+import org.junit.Test;
 
 import com.model.Leaderboard;
 import com.model.User;

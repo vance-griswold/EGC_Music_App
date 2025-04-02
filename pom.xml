@@ -1,73 +1,102 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-<modelVersion>4.0.0</modelVersion>
-<groupId>org.openjfx</groupId>
-<artifactId>hellofx</artifactId>
-<version>0.0.1-SNAPSHOT</version>
-<properties>
-<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-<maven.compiler.release>17</maven.compiler.release>
-<javafx.version>21</javafx.version>
-<javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
-</properties>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-<repositories>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.openjfx</groupId>
+    <artifactId>hellofx</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.release>17</maven.compiler.release>
+        <javafx.version>21</javafx.version>
+        <javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
+    </properties>
+
+    <repositories>
         <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io/</url>
         </repository>
     </repositories>
 
+    <dependencies>
+        <!-- JUnit for testing -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+        </dependency>
 
-     
-<dependencies>
+        <!-- jfugue with xml-apis excluded to avoid conflict -->
+        <dependency>
+            <groupId>com.github.JensPiegsa</groupId>
+            <artifactId>jfugue</artifactId>
+            <version>5.0.9</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>xml-apis</groupId>
+                    <artifactId>xml-apis</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
 
-    <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>4.13.2</version>
-    </dependency>
+        <!-- json-simple for JSON handling -->
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1.1</version>
+        </dependency>
 
+        <!-- JavaFX controls and FXML -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+    </dependencies>
 
-   <dependency>
-        <groupId>com.github.JensPiegsa</groupId>
-        <artifactId>jfugue</artifactId>
-        <version>5.0.9</version>
-    </dependency>
+    <build>
+        <!-- This line is only needed if your test sources are NOT in standard path -->
+        <testSourceDirectory>${basedir}/src/test/java</testSourceDirectory>
 
-    <dependency>
-        <groupId>com.googlecode.json-simple</groupId>
-        <artifactId>json-simple</artifactId>
-        <version>1.1.1</version>
-    </dependency>
+        <plugins>
+            <!-- Java compiler plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+            </plugin>
 
-<dependency>
-<groupId>org.openjfx</groupId>
-<artifactId>javafx-controls</artifactId>
-<version>${javafx.version}</version>
-</dependency>
-<dependency>
-<groupId>org.openjfx</groupId>
-<artifactId>javafx-fxml</artifactId>
-<version>${javafx.version}</version>
-</dependency>
-</dependencies>
-<build>
-<plugins>
-<plugin>
-<groupId>org.apache.maven.plugins</groupId>
-<artifactId>maven-compiler-plugin</artifactId>
-<version>3.11.0</version>
-</plugin>
-<plugin>
-<groupId>org.openjfx</groupId>
-<artifactId>javafx-maven-plugin</artifactId>
-<version>${javafx.maven.plugin.version}</version>
-<configuration>
-<jlinkImageName>hellofx</jlinkImageName>
-<launcher>launcher</launcher>
-<mainClass>hellofx/org.openjfx.hellofx.App</mainClass>
-</configuration>
-</plugin>
-</plugins>
-</build>
+            <!-- JavaFX plugin -->
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>${javafx.maven.plugin.version}</version>
+                <configuration>
+                    <jlinkImageName>hellofx</jlinkImageName>
+                    <launcher>launcher</launcher>
+                    <mainClass>hellofx/org.openjfx.hellofx.App</mainClass>
+                </configuration>
+            </plugin>
+
+            <!-- Surefire for testing with modules -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+                <configuration>
+                    <useModulePath>false</useModulePath>
+                    <argLine>--add-opens com.egcmusicapp/library=ALL-UNNAMED</argLine>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

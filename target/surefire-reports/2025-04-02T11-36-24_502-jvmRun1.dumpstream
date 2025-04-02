@@ -1,0 +1,9 @@
+# Created at 2025-04-02T11:36:24.779
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream 'Error occurred during initialization of boot layer'.
+
+# Created at 2025-04-02T11:36:24.781
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream 'java.lang.module.FindException: Error reading module: /Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/target/classes'.
+
+# Created at 2025-04-02T11:36:24.781
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream 'Caused by: java.lang.module.InvalidModuleDescriptorException: Package library not found in module'.
+

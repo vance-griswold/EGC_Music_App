@@ -10,4 +10,6 @@ module com.egcmusicapp {
 
     opens com.model to javafx.fxml;
     exports com.model;
+
+    opens library to junit;
 }
