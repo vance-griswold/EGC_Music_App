@@ -1,4 +1,5 @@
 package com.model;
+
 import java.util.ArrayList;
 
 /**
@@ -7,7 +8,6 @@ import java.util.ArrayList;
 public class Playlist {
     private ArrayList<Song> playlist;
     private String title;
-
 
     /**
      * Constructor for the Playlist class
@@ -22,7 +22,9 @@ public class Playlist {
      * @param song the song to add to the playlist
      */
     public void addSong(Song song) {
-        playlist.add(song);
+        if (song != null) { /
+            playlist.add(song);
+        }
     }
 
     /**
@@ -52,7 +54,23 @@ public class Playlist {
      * @param newName the new name of the playlist
      */
     public void renamePlaylist(String newName) {
+        this.title = newName;
         System.out.println("Playlist renamed to: " + newName);
     }
 
+    /**
+     * Returns the size of the playlist (number of songs)
+     * @return the size of the playlist
+     */
+    public int getPlaylistSize() {
+        return playlist.size();
+    }
+
+    /**
+     * Returns the title of the playlist
+     * @return the title of the playlist
+     */
+    public String getTitle() {
+        return title;
+    }
 }
