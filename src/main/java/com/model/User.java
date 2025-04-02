@@ -58,10 +58,13 @@ public class User {
 
     /**
      * Increase the user's experience level
-     * @param xp the experience points to add
      */
-    public void increaseLevel(int xp) {
-        
+    public void increaseLevel() {
+        int newLevel = (int)(this.xpPoints / 2000) + 1; //level starts at 1
+        if(newLevel > this.experienceLevel)
+        {
+            this.experienceLevel = newLevel;
+        }
     }
 
     /**
@@ -70,6 +73,7 @@ public class User {
      */
     public void addXP(int xp) {
         this.xpPoints += xp;
+        increaseLevel();
     }
 
     /**
@@ -113,32 +117,32 @@ public class User {
     }
 
     /**
-     * Get the playlists of the user
-     * @return the playlists of the user
+     * Get the user's email address
+     * @return email address
      */
     public String getEmailAddress() {
         return emailAddress;
     }
 
     /**
-     * Get the playlists of the user
-     * @return the playlists of the user
+     * Get the user's current experience level
+     * @return user's experience level
      */
     public int getExperienceLevel() {
         return experienceLevel;
     }
 
     /**
-     * Get the playlists of the user
-     * @return the playlists of the user
+     * Get the current user's xp points
+     * @return xp points
      */
     public int getXpPoints() {
         return xpPoints;
     }
 
     /**
-     * Get the playlists of the user
-     * @return the playlists of the user
+     * Get the user's password
+     * @return user password
      */
     public String getPassword() {
         return password;
