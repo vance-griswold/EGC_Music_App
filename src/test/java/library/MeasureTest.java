@@ -1,6 +1,4 @@
 package library;
-
-
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;

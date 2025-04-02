@@ -1,6 +1,10 @@
-import org.junit.Test;
 import static org.junit.Assert.assertEquals;
-import com.model.*;
+import org.junit.Test;
+
+import com.model.Difficulty;
+import com.model.Genre;
+import com.model.Playlist;
+import com.model.Song;
 
 public class PlaylistTest {
 
@@ -20,7 +24,7 @@ public class PlaylistTest {
     public void testAddMultipleSongs() {
         Playlist playlist = new Playlist();
         Song song1 = new Song("Song1", "Artist1", Difficulty.MEDIUM, Genre.ROCK, "SheetMusic1", 4);
-        Song song2 = new Song("Song2", "Artist2", Difficulty.HARD, Genre.JAZZ, "SheetMusic2", 5);
+        Song song2 = new Song("Song2", "Artist2", Difficulty.HARD, Genre.COUNTRY, "SheetMusic2", 5);
         playlist.addSong(song1);
         playlist.addSong(song2);
         assertEquals(2, playlist.getPlaylistSize());
@@ -73,7 +77,7 @@ public class PlaylistTest {
     @Test
     public void testRemoveSongNotInPlaylist() {
         Playlist playlist = new Playlist();
-        Song song1 = new Song("Song1", "Artist1", Difficulty.HARD, Genre.JAZZ, "SheetMusic1", 5);
+        Song song1 = new Song("Song1", "Artist1", Difficulty.HARD, Genre.COUNTRY, "SheetMusic1", 5);
         Song song2 = new Song("Song2", "Artist2", Difficulty.EASY, Genre.CLASSICAL, "SheetMusic2", 2);
         playlist.addSong(song1);
         playlist.removeSong(song2);
