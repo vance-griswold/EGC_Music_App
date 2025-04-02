@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="library.UserListTest" time="0.014" tests="1" errors="1" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="library.UserListTest" time="0.097" tests="24" errors="0" skipped="0" failures="3">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.class.path" value="/Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/target/test-classes:/Users/vancegriswold/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/vancegriswold/.m2/repository/com/io7m/xom/xom/1.2.10/xom-1.2.10.jar:/Users/vancegriswold/.m2/repository/xml-apis/xml-apis/1.3.03/xml-apis-1.3.03.jar:/Users/vancegriswold/.m2/repository/xerces/xercesImpl/2.8.0/xercesImpl-2.8.0.jar:/Users/vancegriswold/.m2/repository/xalan/xalan/2.7.0/xalan-2.7.0.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-controls/21/javafx-controls-21.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-graphics/21/javafx-graphics-21.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-base/21/javafx-base-21.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-fxml/21/javafx-fxml-21.jar:"/>
+    <property name="java.class.path" value="/Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/target/test-classes:/Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/target/classes:/Users/vancegriswold/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/vancegriswold/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/vancegriswold/.m2/repository/com/github/JensPiegsa/jfugue/5.0.9/jfugue-5.0.9.jar:/Users/vancegriswold/.m2/repository/com/io7m/xom/xom/1.2.10/xom-1.2.10.jar:/Users/vancegriswold/.m2/repository/xerces/xercesImpl/2.8.0/xercesImpl-2.8.0.jar:/Users/vancegriswold/.m2/repository/xalan/xalan/2.7.0/xalan-2.7.0.jar:/Users/vancegriswold/.m2/repository/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-controls/21/javafx-controls-21.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-controls/21/javafx-controls-21-mac-aarch64.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-graphics/21/javafx-graphics-21.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-graphics/21/javafx-graphics-21-mac-aarch64.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-base/21/javafx-base-21.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-base/21/javafx-base-21-mac-aarch64.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-fxml/21/javafx-fxml-21.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-fxml/21/javafx-fxml-21-mac-aarch64.jar:"/>
     <property name="java.vm.vendor" value="Eclipse Adoptium"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.vendor.url" value="https://adoptium.net/"/>
@@ -12,16 +12,15 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter /Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/target/surefire 2025-04-01T15-25-09_829-jvmRun1 surefire-20250401152509998_1tmp surefire_0-20250401152509998_2tmp"/>
+    <property name="sun.java.command" value="/Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/target/surefire/surefirebooter-20250402114644989_3.jar /Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/target/surefire 2025-04-02T11-46-44_936-jvmRun1 surefire-20250402114644989_1tmp surefire_0-20250402114644989_2tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="test" value="library.UserListTest"/>
-    <property name="surefire.test.class.path" value="/Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/target/test-classes:/Users/vancegriswold/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/vancegriswold/.m2/repository/com/io7m/xom/xom/1.2.10/xom-1.2.10.jar:/Users/vancegriswold/.m2/repository/xml-apis/xml-apis/1.3.03/xml-apis-1.3.03.jar:/Users/vancegriswold/.m2/repository/xerces/xercesImpl/2.8.0/xercesImpl-2.8.0.jar:/Users/vancegriswold/.m2/repository/xalan/xalan/2.7.0/xalan-2.7.0.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-controls/21/javafx-controls-21.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-graphics/21/javafx-graphics-21.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-base/21/javafx-base-21.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-fxml/21/javafx-fxml-21.jar:"/>
+    <property name="surefire.test.class.path" value="/Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/target/test-classes:/Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/target/classes:/Users/vancegriswold/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/vancegriswold/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/vancegriswold/.m2/repository/com/github/JensPiegsa/jfugue/5.0.9/jfugue-5.0.9.jar:/Users/vancegriswold/.m2/repository/com/io7m/xom/xom/1.2.10/xom-1.2.10.jar:/Users/vancegriswold/.m2/repository/xerces/xercesImpl/2.8.0/xercesImpl-2.8.0.jar:/Users/vancegriswold/.m2/repository/xalan/xalan/2.7.0/xalan-2.7.0.jar:/Users/vancegriswold/.m2/repository/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-controls/21/javafx-controls-21.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-controls/21/javafx-controls-21-mac-aarch64.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-graphics/21/javafx-graphics-21.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-graphics/21/javafx-graphics-21-mac-aarch64.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-base/21/javafx-base-21.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-base/21/javafx-base-21-mac-aarch64.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-fxml/21/javafx-fxml-21.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-fxml/21/javafx-fxml-21-mac-aarch64.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/Users/vancegriswold"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="jdk.module.path" value="/Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/target/classes:/Users/vancegriswold/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/vancegriswold/.m2/repository/com/github/JensPiegsa/jfugue/5.0.9/jfugue-5.0.9.jar:/Users/vancegriswold/.m2/repository/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-controls/21/javafx-controls-21-mac-aarch64.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-graphics/21/javafx-graphics-21-mac-aarch64.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-base/21/javafx-base-21-mac-aarch64.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-fxml/21/javafx-fxml-21-mac-aarch64.jar"/>
     <property name="java.version.date" value="2024-10-15"/>
     <property name="java.home" value="/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home"/>
     <property name="file.separator" value="/"/>
@@ -31,7 +30,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/vancegriswold/.m2/repository/org/apache/maven/surefire/surefire-booter/3.2.5/surefire-booter-3.2.5.jar:/Users/vancegriswold/.m2/repository/org/apache/maven/surefire/surefire-api/3.2.5/surefire-api-3.2.5.jar:/Users/vancegriswold/.m2/repository/org/apache/maven/surefire/surefire-logger-api/3.2.5/surefire-logger-api-3.2.5.jar:/Users/vancegriswold/.m2/repository/org/apache/maven/surefire/surefire-shared-utils/3.2.5/surefire-shared-utils-3.2.5.jar:/Users/vancegriswold/.m2/repository/org/apache/maven/surefire/surefire-extensions-spi/3.2.5/surefire-extensions-spi-3.2.5.jar:/Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/target/test-classes:/Users/vancegriswold/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/vancegriswold/.m2/repository/com/io7m/xom/xom/1.2.10/xom-1.2.10.jar:/Users/vancegriswold/.m2/repository/xml-apis/xml-apis/1.3.03/xml-apis-1.3.03.jar:/Users/vancegriswold/.m2/repository/xerces/xercesImpl/2.8.0/xercesImpl-2.8.0.jar:/Users/vancegriswold/.m2/repository/xalan/xalan/2.7.0/xalan-2.7.0.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-controls/21/javafx-controls-21.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-graphics/21/javafx-graphics-21.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-base/21/javafx-base-21.jar:/Users/vancegriswold/.m2/repository/org/openjfx/javafx-fxml/21/javafx-fxml-21.jar:/Users/vancegriswold/.m2/repository/org/apache/maven/surefire/surefire-junit4/3.2.5/surefire-junit4-3.2.5.jar:/Users/vancegriswold/.m2/repository/org/apache/maven/surefire/common-java5/3.2.5/common-java5-3.2.5.jar:/Users/vancegriswold/.m2/repository/org/apache/maven/surefire/common-junit3/3.2.5/common-junit3-3.2.5.jar:/Users/vancegriswold/.m2/repository/org/apache/maven/surefire/common-junit4/3.2.5/common-junit4-3.2.5.jar"/>
+    <property name="surefire.real.class.path" value="/Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/target/surefire/surefirebooter-20250402114644989_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="21.0.5+11-LTS"/>
@@ -53,7 +52,7 @@
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="native.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/vancegriswold/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
-    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="stderr.encoding" value="UTF-8"/>
     <property name="java.vendor" value="Eclipse Adoptium"/>
     <property name="java.vm.version" value="21.0.5+11-LTS"/>
@@ -61,24 +60,52 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="initializationError" classname="library.UserListTest" time="0.003">
-    <error message="Unable to make public void library.UserListTest.testGetCurrentUserAfterFailedLogin() accessible: module com.egcmusicapp does not &quot;exports library&quot; to module junit" type="java.lang.reflect.InaccessibleObjectException"><![CDATA[java.lang.reflect.InaccessibleObjectException: Unable to make public void library.UserListTest.testGetCurrentUserAfterFailedLogin() accessible: module com.egcmusicapp does not "exports library" to module junit
-	at java.base/java.lang.reflect.AccessibleObject.throwInaccessibleObjectException(AccessibleObject.java:391)
-	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:367)
-	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:315)
-	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:203)
-	at java.base/java.lang.reflect.Method.setAccessible(Method.java:197)
-	at junit@4.13.2/org.junit.runners.model.FrameworkMethod.<init>(FrameworkMethod.java:35)
-	at junit@4.13.2/org.junit.runners.model.TestClass.scanAnnotatedMembers(TestClass.java:66)
-	at junit@4.13.2/org.junit.runners.model.TestClass.<init>(TestClass.java:57)
-	at junit@4.13.2/org.junit.runners.JUnit4.<init>(JUnit4.java:23)
-	at junit@4.13.2/org.junit.internal.builders.JUnit4Builder.runnerForClass(JUnit4Builder.java:10)
-	at junit@4.13.2/org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:70)
-	at junit@4.13.2/org.junit.internal.builders.AllDefaultPossibilitiesBuilder.runnerForClass(AllDefaultPossibilitiesBuilder.java:37)
-	at junit@4.13.2/org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:70)
-	at junit@4.13.2/org.junit.internal.requests.ClassRequest.createRunner(ClassRequest.java:28)
-	at junit@4.13.2/org.junit.internal.requests.MemoizingRequest.getRunner(MemoizingRequest.java:19)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:314)
+  <testcase name="testGetCurrentUserAfterFailedLogin" classname="library.UserListTest" time="0.028">
+    <system-out><![CDATA[User created: shouldfail
+Error: No account found with this email.
+]]></system-out>
+  </testcase>
+  <testcase name="testUpdateUserInvalid" classname="library.UserListTest" time="0.001">
+    <system-out><![CDATA[User not found: ghost
+]]></system-out>
+  </testcase>
+  <testcase name="testCreateUsersSameUsernameDifferentObjects" classname="library.UserListTest" time="0.0">
+    <system-out><![CDATA[User created: sameuser
+User created: sameuser
+]]></system-out>
+  </testcase>
+  <testcase name="testCreateDuplicateUser" classname="library.UserListTest" time="0.001">
+    <system-out><![CDATA[User created: duplicate
+User created: duplicate
+]]></system-out>
+  </testcase>
+  <testcase name="testBulkCreateUsers" classname="library.UserListTest" time="0.008">
+    <failure message="expected:&lt;50&gt; but was:&lt;60&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<50> but was:<60>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:633)
+	at library.UserListTest.testBulkCreateUsers(UserListTest.java:99)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
 	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
 	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
 	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
@@ -86,6 +113,257 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-]]></error>
+]]></failure>
+    <system-out><![CDATA[User created: bulk0
+User created: bulk1
+User created: bulk2
+User created: bulk3
+User created: bulk4
+User created: bulk5
+User created: bulk6
+User created: bulk7
+User created: bulk8
+User created: bulk9
+User created: bulk10
+User created: bulk11
+User created: bulk12
+User created: bulk13
+User created: bulk14
+User created: bulk15
+User created: bulk16
+User created: bulk17
+User created: bulk18
+User created: bulk19
+User created: bulk20
+User created: bulk21
+User created: bulk22
+User created: bulk23
+User created: bulk24
+User created: bulk25
+User created: bulk26
+User created: bulk27
+User created: bulk28
+User created: bulk29
+User created: bulk30
+User created: bulk31
+User created: bulk32
+User created: bulk33
+User created: bulk34
+User created: bulk35
+User created: bulk36
+User created: bulk37
+User created: bulk38
+User created: bulk39
+User created: bulk40
+User created: bulk41
+User created: bulk42
+User created: bulk43
+User created: bulk44
+User created: bulk45
+User created: bulk46
+User created: bulk47
+User created: bulk48
+User created: bulk49
+]]></system-out>
+  </testcase>
+  <testcase name="testReadUsersPrints" classname="library.UserListTest" time="0.014">
+    <failure message="expected:&lt;2&gt; but was:&lt;62&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<2> but was:<62>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:633)
+	at library.UserListTest.testReadUsersPrints(UserListTest.java:264)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]></failure>
+    <system-out><![CDATA[User created: read1
+User created: read2
+Granny_Smith
+Jonny_Appleseed
+witchgirl123
+ffredrickson
+ffred
+shouldfail
+sameuser
+sameuser
+duplicate
+duplicate
+bulk0
+bulk1
+bulk2
+bulk3
+bulk4
+bulk5
+bulk6
+bulk7
+bulk8
+bulk9
+bulk10
+bulk11
+bulk12
+bulk13
+bulk14
+bulk15
+bulk16
+bulk17
+bulk18
+bulk19
+bulk20
+bulk21
+bulk22
+bulk23
+bulk24
+bulk25
+bulk26
+bulk27
+bulk28
+bulk29
+bulk30
+bulk31
+bulk32
+bulk33
+bulk34
+bulk35
+bulk36
+bulk37
+bulk38
+bulk39
+bulk40
+bulk41
+bulk42
+bulk43
+bulk44
+bulk45
+bulk46
+bulk47
+bulk48
+bulk49
+read1
+read2
+]]></system-out>
+  </testcase>
+  <testcase name="testLoginSuccess" classname="library.UserListTest" time="0.006">
+    <failure type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at library.UserListTest.testLoginSuccess(UserListTest.java:218)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]></failure>
+    <system-out><![CDATA[Error: No account found with this email.
+]]></system-out>
+  </testcase>
+  <testcase name="testLoginNonexistentEmail" classname="library.UserListTest" time="0.001">
+    <system-out><![CDATA[Error: No account found with this email.
+]]></system-out>
+  </testcase>
+  <testcase name="testLoginWithNullEmail" classname="library.UserListTest" time="0.001">
+    <system-out><![CDATA[Error: No account found with this email.
+]]></system-out>
+  </testcase>
+  <testcase name="testLoginWithNullPassword" classname="library.UserListTest" time="0.0">
+    <system-out><![CDATA[User created: nullpass
+Error: No account found with this email.
+]]></system-out>
+  </testcase>
+  <testcase name="testGetUserInvalid" classname="library.UserListTest" time="0.0"/>
+  <testcase name="testCreateUser" classname="library.UserListTest" time="0.0">
+    <system-out><![CDATA[User created: johnd
+]]></system-out>
+  </testcase>
+  <testcase name="testLoginIncorrectPassword" classname="library.UserListTest" time="0.001">
+    <system-out><![CDATA[Error: No account found with this email.
+]]></system-out>
+  </testcase>
+  <testcase name="testGetUserEmptyString" classname="library.UserListTest" time="0.0"/>
+  <testcase name="testDeleteUserTwice" classname="library.UserListTest" time="0.0">
+    <system-out><![CDATA[User created: doubledelete
+User deleted: doubledelete
+User not found: doubledelete
+]]></system-out>
+  </testcase>
+  <testcase name="testGetUserNull" classname="library.UserListTest" time="0.0"/>
+  <testcase name="testSaveDoesNotCrash" classname="library.UserListTest" time="0.0">
+    <system-out><![CDATA[User created: saveuser
+User list saved.
+]]></system-out>
+  </testcase>
+  <testcase name="testGetUserValid" classname="library.UserListTest" time="0.0"/>
+  <testcase name="testUpdateUserValid" classname="library.UserListTest" time="0.0">
+    <system-out><![CDATA[User updated: bob123
+]]></system-out>
+  </testcase>
+  <testcase name="testUpdateUserWithChangedEmail" classname="library.UserListTest" time="0.0">
+    <system-out><![CDATA[User created: editme
+User updated: editme
+]]></system-out>
+  </testcase>
+  <testcase name="testDeleteNonexistentUser" classname="library.UserListTest" time="0.001">
+    <system-out><![CDATA[User not found: nonexistent
+]]></system-out>
+  </testcase>
+  <testcase name="testUpdateUnaddedUser" classname="library.UserListTest" time="0.0">
+    <system-out><![CDATA[User not found: unadded
+]]></system-out>
+  </testcase>
+  <testcase name="testUpdateWithSameData" classname="library.UserListTest" time="0.0">
+    <system-out><![CDATA[User created: sameuser
+User updated: sameuser
+]]></system-out>
+  </testcase>
+  <testcase name="testDeleteExistingUser" classname="library.UserListTest" time="0.0">
+    <system-out><![CDATA[User deleted: deleteme
+]]></system-out>
   </testcase>
 </testsuite>

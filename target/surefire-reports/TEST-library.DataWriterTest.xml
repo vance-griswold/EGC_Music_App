@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="library.DataWriterTest" time="0.066" tests="6" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="library.DataWriterTest" time="0.067" tests="6" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/target/surefire/surefirebooter-20250402114356741_3.jar /Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/target/surefire 2025-04-02T11-43-56_688-jvmRun1 surefire-20250402114356741_1tmp surefire_0-20250402114356741_2tmp"/>
+    <property name="sun.java.command" value="/Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/target/surefire/surefirebooter-20250402114634216_3.jar /Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/target/surefire 2025-04-02T11-46-34_162-jvmRun1 surefire-20250402114634216_1tmp surefire_0-20250402114634216_2tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="test" value="library.DataWriterTest"/>
@@ -30,7 +30,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/target/surefire/surefirebooter-20250402114356741_3.jar"/>
+    <property name="surefire.real.class.path" value="/Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/target/surefire/surefirebooter-20250402114634216_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="21.0.5+11-LTS"/>
@@ -60,7 +60,7 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testSaveSingleSong" classname="library.DataWriterTest" time="0.031"/>
+  <testcase name="testSaveSingleSong" classname="library.DataWriterTest" time="0.033"/>
   <testcase name="testSaveSingleUser" classname="library.DataWriterTest" time="0.002">
     <system-out><![CDATA[User created: singleuser
 ]]></system-out>
