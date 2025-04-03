@@ -10,7 +10,7 @@ public class dailySong {
     private UUID id;
     private Song song;
     private int xpPoints;
-    private int streakCounter;
+    private int songCounter; //tracks total songs completed
     private boolean dailySongCompleted;
 
     /**
@@ -20,7 +20,7 @@ public class dailySong {
     {
         this.id = UUID.randomUUID();
         this.xpPoints = 0;
-        this.streakCounter = 0;
+        this.songCounter = 0;
         this.dailySongCompleted = false;
     }
 
@@ -45,29 +45,31 @@ public class dailySong {
 
        if(this.dailySongCompleted)
        {
-        increaseStreak();
-        increaseXP(100); //actual xp amount tbd
-        System.out.println("You completed the daily song! Your current streak is " + streakCounter);
+            increaseSongCounter();
+            increaseXP(100); //actual xp amount tbd
+            //System.out.println("You completed the daily song! Your current streak is " + streakCounter);
        }
-    }
-
-    /**
-     * Resets the streak counter
-     */
-    public void resetStreak() 
-    {
-        this.streakCounter = 0;
-    }
-
-    /**
-     * Increases the streak counter by one
-     */
-    public void increaseStreak()
-    {
-        if(this.dailySongCompleted)
+        else
         {
-            this.streakCounter ++;
+            //System.out.println("You have not completed the daily song yet.");
         }
+    }
+
+    /**
+     * Checks if the daily song has been completed
+     * @return true if completed, false if not
+     */
+    public boolean isDailySongCompleted()
+    {
+        return dailySongCompleted;
+    }
+
+    /**
+     * Increases the song counter by one
+     */
+    public void increaseSongCounter()
+    {
+        this.songCounter++; //running total of songs the user has completed
     }
 
     /**
@@ -80,10 +82,34 @@ public class dailySong {
     }
 
     /**
-     * Gets the current streak counter
-     * @return user's streak count
+     * Gets the current song count
+     * @return total number of songs completed
      */
-    public int getStreakCounter() {
-        return streakCounter;
+    public int getSongCounter() {
+        return songCounter;
+    }
+
+    /**
+     * Gets the unique ID of the daily song
+     * @return unique song ID
+     */
+    public UUID getId() {
+        return id;
+    }
+
+    /**
+     * Gets the daily song assigned to the user
+     * @return daily song
+     */
+    public Song getSong() {
+        return song;
+    }
+
+    /**
+     * Gets the XP points of the user
+     * @return user's xp points
+     */
+    public int getXpPoints() {
+        return xpPoints;
     }
 }
