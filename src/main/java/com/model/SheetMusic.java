@@ -96,6 +96,14 @@ public class SheetMusic {
     }
 
     /**
+     * returns measures
+     * @return Array List of measures
+     */
+    public ArrayList<Measure> getMeasures() {
+        return this.measures;
+    }
+    
+    /**
      * Prints the sheet music to a text file
      */
     public void toText() {
