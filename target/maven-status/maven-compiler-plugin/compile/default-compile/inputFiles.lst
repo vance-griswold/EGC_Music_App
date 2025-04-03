@@ -1,5 +1,4 @@
 /Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/src/main/java/com/model/Instrument.java
-/Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/src/main/java/com/model/Lesson.java
 /Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/src/main/java/com/model/DataWriter.java
 /Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/src/main/java/com/model/MistakeIndicator.java
 /Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/src/main/java/com/model/SheetMusic.java
@@ -10,7 +9,6 @@
 /Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/src/main/java/com/music/App.java
 /Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/src/main/java/com/model/dailySong.java
 /Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/src/main/java/com/model/Measure.java
-/Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/src/main/java/com/model/Student.java
 /Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/src/main/java/com/music/Music.java
 /Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/src/main/java/com/model/Leaderboard.java
 /Users/vancegriswold/Desktop/CSCE 247/EGC_Music_App/src/main/java/com/model/UserList.java
