@@ -1,6 +1,0 @@
-#surefire_0
-#Wed Apr 02 14:46:12 EDT 2025
-basedir=/Users/kayleighfaus/EGC_Music_App-7
-localRepository=/Users/kayleighfaus/.m2/repository
-maven.ext.class.path=/Users/kayleighfaus/.vscode/extensions/oracle.oracle-java-23.1.0/nbcode/java/maven-nblib/netbeans-eventspy.jar
-test=library.MeasureTest\#testAddChordAtStart

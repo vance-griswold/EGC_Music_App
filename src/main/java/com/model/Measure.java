@@ -18,11 +18,9 @@ public class Measure {
      /**
      * add a chord to the measure
      */
-    public void addChord(int index) {
-    Chord chord = new Chord();
-    chord = chord.chordInput();
-    chords.add(index, chord);
-    }
+    public void addChord(int index, Chord chord) {
+        chords.add(index, chord);
+    }    
 
     /**
      * remove a chord from the measure
