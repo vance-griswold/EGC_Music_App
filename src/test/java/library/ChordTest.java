@@ -75,6 +75,32 @@ public class ChordTest {
 
     }
 
+    @Test //TO TEST
+    public void testChordInputRest() {
+        InputStream sysInBackup = System.in;
+        String testInput = "r\nq\n";
+        ByteArrayInputStream in = new ByteArrayInputStream(testInput.getBytes());
+        System.setIn(in);
+        Chord chord = new Chord();
+        chord = chord.chordInput();
+        assertEquals("Rq", chord.getChord());
+        System.setIn(sysInBackup);
+
+    }
+
+    @Test //TO TEST
+    public void testChordInputChord() {
+        InputStream sysInBackup = System.in;
+        String testInput = "c\nmajor\nc\n5\nq\n";
+        ByteArrayInputStream in = new ByteArrayInputStream(testInput.getBytes());
+        System.setIn(in);
+        Chord chord = new Chord();
+        chord = chord.chordInput();
+        assertEquals("C5majq", chord.getChord());
+        System.setIn(sysInBackup);
+
+    }
+
     @Test
     public void testGetScale() {
         Chord chord = new Chord("C5q");
