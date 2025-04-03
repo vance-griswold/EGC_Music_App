@@ -9,31 +9,24 @@ import org.junit.Test;
 import com.model.Chord;
 import com.model.Measure;
 
-
-/**
-* Author: Kayleigh Faus
-*/
 public class MeasureTest {
-
 
    @Test
    public void testAddChordAtStart() {
        ArrayList<Chord> chords = new ArrayList<>();
        Measure measure = new Measure(chords);
-       measure.addChord(0);
+       measure.addChord(0, new Chord("C5q"));
        assertEquals(1, chords.size());
    }
-
 
    @Test
    public void testAddChordAtEnd() {
        ArrayList<Chord> chords = new ArrayList<>();
        chords.add(new Chord("C5q"));
        Measure measure = new Measure(chords);
-       measure.addChord(1);
+       measure.addChord(1, new Chord("D5q"));
        assertEquals(2, chords.size());
    }
-
 
    @Test
    public void testAddChordInMiddle() {
@@ -41,29 +34,26 @@ public class MeasureTest {
        chords.add(new Chord("C5q"));
        chords.add(new Chord("D5q"));
        Measure measure = new Measure(chords);
-       measure.addChord(1);
+       measure.addChord(1, new Chord("E5q"));
        assertEquals(3, chords.size());
    }
-
 
    @Test
    public void testAddChordInvalidIndex() {
        ArrayList<Chord> chords = new ArrayList<>();
        Measure measure = new Measure(chords);
-       assertThrows(IndexOutOfBoundsException.class, () -> measure.addChord(5));
+       assertThrows(IndexOutOfBoundsException.class, () -> measure.addChord(5, new Chord("C5q")));
    }
-
 
    @Test
    public void testAddMultipleChords() {
        ArrayList<Chord> chords = new ArrayList<>();
        Measure measure = new Measure(chords);
-       measure.addChord(0);
-       measure.addChord(1);
-       measure.addChord(2);
+       measure.addChord(0, new Chord("C5q"));
+       measure.addChord(1, new Chord("D5q"));
+       measure.addChord(2, new Chord("E5q"));
        assertEquals(3, chords.size());
    }
-
 
    @Test
    public void testRemoveChordFromNonEmptyMeasure() {
@@ -73,7 +63,6 @@ public class MeasureTest {
        measure.removeChord();
        assertEquals(0, chords.size());
    }
-
 
    @Test
    public void testRemoveChordMultipleTimes() {
@@ -86,14 +75,12 @@ public class MeasureTest {
        assertEquals(0, chords.size());
    }
 
-
    @Test
    public void testRemoveChordFromEmptyMeasure() {
        ArrayList<Chord> chords = new ArrayList<>();
        Measure measure = new Measure(chords);
        assertThrows(IndexOutOfBoundsException.class, measure::removeChord);
    }
-
 
    @Test
    public void testRemoveChordUntilOneLeft() {
@@ -105,7 +92,6 @@ public class MeasureTest {
        assertEquals(1, chords.size());
    }
 
-
    @Test
    public void testRemoveChordDoesNotAffectOtherChords() {
        ArrayList<Chord> chords = new ArrayList<>();
@@ -116,7 +102,6 @@ public class MeasureTest {
        assertEquals("C5q", chords.get(0).getChord());
    }
 
-
    @Test
    public void testGetMeasureWithMultipleChords() {
        ArrayList<Chord> chords = new ArrayList<>();
@@ -126,7 +111,6 @@ public class MeasureTest {
        assertEquals("C5q D5q", measure.getMeasure());
    }
 
-
    @Test
    public void testGetMeasureWithOneChord() {
        ArrayList<Chord> chords = new ArrayList<>();
@@ -134,7 +118,6 @@ public class MeasureTest {
        Measure measure = new Measure(chords);
        assertEquals("C5q", measure.getMeasure());
    }
-
 
    @Test
    public void testGetMeasureWithRest() {
@@ -144,14 +127,12 @@ public class MeasureTest {
        assertEquals("Rq", measure.getMeasure());
    }
 
-
    @Test
    public void testGetMeasureWithEmptyList() {
        ArrayList<Chord> chords = new ArrayList<>();
        Measure measure = new Measure(chords);
        assertEquals("", measure.getMeasure());
    }
-
 
    @Test
    public void testGetMeasureWithDifferentDurations() {
@@ -161,7 +142,6 @@ public class MeasureTest {
        Measure measure = new Measure(chords);
        assertEquals("C5q D5w", measure.getMeasure());
    }
-
 
    @Test
    public void testGetMeasureArraySize() {
@@ -173,7 +153,6 @@ public class MeasureTest {
        assertEquals(8, measureArray[0].length);
    }
 
-
    @Test
    public void testGetMeasureArrayWithSingleChord() {
        ArrayList<Chord> chords = new ArrayList<>();
@@ -182,7 +161,6 @@ public class MeasureTest {
        char[][] measureArray = measure.getMeasureArray();
        assertEquals('C', measureArray[0][3]);
    }
-
 
    @Test
    public void testGetMeasureArrayWithMultipleChords() {
@@ -194,7 +172,6 @@ public class MeasureTest {
        assertEquals('C', measureArray[0][3]);
        assertEquals('D', measureArray[2][2]);
    }
-
 
    @Test
    public void testGetMeasureArrayWithEmptyMeasure() {
@@ -212,7 +189,6 @@ public class MeasureTest {
        }
        assertTrue(allEmpty);
    }
-
 
    @Test
    public void testGetMeasureArrayWithRest() {
