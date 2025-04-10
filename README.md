@@ -3,5 +3,5 @@ The Evil Gnome Music Learning App is an interactiveplatform designed to help use
 
 YouTube link for Implementation and Presentation: https://youtu.be/5UqCswLaFgw
 
-Mockitt link for app prototype: https://mockitt.com/proto/etboJvGsu5mdaNwU9dYp/sharing?view_mode=device&screen=rbpUhKUwFMcsrmLnU&canvasId=rcUhKUxULgY1Kpqt #EGC_Music_App
+GitHub repo with MusicApp Prototype: https://github.com/vfisher084/vfisher084.github.io/tree/main/csce247
 
