@@ -2,13 +2,15 @@ package com.egcmusicapp;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import com.model.MusicApp;
+import com.model.UserList;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import com.model.UserList;
-import com.model.MusicApp;
 
 
 /**
@@ -35,12 +37,12 @@ public class LoginController implements Initializable {
             return;
         }
 
-        App.setRoot("user_home");
+        App.setRoot("home");
     }
 
     @FXML
     private void back(MouseEvent event) throws IOException {
-        App.setRoot("home");
+        App.setRoot("secondary");
     }
 
     @Override

@@ -5,7 +5,7 @@
 
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1"
             xmlns="http://javafx.com/javafx/8"
-            fx:controller="controllers.LoginController"
+            fx:controller="com.egcmusicapp.LoginController"
            prefWidth="400" prefHeight="300">
 
 
