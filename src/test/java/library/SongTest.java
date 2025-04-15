@@ -72,7 +72,7 @@ public class SongTest {
     public void testSearchByNameFalse() {
         SongLibrary songLibrary = SongLibrary.getInstance();
         Song song = songLibrary.searchSong("A horses journey");
-        assertTrue(song.searchByName("Hadestown"));
+        assertFalse(song.searchByName("Hadestown"));
     }
 
     @Test
