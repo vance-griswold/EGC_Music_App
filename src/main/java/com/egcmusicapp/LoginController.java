@@ -1,5 +1,4 @@
-package controllers;
-
+package com.egcmusicapp;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -8,8 +7,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import library.App;
-import model.Library;
+import com.model.UserList;
+import com.model.MusicApp;
+
 
 /**
  * created by kayleigh faus
@@ -27,9 +27,10 @@ public class LoginController implements Initializable {
         String username = txt_username.getText();
         String password = txt_password.getText(); // Not used yet
 
-        Library library = Library.getInstance();
+        MusicApp app = new MusicApp();
+        UserList userList = UserList.getInstance();
 
-        if (!library.login(username)) {
+        if (!app.login(username, password)) {
             lbl_error.setText("Invalid login credentials.");
             return;
         }
