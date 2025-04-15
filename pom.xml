@@ -64,8 +64,7 @@
     </dependencies>
 
     <build>
-        <!-- This line is only needed if your test sources are NOT in standard path -->
-        <testSourceDirectory>${basedir}/src/test/java</testSourceDirectory>
+       
 
         <plugins>
             <!-- Java compiler plugin -->
