@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.egcmusicapp.HomeController">
+    <children>
+        <!-- Top Navigation -->
+        <HBox spacing="10" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" alignment="TOP_RIGHT">
+            <children>
+                <Button text="My Account" fx:id="myAccountBtn" onAction="#onMyAccountClicked" style="-fx-background-color: #dfb9a9;" />
+                <Button text="Logout" fx:id="logoutBtn" onAction="#onLogoutClicked" style="-fx-background-color: #dfb9a9;" />
+            </children>
+        </HBox>
+
+        <!-- Welcome Message -->
+        <VBox spacing="10" alignment="CENTER" AnchorPane.topAnchor="60" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+            <children>
+                <Label text="Hello, [Username]" style="-fx-font-size: 28px; -fx-font-weight: bold;" />
+                <Label text="Welcome to MetroGnome" style="-fx-font-size: 24px;" />
+                <Separator prefWidth="400"/>
+            </children>
+        </VBox>
+
+        <!-- Center Area with Buttons and Icons -->
+        <HBox spacing="40" alignment="CENTER" AnchorPane.topAnchor="150" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
+            <children>
+                <ImageView fx:id="leftIcon" fitHeight="180" fitWidth="100" pickOnBounds="true" preserveRatio="true" />
+
+                <VBox spacing="15" alignment="CENTER">
+                    <children>
+                        <Button text="Complete Daily Song" onAction="#onDailySongClicked" style="-fx-background-color: #9ba18f;" />
+                        <Button text="Practice" onAction="#onPracticeClicked" style="-fx-background-color: #9ba18f;" />
+                        <Button text="Create a Song" onAction="#onCreateSongClicked" style="-fx-background-color: #9ba18f;" />
+                        <Separator prefWidth="250"/>
+                        <Button text="My Playlist" onAction="#onPlaylistClicked" style="-fx-background-color: #dfb9a9;" />
+                        <Button text="View Leaderboard" onAction="#onLeaderboardClicked" style="-fx-background-color: #dfb9a9;" />
+                    </children>
+                </VBox>
+
+                <ImageView fx:id="rightIcon" fitHeight="180" fitWidth="100" pickOnBounds="true" preserveRatio="true" />
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>
