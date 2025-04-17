@@ -1,4 +1,5 @@
 package com.egcmusicapp;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -9,25 +10,27 @@ import com.model.UserList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
-
 
 /**
- * created by kayleigh faus
+ * Controller for the Login screen
  */
 public class LoginController implements Initializable {
+
     @FXML
     private TextField txt_username;
+
     @FXML
-    private TextField txt_password;
+    private PasswordField txt_password;
+
     @FXML
     private Label lbl_error;
 
     @FXML
-    private void btnLoginClicked(MouseEvent event) throws IOException {
+    private void btnLoginClicked() throws IOException {
         String username = txt_username.getText();
-        String password = txt_password.getText(); // Not used yet
+        String password = txt_password.getText();
 
         MusicApp app = new MusicApp();
         UserList userList = UserList.getInstance();
@@ -37,12 +40,14 @@ public class LoginController implements Initializable {
             return;
         }
 
-        App.setRoot("home");
+        // On successful login, go to the home screen
+        App.setRoot("home"); // Go to home.fxml on success
     }
 
     @FXML
-    private void back(MouseEvent event) throws IOException {
-        App.setRoot("secondary");
+    private void back() throws IOException {
+        // Go back to the secondary page (cover screen)
+        App.setRoot("secondary"); // Back to cover screen
     }
 
     @Override

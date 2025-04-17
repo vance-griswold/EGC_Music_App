@@ -1,26 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
-            xmlns="http://javafx.com/javafx/8"
-            fx:controller="com.egcmusicapp.LoginController"
-           prefWidth="400" prefHeight="300">
-
-
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.egcmusicapp.LoginController">
     <children>
-        <Label layoutX="150" layoutY="30" text="Login" style="-fx-font-size: 24px;" />
+        <!-- Background Image -->
+        <ImageView fitWidth="400" fitHeight="500" preserveRatio="true" opacity="0.2">
+            <image>
+                <Image url="@gnome.png" />
+            </image>
+        </ImageView>
 
-        <Label layoutX="70" layoutY="90" text="Username:" />
-        <TextField fx:id="txt_username" layoutX="150" layoutY="85" prefWidth="180"/>
+        <!-- Login Form -->
+        <VBox spacing="15" alignment="CENTER" AnchorPane.topAnchor="100" AnchorPane.leftAnchor="50" AnchorPane.rightAnchor="50">
+            <children>
+                <!-- Title with Music Notes -->
+                <HBox spacing="10" alignment="CENTER">
+                    <children>
+                        <Label text="♪" style="-fx-font-size: 24px;" />
+                        <Label text="Login" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+                        <Label text="♪" style="-fx-font-size: 24px;" />
+                    </children>
+                </HBox>
 
-        <Label layoutX="70" layoutY="140" text="Password:" />
-        <TextField fx:id="txt_password" layoutX="150" layoutY="135" prefWidth="180"/>
+                <!-- Username Field -->
+                <HBox spacing="5" alignment="CENTER_LEFT" style="-fx-background-color: #f0f0f0; -fx-padding: 5; -fx-background-radius: 5;">
+                    <children>
+                        <Label text="👤" style="-fx-font-size: 14px;" />
+                        <TextField fx:id="txt_username" promptText="Username"
+                                   style="-fx-background-color: transparent; -fx-border-color: transparent;" />
+                    </children>
+                </HBox>
 
-        <Button text="Login" layoutX="150" layoutY="190" onMouseClicked="#btnLoginClicked"/>
-        <Button text="Back" layoutX="220" layoutY="190" onMouseClicked="#back"/>
+                <!-- Password Field -->
+                <HBox spacing="5" alignment="CENTER_LEFT" style="-fx-background-color: #f0f0f0; -fx-padding: 5; -fx-background-radius: 5;">
+                    <children>
+                        <Label text="🔒" style="-fx-font-size: 14px;" />
+                        <PasswordField fx:id="txt_password" promptText="Password"
+                                       style="-fx-background-color: transparent; -fx-border-color: transparent;" />
+                    </children>
+                </HBox>
 
-        <Label fx:id="lbl_error" layoutX="150" layoutY="230" textFill="red"/>
+                <!-- Login Button -->
+                <Button text="Login" fx:id="btnLogin" onAction="#btnLoginClicked"
+                        style="-fx-background-color: #9ba18f; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 180;" />
+
+                <!-- Sign Up Button -->
+                <Button text="Sign Up" onAction="#back" style="-fx-background-color: #9ba18f; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 180;" />
+
+                <!-- Error Label -->
+                <Label fx:id="lbl_error" textFill="red" style="-fx-font-weight: bold;" />
+            </children>
+        </VBox>
+
+        <!-- Optional: Add other UI elements or adjust layout as needed -->
     </children>
 </AnchorPane>
