@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/8"
+            fx:controller="com.egcmusicapp.LoginController"
+           prefWidth="400" prefHeight="300">
+
+
+    <children>
+        <Label layoutX="150" layoutY="30" text="Login" style="-fx-font-size: 24px;" />
+
+        <Label layoutX="70" layoutY="90" text="Username:" />
+        <TextField fx:id="txt_username" layoutX="150" layoutY="85" prefWidth="180"/>
+
+        <Label layoutX="70" layoutY="140" text="Password:" />
+        <TextField fx:id="txt_password" layoutX="150" layoutY="135" prefWidth="180"/>
+
+        <Button text="Login" layoutX="150" layoutY="190" onMouseClicked="#btnLoginClicked"/>
+        <Button text="Back" layoutX="220" layoutY="190" onMouseClicked="#back"/>
+
+        <Label fx:id="lbl_error" layoutX="150" layoutY="230" textFill="red"/>
+    </children>
+</AnchorPane>
