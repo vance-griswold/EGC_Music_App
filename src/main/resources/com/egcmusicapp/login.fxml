@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by kayleigh faus -->
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
-/*
- * Created by kayleigh faus
- */
+
 <AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.egcmusicapp.LoginController" prefWidth="400" prefHeight="500">
     <children>
 
