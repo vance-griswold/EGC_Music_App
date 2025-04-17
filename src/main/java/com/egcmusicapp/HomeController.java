@@ -9,7 +9,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
 
-
 public class HomeController implements Initializable {
 
     @FXML private ImageView leftIcon;
@@ -17,38 +16,46 @@ public class HomeController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        /** 
-        Image icon = new Image("/images/treble_clef.png"); // adjust path to match your assets folder
+        // Optional: Load icons
+        /*
+        Image icon = new Image(getClass().getResource("/images/treble_clef.png").toExternalForm());
         leftIcon.setImage(icon);
         rightIcon.setImage(icon);
         */
     }
 
-    @FXML private void onMyAccountClicked(ActionEvent event) throws IOException {
-        App.setRoot("account");
+    @FXML
+    private void onMyAccountClicked(ActionEvent event) throws IOException {
+        App.setRoot("myaccount"); // ✅ Fix: match FXML name
     }
 
-    @FXML private void onLogoutClicked(ActionEvent event) throws IOException {
+    @FXML
+    private void onLogoutClicked(ActionEvent event) throws IOException {
         App.setRoot("login");
     }
 
-    @FXML private void onDailySongClicked(ActionEvent event) throws IOException {
+    @FXML
+    private void onDailySongClicked(ActionEvent event) throws IOException {
         App.setRoot("dailySong");
     }
 
-    @FXML private void onPracticeClicked(ActionEvent event) throws IOException {
+    @FXML
+    private void onPracticeClicked(ActionEvent event) throws IOException {
         App.setRoot("practice");
     }
 
-    @FXML private void onCreateSongClicked(ActionEvent event) throws IOException {
+    @FXML
+    private void onCreateSongClicked(ActionEvent event) throws IOException {
         App.setRoot("createSong");
     }
 
-    @FXML private void onPlaylistClicked(ActionEvent event) throws IOException {
+    @FXML
+    private void onPlaylistClicked(ActionEvent event) throws IOException {
         App.setRoot("playlist");
     }
 
-    @FXML private void onLeaderboardClicked(ActionEvent event) throws IOException {
+    @FXML
+    private void onLeaderboardClicked(ActionEvent event) throws IOException {
         App.setRoot("leaderboard");
     }
 }
