@@ -5,14 +5,15 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.model.MusicApp;
-import com.model.UserList;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-
+/*
+ * Created by kayleigh faus
+ */
 /**
  * Controller for the Login screen
  */
@@ -27,13 +28,20 @@ public class LoginController implements Initializable {
     @FXML
     private Label lbl_error;
 
+    /**
+     * Handles the Login button click event
+     */
     @FXML
-    private void btnLoginClicked() throws IOException {
+    private void onLoginClicked() throws IOException {
         String username = txt_username.getText();
         String password = txt_password.getText();
 
         MusicApp app = new MusicApp();
-        UserList userList = UserList.getInstance();
+
+        if (username.isEmpty() || password.isEmpty()) {
+            lbl_error.setText("Please enter both username and password.");
+            return;
+        }
 
         if (!app.login(username, password)) {
             lbl_error.setText("Invalid login credentials.");
@@ -41,17 +49,28 @@ public class LoginController implements Initializable {
         }
 
         // On successful login, go to the home screen
-        App.setRoot("home"); // Go to home.fxml on success
+        App.setRoot("home");
     }
 
+    /**
+     * Handles the Back button click event (you can customize this)
+     */
     @FXML
-    private void back() throws IOException {
-        // Go back to the secondary page (cover screen)
-        App.setRoot("secondary"); // Back to cover screen
+    private void onBackClicked() throws IOException {
+        // Optional: back to splash screen or previous screen
+        App.setRoot("splash"); // Or remove this if you don't have a back screen
+    }
+
+    /**
+     * Navigates to the sign-up page
+     */
+    @FXML
+    private void onSignUpClicked() throws IOException {
+        App.setRoot("signup");
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // Optional: init logic
+        // Optional: Add init logic here
     }
 }

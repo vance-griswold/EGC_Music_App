@@ -214,4 +214,20 @@ public class MusicApp {
         DataWriter.saveUsers();
         System.exit(0);
     }
+    /**
+ * Registers a new user with just username and password.
+ * This is used by the signup form for quick registration.
+ *
+ * @param username The desired username.
+ * @param password The desired password.
+ * @return true if successful, false if username or email already exists.
+ */
+public boolean register(String username, String password) {
+    String firstName = "New";
+    String lastName = "User";
+    String email = username + "@example.com"; // Dummy email derived from username
+
+    User result = signUp(firstName, lastName, email, username, password);
+    return result != null;
+ } 
 }

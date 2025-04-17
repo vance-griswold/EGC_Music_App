@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+/*
+ * Created by kayleigh faus
+ */
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.egcmusicapp.SignupController" prefWidth="600" prefHeight="500">
+    <children>
+
+        <!-- Background -->
+        <ImageView fitWidth="400" fitHeight="500" preserveRatio="true" opacity="0.2">
+            <image>
+                <Image url="@gnome.png" />
+            </image>
+        </ImageView>
+
+        <!-- Sign Up Form -->
+        <VBox fx:id="formPane" spacing="15" alignment="CENTER" AnchorPane.topAnchor="50" AnchorPane.leftAnchor="100" AnchorPane.rightAnchor="100">
+            <children>
+                <Label text="♪ Sign Up ♪" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+
+                <HBox spacing="5" alignment="CENTER_LEFT" style="-fx-background-color: #f0f0f0; -fx-padding: 5; -fx-background-radius: 5;">
+                    <children>
+                        <Label text="👤" />
+                        <TextField fx:id="txt_username" promptText="Username" style="-fx-background-color: transparent;" />
+                    </children>
+                </HBox>
+
+                <HBox spacing="5" alignment="CENTER_LEFT" style="-fx-background-color: #f0f0f0; -fx-padding: 5; -fx-background-radius: 5;">
+                    <children>
+                        <Label text="🔒" />
+                        <PasswordField fx:id="txt_password" promptText="Password" style="-fx-background-color: transparent;" />
+                    </children>
+                </HBox>
+
+                <HBox spacing="5" alignment="CENTER_LEFT" style="-fx-background-color: #f0f0f0; -fx-padding: 5; -fx-background-radius: 5;">
+                    <children>
+                        <Label text="✅" />
+                        <PasswordField fx:id="txt_confirmPassword" promptText="Confirm Password" style="-fx-background-color: transparent;" />
+                    </children>
+                </HBox>
+
+                <Button text="Sign Up" onAction="#btnSignUpClicked" style="-fx-background-color: #9ba18f; -fx-text-fill: white; -fx-font-weight: bold;" />
+                <Button text="Back to Login" onAction="#backToLogin" style="-fx-background-color: #9ba18f; -fx-text-fill: white;" />
+
+                <Label fx:id="lbl_error" textFill="red" style="-fx-font-weight: bold;" />
+            </children>
+        </VBox>
+
+        <!-- Profile Section -->
+        <VBox fx:id="profilePane" visible="false" spacing="20" alignment="TOP_CENTER" AnchorPane.topAnchor="30" AnchorPane.leftAnchor="50" AnchorPane.rightAnchor="50">
+            <children>
+                <ImageView fitWidth="100" fitHeight="100" preserveRatio="true">
+                    <image>
+                        <Image url="@gnome.png" />
+                    </image>
+                </ImageView>
+
+                <Label fx:id="lblUsername" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+                <Label text="Level 10" />
+
+                <VBox spacing="5" alignment="CENTER">
+                    <ProgressBar fx:id="xpProgress" prefWidth="200" progress="0.6" />
+                    <Label fx:id="lblXP" text="3200/5000" />
+                </VBox>
+
+                <Label text="Created Songs" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+                <VBox spacing="5">
+                    <HBox spacing="20">
+                        <Label text="Title" />
+                        <Label text="Username" />
+                        <Label text="Genre" />
+                    </HBox>
+                    <HBox spacing="20">
+                        <Label text="Sample Song" />
+                        <Label text="User123" />
+                        <Label text="Lo-Fi" />
+                    </HBox>
+                </VBox>
+
+                <Label text="Daily Songs Completed" />
+                <Label fx:id="lblDailySongs" text="34" style="-fx-font-size: 36px;" />
+            </children>
+        </VBox>
+
+    </children>
+</AnchorPane>
