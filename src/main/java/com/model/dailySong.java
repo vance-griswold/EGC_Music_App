@@ -46,7 +46,7 @@ public class dailySong {
        if(this.dailySongCompleted)
        {
             increaseSongCounter();
-            increaseXP(100); //actual xp amount tbd
+            increaseXP(500); //add 500 xp points for completing
             //System.out.println("You completed the daily song! Your current streak is " + streakCounter);
        }
         else
