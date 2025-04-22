@@ -4,33 +4,43 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.model.User;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
 public class HomeController implements Initializable {
 
     @FXML private ImageView leftIcon;
     @FXML private ImageView rightIcon;
+    @FXML private Label lblWelcome;
+
+    private User currentUser;
+
+    public void setUser(User user) {
+        this.currentUser = user;
+
+        if (lblWelcome != null && user != null) {
+            lblWelcome.setText("Hello, " + user.getUserName());
+        }
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // Optional: Load icons
-        /*
-        Image icon = new Image(getClass().getResource("/images/treble_clef.png").toExternalForm());
-        leftIcon.setImage(icon);
-        rightIcon.setImage(icon);
-        */
+        // setUser will be called after FXML is loaded
     }
 
     @FXML
     private void onMyAccountClicked(ActionEvent event) throws IOException {
-        App.setRoot("myaccount"); // ✅ Fix: match FXML name
+        App.setRoot("myaccount");
     }
 
     @FXML
     private void onLogoutClicked(ActionEvent event) throws IOException {
+        currentUser = null; // optional: clear session
         App.setRoot("login");
     }
 
