@@ -1,5 +1,5 @@
-<!-- Created by kayleigh faus -->
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by kayleigh faus -->
 
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -15,7 +15,7 @@
             <children>
                 <ImageView fitHeight="150" fitWidth="150" preserveRatio="true">
                     <image>
-                        <Image url="@gnome.png" />
+                        <Image url="@images/gnome.png" />
                     </image>
                 </ImageView>
 
@@ -46,7 +46,6 @@
                     </children>
                 </HBox>
 
-                <!-- Table of Created Songs -->
                 <VBox spacing="5">
                     <children>
                         <HBox spacing="20">
@@ -56,7 +55,6 @@
                                 <Label text="Genre" style="-fx-font-weight: bold;" />
                             </children>
                         </HBox>
-                        <!-- Example rows -->
                         <HBox spacing="20">
                             <children>
                                 <Label text="Sample Song" />
@@ -84,6 +82,12 @@
                 <Label fx:id="lblDailySongs" text="34" style="-fx-font-size: 36px;" />
             </children>
         </VBox>
+
+        <!-- Back to Home Button -->
+        <Button text="Back to Home"
+                AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20"
+                onAction="#onBackToHomeClicked"
+                style="-fx-background-color: #9ba18f; -fx-text-fill: white; -fx-font-weight: bold;" />
 
     </children>
 </AnchorPane>

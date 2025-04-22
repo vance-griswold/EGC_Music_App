@@ -3,14 +3,15 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.VBox?>
 
 <AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.egcmusicapp.HomeController">
     <children>
+
         <!-- Top Navigation -->
         <HBox spacing="10" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" alignment="TOP_RIGHT">
             <children>
@@ -22,7 +23,7 @@
         <!-- Welcome Message -->
         <VBox spacing="10" alignment="CENTER" AnchorPane.topAnchor="60" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
             <children>
-                <Label text="Hello, [Username]" style="-fx-font-size: 28px; -fx-font-weight: bold;" />
+                <Label fx:id="lblWelcome" text="Hello, [Username]" style="-fx-font-size: 28px; -fx-font-weight: bold;" />
                 <Label text="Welcome to MetroGnome" style="-fx-font-size: 24px;" />
                 <Separator prefWidth="400"/>
             </children>
