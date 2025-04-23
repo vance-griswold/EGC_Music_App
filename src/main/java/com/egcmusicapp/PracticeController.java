@@ -1,8 +1,10 @@
 package com.egcmusicapp;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -27,5 +29,10 @@ public class PracticeController {
         genreComboBox.getItems().addAll("Classical", "Jazz", "Pop", "Rock", "Hip Hop");
 
         
+    }
+
+    @FXML
+    public void switchToPlaySong() throws IOException {
+        App.setRoot("playSong");
     }
 }
