@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.egcmusicapp.DailySongController">
+    <children>
+        <!-- Background Image -->
+        <ImageView fitWidth="880" fitHeight="626" preserveRatio="false">
+            <image>
+                <Image url="@background_mushroom_forest.jpg" />
+            </image>
+        </ImageView>
+
+        <!-- Main layout -->
+        <VBox spacing="20" alignment="TOP_CENTER" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="30" AnchorPane.rightAnchor="30">
+            <children>
+                <!-- Back Arrow and Title -->
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <children>
+                        <Label text="←" style="-fx-font-size: 24px;" onMouseClicked="#onBackClicked"/>
+                        <Label text="Daily Song" style="-fx-font-size: 28px; -fx-underline: true; -fx-font-weight: bold;" />
+                    </children>
+                </HBox>
+
+                <!-- Song Info Section -->
+                <HBox spacing="30" alignment="CENTER_LEFT">
+                    <children>
+                        <!-- Placeholder Song Image -->
+                        <StackPane prefWidth="200" prefHeight="200" style="-fx-background-color: #d8beb3;">
+                            <Label text="▶" style="-fx-font-size: 48px;" />
+                        </StackPane>
+
+                        <!-- Song Metadata -->
+                        <VBox spacing="10" alignment="TOP_LEFT">
+                            <children>
+                                <Label fx:id="titleLabel" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+                                <Label fx:id="authorLabel" style="-fx-font-size: 16px;" />
+                                <Label fx:id="difficultyLabel" />
+                                <Label fx:id="genreLabel" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <!-- XP Info -->
+                <Label text="Complete the daily song to earn extra XP points!"
+                       style="-fx-font-size: 16px; -fx-padding: 10;" />
+
+                <!-- Play Button -->
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <children>
+                        <Button fx:id="playBtn" text="▶ Play" onAction="#onPlayClicked"
+                                style="-fx-background-color: #9ba18f; -fx-font-size: 16px; -fx-font-weight: bold; -fx-padding: 10 20;" />
+                        <Label text="+ 500 XP" style="-fx-font-size: 16px;" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
