@@ -23,7 +23,7 @@
         <!-- Welcome Message -->
         <VBox spacing="10" alignment="CENTER" AnchorPane.topAnchor="60" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
             <children>
-                <Label fx:id="lblWelcome" text="Hello, [Username]" style="-fx-font-size: 28px; -fx-font-weight: bold;" />
+                <Label fx:id="lblWelcome" style="-fx-font-size: 28px; -fx-font-weight: bold;" />
                 <Label text="Welcome to MetroGnome" style="-fx-font-size: 24px;" />
                 <Separator prefWidth="400"/>
             </children>

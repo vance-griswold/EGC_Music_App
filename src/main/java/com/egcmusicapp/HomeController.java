@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.model.User;
+import com.model.UserList;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,19 +19,18 @@ public class HomeController implements Initializable {
     @FXML private ImageView rightIcon;
     @FXML private Label lblWelcome;
 
-    private User currentUser;
 
-    public void setUser(User user) {
-        this.currentUser = user;
-
-        if (lblWelcome != null && user != null) {
-            lblWelcome.setText("Hello, " + user.getUserName());
+    public void setUserDisplay() {
+        User currentUser = UserList.getCurrentUser();
+        if(currentUser != null) {
+            lblWelcome.setText("Hello, " +currentUser.getUserName());
         }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // setUser will be called after FXML is loaded
+        setUserDisplay();
     }
 
     @FXML
@@ -40,7 +40,6 @@ public class HomeController implements Initializable {
 
     @FXML
     private void onLogoutClicked(ActionEvent event) throws IOException {
-        currentUser = null; // optional: clear session
         App.setRoot("login");
     }
 
