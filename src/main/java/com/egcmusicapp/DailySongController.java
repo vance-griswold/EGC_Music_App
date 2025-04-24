@@ -6,6 +6,7 @@ import com.model.dailySong;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import java.io.IOException;
 
 import java.util.Random;
 
@@ -66,8 +67,8 @@ public class DailySongController {
     }
 
     @FXML
-    private void onBackClicked() {
-        //method to go back to the previous screen
+    private void onBackClicked(javafx.scene.input.MouseEvent event) throws IOException {
+        App.setRoot("home");
         System.out.println("Back button clicked.");
     }
 }
