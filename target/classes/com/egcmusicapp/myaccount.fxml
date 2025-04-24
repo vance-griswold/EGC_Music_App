@@ -19,6 +19,17 @@
                AnchorPane.topAnchor="10"
                AnchorPane.leftAnchor="30"/>
 
+        <!-- Back Arrow and Title -->
+        <HBox spacing="10" alignment="CENTER_LEFT"
+              AnchorPane.topAnchor="10"
+              AnchorPane.rightAnchor="30">
+            <children>
+                <Label text="←"
+                       style="-fx-font-size: 24px; -fx-cursor: hand;"
+                       onMouseClicked="#onBackToHomeClicked"/>
+            </children>
+        </HBox>
+
         <!-- Profile Info -->
         <HBox spacing="20" alignment="CENTER_LEFT"
               AnchorPane.topAnchor="60"
@@ -101,12 +112,6 @@
                        style="-fx-font-size: 36px;"/>
             </children>
         </VBox>
-
-        <!-- Back to Home Button -->
-        <Button text="Back to Home"
-                AnchorPane.bottomAnchor="20"
-                AnchorPane.leftAnchor="20"
-                onAction="#onBackToHomeClicked"
-                style="-fx-background-color: #9ba18f; -fx-text-fill: white; -fx-font-weight: bold;"/>
     </children>
 </AnchorPane>
+
