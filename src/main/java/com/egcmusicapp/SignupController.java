@@ -5,18 +5,14 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.model.MusicApp;
-import com.model.UserList;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
-/*
- * Created by kayleigh faus
- */
+
 /**
  * Controller for the Sign Up screen
  */
@@ -29,55 +25,47 @@ public class SignupController implements Initializable {
 
     @FXML private VBox formPane;
     @FXML private VBox profilePane;
-
     @FXML private Label lblUsername;
-    @FXML private ProgressBar xpProgress;
-    @FXML private Label lblXP;
-    @FXML private Label lblDailySongs;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        // Hide confirmation pane on startup
+        profilePane.setVisible(false);
+    }
 
     @FXML
     private void btnSignUpClicked() {
-        String username = txt_username.getText();
+        String username = txt_username.getText().trim();
         String password = txt_password.getText();
-        String confirmPassword = txt_confirmPassword.getText();
+        String confirm  = txt_confirmPassword.getText();
 
-        MusicApp app = new MusicApp();
-        UserList userList = UserList.getInstance();
-
-        if (username.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
+        // Validation
+        if (username.isEmpty() || password.isEmpty() || confirm.isEmpty()) {
             lbl_error.setText("All fields are required.");
             return;
         }
-
-        if (!password.equals(confirmPassword)) {
+        if (!password.equals(confirm)) {
             lbl_error.setText("Passwords do not match.");
             return;
         }
 
+        // Attempt registration
+        MusicApp app = new MusicApp();
         boolean success = app.register(username, password);
         if (!success) {
             lbl_error.setText("Username already exists.");
             return;
         }
 
+        // Show confirmation
+        lbl_error.setText("");
         formPane.setVisible(false);
         profilePane.setVisible(true);
-
-        lblUsername.setText(username);
-        xpProgress.setProgress(0.64); // Starting value
-        lblXP.setText("3200/5000");
-        lblDailySongs.setText("34");
-
-        lbl_error.setText("");
+        lblUsername.setText("Created account: " + username);
     }
 
     @FXML
     private void backToLogin() throws IOException {
         App.setRoot("login");
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        // Optional init logic
     }
 }
