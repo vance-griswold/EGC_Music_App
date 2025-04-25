@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.egcmusicapp.LeaderboardController"
+style="-fx-background-color: #9ba18f;" >
+    <children>
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="←" style="-fx-font-size: 24px;" onMouseClicked="#onBackClicked"/>
+        </HBox>
+
+        <VBox spacing="15" alignment="CENTER" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
+            <children>
+
+                <Label text="🎵 Leaderboard 🎵" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #333333;" />
+       
+        <!-- Subtitle -->
+        <VBox spacing="10" alignment="CENTER" AnchorPane.topAnchor="60" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+            <children>
+                <Label text="Highest Level Rankings" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+            </children>
+        </VBox>
+
+                <TableView fx:id="leaderboardTable" prefWidth="600" style="-fx-background-color: #f2f2f2;">
+                    <columns>
+                        <TableColumn fx:id="rankColumn" text="Rank" prefWidth="60" />
+                        <TableColumn fx:id="usernameColumn" text="Username" prefWidth="220" />
+                        <TableColumn fx:id="levelColumn" text="Level" prefWidth="100" />
+                        <TableColumn fx:id="xpColumn" text="XP" prefWidth="100" />
+                    </columns>
+                </TableView>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
+
