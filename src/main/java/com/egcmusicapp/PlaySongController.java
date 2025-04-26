@@ -17,8 +17,16 @@ import com.model.UserList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.control.Dialog;
 import javafx.scene.text.Text;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
 
 public class PlaySongController{
     @FXML
@@ -31,6 +39,8 @@ public class PlaySongController{
     private Label lblScoreBot;
     @FXML
     private Label lblScoreCard;
+    @FXML
+    private ImageView imageView;
     private int j = 0;
     private int score = 0;
     private ArrayList<Character> notes = new ArrayList<Character>();
@@ -41,6 +51,8 @@ public class PlaySongController{
         SongLibrary songLibrary = SongLibrary.getInstance();
         Song song = songLibrary.getSong(UUID.fromString("9e42d9ac-7380-4ced-989b-ddb196ea7913"));
         MusicApp.setCurrentSong(song);
+        //imageView = new ImageView(new Image(getClass().getResource("/images/Piano.jpg").toExternalForm()));
+        imageView.setImage(new Image(getClass().getResource("/images/Piano.jpg").toExternalForm()));
         getNotes();
         lblNote.setText(notes.get(j).toString());
         activeNote.addEventFilter(KeyEvent.KEY_PRESSED, event -> {
