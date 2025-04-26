@@ -1,5 +1,6 @@
 package com.egcmusicapp;
 
+import com.model.MusicApp;
 import com.model.Song;
 import com.model.SongLibrary;
 import com.model.dailySong;
@@ -36,25 +37,28 @@ public class DailySongController {
         currentDailySong = new dailySong();
         assignRandomDailySong();
         updateDisplay();
+
+        
     }
 
     private void assignRandomDailySong() {
         var songs = songLibrary.getSongs();
         if (!songs.isEmpty()) {
             Random rand = new Random();
-            Song song = songs.get(rand.nextInt(songs.size()));
-            currentDailySong.assignDailySong(song);
+            Song randomSong = songs.get(rand.nextInt(songs.size()));
+            currentDailySong.assignDailySong(randomSong);
+            MusicApp.setCurrentSong(randomSong);
         }
     }
 
     @FXML
-    private void onPlayClicked() {
-        Song song = currentDailySong.getSong();
+    private void onPlayClicked() throws IOException{
+        Song song = MusicApp.getCurrentSong();
         if (song != null && !currentDailySong.isDailySongCompleted()) {
-            currentDailySong.playDailySong(song);
-            updateDisplay();
-        }
+            App.setRoot("playSong");
     }
+}
+
 
     private void updateDisplay() {
         Song song = currentDailySong.getSong();
