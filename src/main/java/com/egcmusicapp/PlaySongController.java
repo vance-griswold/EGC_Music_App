@@ -12,6 +12,7 @@ import com.model.MistakeIndicator;
 import com.model.MusicApp;
 import com.model.Song;
 import com.model.SongLibrary;
+import com.model.UserList;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -28,6 +29,8 @@ public class PlaySongController{
     private Label lblScoreTop;
     @FXML
     private Label lblScoreBot;
+    @FXML
+    private Label lblScoreCard;
     private int j = 0;
     private int score = 0;
     private ArrayList<Character> notes = new ArrayList<Character>();
@@ -71,7 +74,7 @@ public class PlaySongController{
                 notes.add(note);
             }
         }
-        lblScoreBot.setText(notes.size() - 1 + "");
+        lblScoreBot.setText(notes.size() + "");
         return notes;
     }
 
@@ -133,7 +136,7 @@ public class PlaySongController{
     }
 
     private void noteUpdate(Character note) {
-        if (j < notes.size() - 1) {
+        if (j < notes.size()) {
             if (notes.get(j).equals(note)) {
                 score = score + 1;
                 lblScoreTop.setText(score + "");
@@ -141,11 +144,31 @@ public class PlaySongController{
                 mistakeIndicator.addMistake();
             }
             setJ(j+1);
-            lblNote.setText(notes.get(j).toString());
+            if (j < notes.size()) {
+                lblNote.setText(notes.get(j).toString());
+            } else {
+                lblNote.setText("End!");
+                int scorePercentage = (int) (((float) score) / ((float)notes.size()) * 100);
+                if (scorePercentage == 100) {
+                    lblScoreCard.setText("You passed with a score of " + scorePercentage + "%! +20 XP");
+                    MusicApp.getCurrentUser().addXP(20);
+                }else if (scorePercentage >= 60) {
+                    lblScoreCard.setText("You passed with a score of " + scorePercentage + "%! +10 XP");
+                    MusicApp.getCurrentUser().addXP(10);
+                } else {
+                    lblScoreCard.setText("You failed with a score of " + scorePercentage + "%.");
+                }
+                UserList list = UserList.getInstance();
+                list.save();
+            }
         }
     }
 
     public void switchToPractice() throws IOException {
         App.setRoot("practice");
+    }
+
+    public void printSheetMusic() {
+        MusicApp.getCurrentSong().printToText();
     }
 }

@@ -116,7 +116,7 @@ public class UserList {
      *  Save the list of users
      */ 
     public void save() {
-        
+        DataWriter.saveUsers();
         System.out.println("User list saved.");
     }
 

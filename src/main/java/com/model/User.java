@@ -60,7 +60,7 @@ public class User {
      * Increase the user's experience level
      */
     public void increaseLevel() {
-        int newLevel = (int)(this.xpPoints / 2000) + 1; //level starts at 1
+        int newLevel = (int)(this.xpPoints / 100) + 1; //level starts at 1
         if(newLevel > this.experienceLevel)
         {
             this.experienceLevel = newLevel;
