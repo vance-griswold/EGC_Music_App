@@ -50,7 +50,7 @@ public class MyAccountController implements Initializable {
         lblLevel.setText("Level " + level);
 
         int currentXP = user.getXpPoints();
-        int xpToNext = level * 2000;
+        int xpToNext = level * 100;
         xpBar.setProgress(xpToNext > 0 ? (double) currentXP / xpToNext : 0);
         lblXP.setText(currentXP + " / " + xpToNext);
 
