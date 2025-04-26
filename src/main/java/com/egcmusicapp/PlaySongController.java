@@ -51,7 +51,7 @@ public class PlaySongController{
         SongLibrary songLibrary = SongLibrary.getInstance();
         Song song = songLibrary.getSong(UUID.fromString("9e42d9ac-7380-4ced-989b-ddb196ea7913"));
         MusicApp.setCurrentSong(song);
-        //imageView = new ImageView(new Image(getClass().getResource("/images/Piano.jpg").toExternalForm()));
+        // imageView = new ImageView(new Image(getClass().getResource("/images/Piano.jpg").toExternalForm()));
         imageView.setImage(new Image(getClass().getResource("/images/Piano.jpg").toExternalForm()));
         getNotes();
         lblNote.setText(notes.get(j).toString());
