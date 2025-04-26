@@ -48,9 +48,12 @@ public class PlaySongController{
 
     @FXML
     public void initialize() {
-        SongLibrary songLibrary = SongLibrary.getInstance();
-        Song song = songLibrary.getSong(UUID.fromString("9e42d9ac-7380-4ced-989b-ddb196ea7913"));
-        MusicApp.setCurrentSong(song);
+        Song song = MusicApp.getCurrentSong();
+        if (song == null) {
+            // Handle the case when no song is selected
+            System.out.println("No song selected.");
+            return;
+        }
         getNotes();
         lblNote.setText(notes.get(j).toString());
         activeNote.addEventFilter(KeyEvent.KEY_PRESSED, event -> {
