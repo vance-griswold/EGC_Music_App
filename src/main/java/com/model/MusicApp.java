@@ -8,6 +8,7 @@ import javafx.scene.chart.PieChart.Data;
 public class MusicApp {
 
     private static User currentUser;
+    private static Song currentSong;
     private Map<String, User> userDatabase;
     private SongLibrary library;
 
@@ -30,6 +31,19 @@ public class MusicApp {
      */
     public static User getCurrentUser() {
         return MusicApp.currentUser;
+    }
+
+    /**
+     * Getter for the current song.
+     * 
+     * @return The current song.
+     */
+    public static Song getCurrentSong() {
+        return MusicApp.currentSong;
+    }
+
+    public static void setCurrentSong(Song song) {
+        MusicApp.currentSong = song;
     }
 
     /**
