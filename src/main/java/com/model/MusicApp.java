@@ -76,8 +76,43 @@ public class MusicApp {
         System.out.println("Sign-up successful! Welcome, " + firstName);
         return newUser;
     }
-    
 
+    /**
+     * Registers a new user with just username and password.
+     * This is used by the signup form for quick registration.
+     *
+     * @param username The desired username.
+     * @param password The desired password.
+     * @return true if successful, false otherwise.
+     */
+    public boolean register(String username, String password) {
+        // derive a dummy email if none was provided
+        String email = username + "@example.com";
+        User result = signUp("New", "User", email, username, password);
+        if (result != null) {
+            currentUser = result;
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Registers a new user with username, password, and email.
+     *
+     * @param username The desired username.
+     * @param password The desired password.
+     * @param email    The user's email address.
+     * @return true if successful, false otherwise.
+     */
+    public boolean register(String username, String password, String email) {
+        User result = signUp("New", "User", email, username, password);
+        if (result != null) {
+            currentUser = result;
+            return true;
+        }
+        return false;
+    }
+    
     /**
      * Logs a user in if the credentials match an existing account.
      * 

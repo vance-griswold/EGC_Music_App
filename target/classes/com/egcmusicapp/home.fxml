@@ -25,7 +25,7 @@
             <children>
                 <Label fx:id="lblWelcome" style="-fx-font-size: 28px; -fx-font-weight: bold;" />
                 <Label text="Welcome to MetroGnome" style="-fx-font-size: 24px;" />
-                <Separator prefWidth="400"/>
+                <Separator prefWidth="250"/>
             </children>
         </VBox>
 
@@ -40,7 +40,7 @@
                         <Button text="Practice" onAction="#onPracticeClicked" style="-fx-background-color: #9ba18f;" />
                         <Button text="Create a Song" onAction="#onCreateSongClicked" style="-fx-background-color: #9ba18f;" />
                         <Separator prefWidth="250"/>
-                        <Button text="My Playlist" onAction="#onPlaylistClicked" style="-fx-background-color: #dfb9a9;" />
+                        <!--<Button text="My Playlist" onAction="#onPlaylistClicked" style="-fx-background-color: #dfb9a9;" /> -->
                         <Button text="View Leaderboard" onAction="#onLeaderboardClicked" style="-fx-background-color: #dfb9a9;" />
                     </children>
                 </VBox>

@@ -58,10 +58,12 @@ public class HomeController implements Initializable {
         App.setRoot("createSong");
     }
 
+    /** 
     @FXML
     private void onPlaylistClicked(ActionEvent event) throws IOException {
         App.setRoot("playlist");
     }
+        */
 
     @FXML
     private void onLeaderboardClicked(ActionEvent event) throws IOException {

@@ -1,3 +1,4 @@
+// src/main/java/com/egcmusicapp/SignupController.java
 package com.egcmusicapp;
 
 import java.io.IOException;
@@ -19,6 +20,7 @@ import javafx.scene.layout.VBox;
 public class SignupController implements Initializable {
 
     @FXML private TextField txt_username;
+    @FXML private TextField txt_email;               // ← new
     @FXML private PasswordField txt_password;
     @FXML private PasswordField txt_confirmPassword;
     @FXML private Label lbl_error;
@@ -36,12 +38,17 @@ public class SignupController implements Initializable {
     @FXML
     private void btnSignUpClicked() {
         String username = txt_username.getText().trim();
+        String email    = txt_email.getText().trim();   // ← new
         String password = txt_password.getText();
         String confirm  = txt_confirmPassword.getText();
 
         // Validation
-        if (username.isEmpty() || password.isEmpty() || confirm.isEmpty()) {
+        if (username.isEmpty() || email.isEmpty() || password.isEmpty() || confirm.isEmpty()) {
             lbl_error.setText("All fields are required.");
+            return;
+        }
+        if (!email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")) {
+            lbl_error.setText("Invalid email address.");
             return;
         }
         if (!password.equals(confirm)) {
@@ -49,11 +56,11 @@ public class SignupController implements Initializable {
             return;
         }
 
-        // Attempt registration
+        // Attempt registration (now passing email)
         MusicApp app = new MusicApp();
-        boolean success = app.register(username, password);
+        boolean success = app.register(username, password, email);
         if (!success) {
-            lbl_error.setText("Username already exists.");
+            lbl_error.setText("Username or email already exists.");
             return;
         }
 
@@ -61,7 +68,7 @@ public class SignupController implements Initializable {
         lbl_error.setText("");
         formPane.setVisible(false);
         profilePane.setVisible(true);
-        lblUsername.setText("Created account: " + username);
+        lblUsername.setText("Created account: " + username + "\nEmail: " + email);
     }
 
     @FXML
