@@ -15,7 +15,6 @@
             fx:controller="com.egcmusicapp.SignupController"
             prefWidth="600" prefHeight="500">
 
-    <!-- Background -->
     <children>
         <ImageView fitWidth="400" fitHeight="500" preserveRatio="true" opacity="0.2">
             <image>
@@ -34,6 +33,7 @@
                 <Label text="♪ Sign Up ♪"
                        style="-fx-font-size: 24px; -fx-font-weight: bold;" />
 
+                <!-- Username -->
                 <HBox spacing="5" alignment="CENTER_LEFT"
                       style="-fx-background-color: #f0f0f0; -fx-padding: 5; -fx-background-radius: 5;">
                     <children>
@@ -44,6 +44,18 @@
                     </children>
                 </HBox>
 
+                <!-- Email -->
+                <HBox spacing="5" alignment="CENTER_LEFT"
+                      style="-fx-background-color: #f0f0f0; -fx-padding: 5; -fx-background-radius: 5;">
+                    <children>
+                        <Label text="✉️" />
+                        <TextField fx:id="txt_email"
+                                   promptText="Email"
+                                   style="-fx-background-color: transparent;" />
+                    </children>
+                </HBox>
+
+                <!-- Password -->
                 <HBox spacing="5" alignment="CENTER_LEFT"
                       style="-fx-background-color: #f0f0f0; -fx-padding: 5; -fx-background-radius: 5;">
                     <children>
@@ -54,6 +66,7 @@
                     </children>
                 </HBox>
 
+                <!-- Confirm Password -->
                 <HBox spacing="5" alignment="CENTER_LEFT"
                       style="-fx-background-color: #f0f0f0; -fx-padding: 5; -fx-background-radius: 5;">
                     <children>

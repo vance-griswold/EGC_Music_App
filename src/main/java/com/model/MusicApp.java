@@ -3,8 +3,6 @@ package com.model;
 import java.util.HashMap;
 import java.util.Map;
 
-import javafx.scene.chart.PieChart.Data;
-
 public class MusicApp {
 
     private static User currentUser;
@@ -20,25 +18,26 @@ public class MusicApp {
         for (User user : userList.getUsers()) {
             userDatabase.put(user.getEmailAddress(), user);
         }
-        this.library = SongLibrary.getInstance(); 
+        this.library = SongLibrary.getInstance();
     }
 
     /**
      * Getter for the current user.
-     * 
+     *
      * @return The current user.
      */
     public static User getCurrentUser() {
-        return MusicApp.currentUser;
+        return currentUser;
     }
 
     /**
      * Signs up a new user and adds them to the user database.
-     * 
+     *
      * @param firstName The first name of the user.
-     * @param lastName The last name of the user.
-     * @param email The email address of the user.
-     * @param password The password for the new account.
+     * @param lastName  The last name of the user.
+     * @param email     The email address of the user.
+     * @param username  The username of the user.
+     * @param password  The password for the new account.
      * @return The newly created User object if sign-up is successful, otherwise null.
      */
     public User signUp(String firstName, String lastName, String email, String username, String password) {
@@ -46,29 +45,63 @@ public class MusicApp {
             System.out.println("Error: A user with this email already exists.");
             return null;
         }
-    
+
         UserList userList = UserList.getInstance();
         if (userList.getUser(username) != null) {
             System.out.println("Error: A user with this username already exists.");
             return null;
         }
-    
+
         User newUser = new User(firstName, lastName, email, username, password, "User");
-    
         userDatabase.put(email, newUser);
         userList.create(newUser);
         DataWriter.saveUsers();
-    
+
         System.out.println("Sign-up successful! Welcome, " + firstName);
         return newUser;
     }
-    
+
+    /**
+     * Registers a new user with just username and password.
+     * This is used by the signup form for quick registration.
+     *
+     * @param username The desired username.
+     * @param password The desired password.
+     * @return true if successful, false otherwise.
+     */
+    public boolean register(String username, String password) {
+        // derive a dummy email if none was provided
+        String email = username + "@example.com";
+        User result = signUp("New", "User", email, username, password);
+        if (result != null) {
+            currentUser = result;
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Registers a new user with username, password, and email.
+     *
+     * @param username The desired username.
+     * @param password The desired password.
+     * @param email    The user's email address.
+     * @return true if successful, false otherwise.
+     */
+    public boolean register(String username, String password, String email) {
+        User result = signUp("New", "User", email, username, password);
+        if (result != null) {
+            currentUser = result;
+            return true;
+        }
+        return false;
+    }
 
     /**
      * Logs a user in if the credentials match an existing account.
-     * 
+     *
      * @param emailAddress The email address of the user.
-     * @param password The password entered by the user.
+     * @param password     The password entered by the user.
      * @return true if login is successful, false otherwise.
      */
     public boolean login(String emailAddress, String password) {
@@ -77,7 +110,7 @@ public class MusicApp {
         if (loginSuccessful) {
             currentUser = UserList.getCurrentUser();
             System.out.println("Login successful! Welcome back, " + currentUser.getFirstName());
-    }
+        }
         return loginSuccessful;
     }
 
@@ -110,7 +143,7 @@ public class MusicApp {
 
     /**
      * Resets the password for the current user.
-     * 
+     *
      * @param newPassword The new password to set.
      */
     public void resetPassword(String newPassword) {
@@ -124,14 +157,12 @@ public class MusicApp {
 
     /**
      * Adds a new song to the song library.
-     * 
-     * @param title The title of the song.
-     * @param artist The artist of the song.
-     * @param duration The duration of the song in seconds.
-     * @param difficulty The difficulty level of the song.
-     * @param genre The genre of the song.
-     * @param sheetMusic The sheet music for the song.
-     * @param rating The rating of the song.
+     *
+     * @param title       The title of the song.
+     * @param difficulty  The difficulty level of the song.
+     * @param genre       The genre of the song.
+     * @param sheetMusic  The sheet music for the song.
+     * @param rating      The rating of the song.
      * @return The newly created Song object.
      */
     public Song newSong(String title, Difficulty difficulty, Genre genre, String sheetMusic, int rating) {
@@ -149,7 +180,7 @@ public class MusicApp {
 
     /**
      * Plays the specified song.
-     * 
+     *
      * @param song The song to play.
      */
     public static void playSong(Song song) {
@@ -176,13 +207,13 @@ public class MusicApp {
 
     /**
      * Displays the songs in the specified playlist.
-     * 
+     *
      * @param playlist The playlist to view.
      */
     public void viewPlaylist(Playlist playlist) {
         if (playlist != null) {
             System.out.println("Playlist: " + playlist.getTitle());
-            playlist.displaySongs(); 
+            playlist.displaySongs();
         } else {
             System.out.println("Error: Playlist not found.");
         }
@@ -197,7 +228,7 @@ public class MusicApp {
 
     /**
      * Displays the leaderboard for the app.
-     * 
+     *
      * @param leaderboard The leaderboard to display.
      */
     public void viewLeaderboard(Leaderboard leaderboard) {
@@ -214,20 +245,4 @@ public class MusicApp {
         DataWriter.saveUsers();
         System.exit(0);
     }
-    /**
- * Registers a new user with just username and password.
- * This is used by the signup form for quick registration.
- *
- * @param username The desired username.
- * @param password The desired password.
- * @return true if successful, false if username or email already exists.
- */
-public boolean register(String username, String password) {
-    String firstName = "New";
-    String lastName = "User";
-    String email = username + "@example.com"; // Dummy email derived from username
-
-    User result = signUp(firstName, lastName, email, username, password);
-    return result != null;
- } 
 }
