@@ -1,54 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.TextField?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Region?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400" prefWidth="600" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.egcmusicapp.CreateSongController">
+<AnchorPane prefHeight="480.0" prefWidth="649.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.egcmusicapp.CreateSongController">
 
     <children>
-        <ImageView fx:id="gnomeImage" fitHeight="200" fitWidth="150" layoutX="26.0" layoutY="73.0" preserveRatio="true">
-            <Image url="@../../images/gnome_guitar.png" /> </ImageView>
-
-        <VBox layoutX="200" layoutY="60" spacing="10">
-            <HBox spacing="10">
-                <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
-                    <Image url="@images/treble_clef.png" />
-                </ImageView>
-            </HBox>
-            <HBox spacing="10">
-                <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
-                    <Image url="@images/treble_clef.png" />
-                </ImageView>
-                <Region prefHeight="20" prefWidth="300" />
-            </HBox>
-            <HBox spacing="10">
-                <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
-                    <Image url="@images/treble_clef.png" />
-                </ImageView>
-                <Region prefHeight="20" prefWidth="300" />
-            </HBox>
-        </VBox>
+        <ImageView fx:id="gnomeImage" fitHeight="200" fitWidth="150" layoutX="17.0" layoutY="154.0" preserveRatio="true">
+          </ImageView>
 
         <HBox layoutX="200" layoutY="200" spacing="20" />
 
         <HBox layoutX="200" layoutY="250" spacing="20" />
 
-        <Button layoutX="74.0" layoutY="308.0" onAction="#createMusic" style="-fx-background-color: #9ba18f;" text="Create" />
-         <Button layoutX="534.0" layoutY="339.0" onAction="#addEighthRest" style="-fx-background-color: #dfb9a9;" text="Add Eighth Rest" />
-         <Button layoutX="404.0" layoutY="339.0" onAction="#addQuarterRest" style="-fx-background-color: #9ba18f;" text="Add Quarter Rest" />
-         <Button layoutX="532.0" layoutY="273.0" onAction="#addEighthNote" style="-fx-background-color: #dfb9a9;" text="Add Eighth Note" />
-         <Button layoutX="404.0" layoutY="273.0" onAction="#addQuarterNote" style="-fx-background-color: #9ba18f;" text="Add Quarter Note" />
-         <Button layoutX="301.0" layoutY="339.0" onAction="#addHalfRest" style="-fx-background-color: #dfb9a9;" text="Add Half Rest" />
-         <Button layoutX="186.0" layoutY="339.0" onAction="#addWholeRest" style="-fx-background-color: #9ba18f;" text="Add Whole Rest" />
-         <Button layoutX="300.0" layoutY="273.0" onAction="#addHalfNote" style="-fx-background-color: #dfb9a9;" text="Add Half Note" />
-         <Button layoutX="184.0" layoutY="273.0" onAction="#addWholeNote" style="-fx-background-color: #9ba18f;" text="Add Whole Note" />
-      <TextField floatText="          [Name Your Song]" layoutX="11.0" layoutY="23.0" prefWidth="180" />
+        <Button layoutX="45.0" layoutY="380.0" onAction="#addMeasure" style="-fx-background-color: #9ba18f;" text="Add Measure" />
+         <Button layoutX="533.0" layoutY="425.0" onAction="#addEighthRest" style="-fx-background-color: #dfb9a9;" text="Add Eighth Rest" />
+         <Button layoutX="405.0" layoutY="425.0" onAction="#addQuarterRest" style="-fx-background-color: #9ba18f;" text="Add Quarter Rest" />
+         <Button layoutX="532.0" layoutY="324.0" onAction="#addEighthNote" style="-fx-background-color: #dfb9a9;" text="Add Eighth Note" />
+         <Button layoutX="404.0" layoutY="324.0" onAction="#addQuarterNote" style="-fx-background-color: #9ba18f;" text="Add Quarter Note" />
+         <Button layoutX="301.0" layoutY="425.0" onAction="#addHalfRest" style="-fx-background-color: #dfb9a9;" text="Add Half Rest" />
+         <Button layoutX="185.0" layoutY="425.0" onAction="#addWholeRest" style="-fx-background-color: #9ba18f;" text="Add Whole Rest" />
+         <Button layoutX="300.0" layoutY="324.0" onAction="#addHalfNote" style="-fx-background-color: #dfb9a9;" text="Add Half Note" />
+         <Button layoutX="184.0" layoutY="324.0" onAction="#addWholeNote" style="-fx-background-color: #9ba18f;" text="Add Whole Note" />
+      <Label fx:id="lblCurrentMeasure" layoutX="218.0" layoutY="140.0" prefHeight="95.0" prefWidth="374.0">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Button fx:id="printButton1" layoutX="499.0" layoutY="11.0" mnemonicParsing="false" onAction="#printSheetMusic" prefHeight="39.0" prefWidth="138.0" style="-fx-background-color: #dfb9a9;" text="Print Sheet Music">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="button" layoutX="18.0" layoutY="18.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="25.0" prefWidth="22.0" style="-fx-background-color: #dfb9a9;" text="&lt;-">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Button>
+      <TextField fx:id="txt_title" alignment="CENTER" layoutX="4.0" layoutY="101.0" prefHeight="39.0" prefWidth="176.0" promptText="Name Your Song" />
+   
+      <MenuBar layoutX="188.0" layoutY="20.0" style="-fx-background-color: #9ba18f;">
+        <menus>
+          <Menu mnemonicParsing="false" style="-fx-background-color: #9ba18f;" text="Difficulty">
+            <items>
+              <MenuItem fx:id="easy" mnemonicParsing="false" onAction="#setDiffEasy" text="Easy" />
+               <MenuItem fx:id="medium" mnemonicParsing="false" onAction="#setDiffMedium" text="Medium" />
+               <MenuItem fx:id="hard" mnemonicParsing="false" onAction="#setDiffHard" text="Hard" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" style="-fx-background-color: #9ba18f;" text="Genre">
+            <items>
+               <MenuItem fx:id="rock" mnemonicParsing="false" onAction="#setGenreRock" text="Rock" />
+               <MenuItem fx:id="country" mnemonicParsing="false" onAction="#setGenreCountry" text="Country" />
+               <MenuItem fx:id="pop" mnemonicParsing="false" onAction="#setGenrePop" text="Pop" />            
+               <MenuItem fx:id="classical" mnemonicParsing="false" onAction="#setGenreClassical" text="Classical" /> 
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" style="-fx-background-color: #9ba18f;" text="Personal Rating">
+            <items>
+              <MenuItem fx:id="1" mnemonicParsing="false" onAction="#setRating1" text="1" />
+              <MenuItem fx:id="2" mnemonicParsing="false" onAction="#setRating2" text="2" />
+              <MenuItem fx:id="3" mnemonicParsing="false" onAction="#setRating3" text="3" />
+              <MenuItem fx:id="4" mnemonicParsing="false" onAction="#setRating4" text="4" />
+              <MenuItem fx:id="5" mnemonicParsing="false" onAction="#setRating5" text="5" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <MenuBar layoutX="563.0" layoutY="286.0" style="-fx-background-color: #dfb9a9;">
+        <menus>
+          <Menu mnemonicParsing="false" style="-fx-background-color: #dfb9a9;" text="Note">
+            <items>
+               <MenuItem mnemonicParsing="false" onAction="#setScaleC" text="C" />
+               <MenuItem mnemonicParsing="false" onAction="#setScaleD" text="D" />
+               <MenuItem mnemonicParsing="false" onAction="#setScaleE" text="E" />
+               <MenuItem mnemonicParsing="false" onAction="#setScaleF" text="F" />
+               <MenuItem mnemonicParsing="false" onAction="#setScaleG" text="G" />
+               <MenuItem mnemonicParsing="false" onAction="#setScaleA" text="A" />
+               <MenuItem mnemonicParsing="false" onAction="#setScaleB" text="B" />
+
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Button layoutX="45.0" layoutY="425.0" onAction="#publishSong" style="-fx-background-color: #dfb9a9;" text="Publish Song" />
 
     </children>
 </AnchorPane>

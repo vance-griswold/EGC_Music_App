@@ -13,7 +13,7 @@
     <children>
         <Pane fx:id="sheetMusicPane" prefHeight="400.0" prefWidth="600.0">
             <children>
-                <Label fx:id="lblNote" alignment="CENTER" contentDisplay="CENTER" layoutX="263.0" layoutY="115.0" prefHeight="94.0" prefWidth="108.0" style="-fx-font-size: 28px; -fx-font-weight: bold;" text="B" textAlignment="CENTER">
+                <Label fx:id="lblNote" alignment="CENTER" contentDisplay="CENTER" layoutX="263.0" layoutY="115.0" prefHeight="94.0" prefWidth="108.0" style="-fx-font-size: 28px; -fx-font-weight: bold;" textAlignment="CENTER">
                <font>
                   <Font size="96.0" />
                </font></Label>
@@ -51,6 +51,46 @@
                <ImageView fx:id="imageView" fitHeight="227.0" fitWidth="487.0" layoutX="73.0" layoutY="253.0" pickOnBounds="false" preserveRatio="false">
                   
                </ImageView>
+            <Label layoutX="160.0" layoutY="260.0" text="2">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="93.0" layoutY="260.0" text="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="230.0" layoutY="260.0" text="3">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="273.0" layoutY="260.0" text="4">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="341.0" layoutY="260.0" text="5">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="401.0" layoutY="260.0" text="6">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="472.0" layoutY="260.0" text="7">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="516.0" layoutY="260.0" text="8">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
             </children>
         </Pane>
     </children>
