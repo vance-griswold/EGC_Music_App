@@ -1,3 +1,78 @@
-.label {
-    -fx-text-fill: #549df9
+
+.anchor-pane {
+    -fx-background-image: url("/images/background2.png");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+}
+
+
+.title-label {
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+}
+
+
+.text-field, .combo-box {
+    -fx-pref-width: 200px;
+    -fx-font-size: 14px;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+
+.list-view {
+    -fx-background-color: transparent;
+}
+
+
+.song-card {
+    -fx-background-color: rgba(255, 255, 255, 0.3);
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: rgba(255, 255, 255, 0.4);
+    -fx-border-width: 1;
+    -fx-padding: 10;
+}
+
+
+.song-card:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.45); 
+    -fx-translate-y: -3;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 12, 0, 0, 6);
+}
+
+
+.song-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.song-artist {
+    -fx-font-size: 14px;
+    -fx-text-fill: gray;
+}
+
+.song-genre {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666;
+}
+
+
+.play-button {
+    -fx-background-color: transparent;
+    -fx-border-color: black;
+    -fx-border-radius: 50%;
+    -fx-pref-width: 30px;
+    -fx-pref-height: 30px;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-transition: all 0.2s ease;
+}
+
+
+.play-button:hover {
+    -fx-background-color: rgba(0,0,0,0.1);
+    -fx-scale-x: 1.15;
+    -fx-scale-y: 1.15;
 }

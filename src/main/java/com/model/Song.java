@@ -212,6 +212,11 @@ public class Song {
         SheetMusic sheetMusic = new SheetMusic(this.songTitle, this.sheetMusic);
         sheetMusic.toText();
     }
+
+    @Override
+    public String toString() {
+        return songTitle + " | " + author + " | " + genre;
+    }
 }
 
 
