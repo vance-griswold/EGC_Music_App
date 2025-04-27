@@ -20,7 +20,14 @@ public class Measure {
      */
     public void addChord(int index, Chord chord) {
         chords.add(index, chord);
-    }    
+    } 
+    
+    /**
+     * add a chord to the measure
+     */
+    public void addChord(Chord chord) {
+        chords.add(chord);
+    } 
 
     /**
      * remove a chord from the measure
