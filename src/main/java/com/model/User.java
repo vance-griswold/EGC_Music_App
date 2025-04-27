@@ -2,6 +2,8 @@ package com.model;
 import java.util.ArrayList;
 import java.util.UUID;
 
+import com.egcmusicapp.DailySongController;
+
 /**
  * A class to represent a user
  */
@@ -16,6 +18,8 @@ public class User {
     private String userRole;
     private int experienceLevel;
     private int xpPoints;
+    private dailySong dailySong;
+    private int dailySongsCompleted;
 
     public User(String firstName, String lastName, String emailAddress, String username, String password, String userRole) {
         this.id = UUID.randomUUID();
@@ -28,6 +32,8 @@ public class User {
         this.experienceLevel = 1;
         this.xpPoints = 0;
         this.playlists = new ArrayList<>();
+        this.dailySong = new dailySong();
+        this.dailySongsCompleted = 0;
     }
 
     /**
@@ -54,6 +60,8 @@ public class User {
         this.experienceLevel = level;
         this.xpPoints = xpPoints;
         this.password = password;
+        this.dailySong = new dailySong();
+        this.dailySongsCompleted = 0;
 }
 
     /**
@@ -74,6 +82,15 @@ public class User {
     public void addXP(int xp) {
         this.xpPoints += xp;
         increaseLevel();
+    }
+
+    public void completeDailySong() {
+        if(dailySong != null && dailySong.isDailySongCompleted())
+        {
+            dailySong.playDailySong(dailySong.getSong());
+            addXP(500);
+            dailySongsCompleted++;
+        }
     }
 
     /**
@@ -146,5 +163,19 @@ public class User {
      */
     public String getPassword() {
         return password;
+    }
+
+    public dailySong getDailySong() {
+        return dailySong;
+    }
+
+    public void assignNewDailySong(Song song) {
+        if(dailySong != null) {
+            dailySong.assignDailySong(song);
+        }
+    }
+
+    public int getDailySongsCompleted() {
+        return dailySongsCompleted;
     }
 }
