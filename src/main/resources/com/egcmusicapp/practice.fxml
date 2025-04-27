@@ -1,46 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
 
-<StackPane prefHeight="700" prefWidth="800" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.egcmusicapp.PracticeController">
+<StackPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.egcmusicapp.PracticeController" stylesheets="@styles.css">
 
-    <!-- Foreground Layout -->
-    <VBox alignment="TOP_CENTER" spacing="20" style="-fx-background-color: transparent;">
-        <padding>
-            <Insets bottom="30" left="30" right="30" top="30" />
-        </padding>
+    <!-- Blurred background pane -->
+    <AnchorPane fx:id="backgroundPane" styleClass="anchor-pane" />
+
+    <!-- Main content -->
+    <VBox alignment="TOP_CENTER" spacing="20" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+
+        <!-- Back Button -->
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Button fx:id="backButton" text="← Back" onAction="#switchToHome" />
+        </HBox>
 
         <!-- Title -->
-        <Label style="-fx-font-size: 28px; -fx-font-weight: bold;" text="Practice Songs" />
-
-        <!-- Search and Genre -->
-        <HBox alignment="CENTER" spacing="15">
-            <TextField fx:id="searchField" prefWidth="300" promptText="Search by title" />
-            <ComboBox fx:id="genreComboBox" prefWidth="150" promptText="Genre" />
+        <HBox alignment="CENTER" spacing="10">
+            <Label text="Song Select" styleClass="title-label" />
         </HBox>
 
-        <!-- Table Header -->
-        <HBox alignment="CENTER_LEFT" spacing="20" style="-fx-background-color: rgba(255,255,255,0.6); -fx-padding: 8 16; -fx-background-radius: 10;">
-            <Label prefWidth="250" text="Title" />
-            <Label prefWidth="200" text="Artist" />
-            <Label prefWidth="100" text="Genre" />
-            <Label prefWidth="50" text=" " />
+        <!-- Search and Filter -->
+        <HBox alignment="CENTER" spacing="10">
+            <TextField fx:id="searchField" promptText="Search by title" />
+            <ComboBox fx:id="genreComboBox" promptText="Genre" />
         </HBox>
 
-        <!-- Example Song Row -->
-        <HBox alignment="CENTER_LEFT" spacing="20" style="-fx-background-color: rgba(255,255,255,0.9); -fx-padding: 10 16; -fx-background-radius: 10;">
-            <Label prefWidth="250" text="Mary Had a Little Lamb" />
-            <Label prefWidth="200" text="Sarah Hale" />
-            <Label prefWidth="100" text="Classical" />
-            <Button prefWidth="40" text="＋"  fx:id="song" onAction="#switchToPlaySong"/>
-        </HBox>
+        <!-- Song List -->
+        <ListView fx:id="songListView" maxWidth="800" />
     </VBox>
-
 </StackPane>
