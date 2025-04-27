@@ -40,7 +40,7 @@ public class LeaderboardController {
         }
 
         // Setup table columns
-        rankColumn.setCellValueFactory(new PropertyValueFactory<>("rank"));
+        //rankColumn.setCellValueFactory(new PropertyValueFactory<>("rank"));
         usernameColumn.setCellValueFactory(new PropertyValueFactory<>("userName"));
         levelColumn.setCellValueFactory(new PropertyValueFactory<>("experienceLevel"));
         xpColumn.setCellValueFactory(new PropertyValueFactory<>("xpPoints"));
