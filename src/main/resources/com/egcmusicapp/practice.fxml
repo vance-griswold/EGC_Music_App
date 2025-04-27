@@ -11,7 +11,7 @@
     <AnchorPane fx:id="backgroundPane" styleClass="anchor-pane" />
 
     <!-- Main Content -->
-    <VBox alignment="TOP_CENTER" spacing="20" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+    <VBox alignment="TOP_CENTER" spacing="20" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" style="-fx-background-color: #9ba18f;">
 
         <!-- Top Bar: Back Arrow + Page Title -->
         <HBox alignment="CENTER_LEFT" spacing="10">
@@ -29,7 +29,7 @@
         <!-- Search and Filter -->
         <HBox alignment="CENTER" spacing="10">
             <TextField fx:id="searchField" promptText="Search by title" />
-            <ComboBox fx:id="genreComboBox" promptText="Genre" />
+            <ComboBox fx:id="genreComboBox" promptText="Genre" style="-fx-background-color: #dfb9a9;"/>
         </HBox>
 
         <!-- Song List -->
