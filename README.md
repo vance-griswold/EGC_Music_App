@@ -9,3 +9,5 @@ Link to index.html with prototype iFrame: https://vfisher084.github.io/csce247/i
 
 YouTube link with Prototype walkthrough: https://youtu.be/MyJxallIsuc
 
+Youtube link to app showcase: https://www.youtube.com/watch?v=d2yZH8TJv8U
+
