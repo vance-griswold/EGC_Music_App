@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
+import com.model.MusicApp;
 import com.model.Song;
 import com.model.SongLibrary;
 
@@ -91,7 +92,12 @@ public class PracticeController implements Initializable {
                 playButton.setOnAction(event -> {
                     Song song = getItem();
                     if (song != null) {
-                        SongLibrary.playSong(song.getSheetMusic());
+                        MusicApp.setCurrentSong(song); // Set the current song
+                        try {
+                            App.setRoot("playSong"); // Switch to the Play Song screen
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
                 });
             }
