@@ -179,7 +179,7 @@ public class PlaySongController{
     }
 
     public void switchToPractice() throws IOException {
-        App.setRoot("practice");
+        App.setRoot("home");
     }
 
     public void printSheetMusic() {
