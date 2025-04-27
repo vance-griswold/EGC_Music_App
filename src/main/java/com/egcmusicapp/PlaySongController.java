@@ -54,6 +54,7 @@ public class PlaySongController{
             System.out.println("No song selected.");
             return;
         }
+        imageView.setImage(new Image(getClass().getResource("/images/Piano.jpg").toExternalForm()));
         getNotes();
         lblNote.setText(notes.get(j).toString());
         activeNote.addEventFilter(KeyEvent.KEY_PRESSED, event -> {
