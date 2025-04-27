@@ -6,6 +6,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.model.MusicApp;
+import com.model.UserList;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -28,11 +29,13 @@ public class SignupController implements Initializable {
     @FXML private VBox formPane;
     @FXML private VBox profilePane;
     @FXML private Label lblUsername;
+    @FXML private Label arrow;                // ← new
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Hide confirmation pane on startup
         profilePane.setVisible(false);
+        arrow.setVisible(false);
     }
 
     @FXML
@@ -59,6 +62,8 @@ public class SignupController implements Initializable {
         // Attempt registration (now passing email)
         MusicApp app = new MusicApp();
         boolean success = app.register(username, password, email);
+        UserList list = UserList.getInstance();
+        list.save();
         if (!success) {
             lbl_error.setText("Username or email already exists.");
             return;
@@ -68,6 +73,7 @@ public class SignupController implements Initializable {
         lbl_error.setText("");
         formPane.setVisible(false);
         profilePane.setVisible(true);
+        arrow.setVisible(true);
         lblUsername.setText("Created account: " + username + "\nEmail: " + email);
     }
 

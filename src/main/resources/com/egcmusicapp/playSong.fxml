@@ -38,7 +38,7 @@
                   <Font size="96.0" />
                </font>
             </Label>
-            <Button fx:id="printButton" layoutX="491.0" layoutY="8.0" mnemonicParsing="false" onAction="#printSheetMusic" prefHeight="39.0" prefWidth="138.0" style="-fx-background-color: #dfb9a9;" text="Print Sheet Music">
+            <Button fx:id="printButton" layoutX="449.0" layoutY="8.0" mnemonicParsing="false" onAction="#printSheetMusic" prefHeight="39.0" prefWidth="180.0" style="-fx-background-color: #dfb9a9;" text="Print Sheet Music Text File">
                <font>
                   <Font size="14.0" />
                </font>

@@ -71,5 +71,6 @@
                 <Label fx:id="lblUsername" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
             </children>
         </VBox>
+      <Label fx:id="arrow" layoutX="24.0" layoutY="18.0" onMouseClicked="#backToLogin" style="-fx-font-size: 24px; -fx-cursor: hand;" text="←" />
     </children>
 </AnchorPane>
