@@ -1,18 +1,18 @@
-/* Set full scene background */
+
 .anchor-pane {
     -fx-background-image: url("/images/background2.png");
     -fx-background-size: cover;
     -fx-background-position: center center;
 }
 
-/* Big centered title */
+
 .title-label {
     -fx-font-size: 36px;
     -fx-font-weight: bold;
     -fx-text-fill: black;
 }
 
-/* Search and Genre Dropdown */
+
 .text-field, .combo-box {
     -fx-pref-width: 200px;
     -fx-font-size: 14px;
@@ -20,14 +20,14 @@
     -fx-border-radius: 10;
 }
 
-/* The ListView background (invisible) */
+
 .list-view {
     -fx-background-color: transparent;
 }
 
-/* The song card */
+
 .song-card {
-    -fx-background-color: rgba(255, 255, 255, 0.3); /* More transparent */
+    -fx-background-color: rgba(255, 255, 255, 0.3);
     -fx-background-radius: 20;
     -fx-border-radius: 20;
     -fx-border-color: rgba(255, 255, 255, 0.4);
@@ -36,14 +36,13 @@
 }
 
 
-/* Hover effect on song card */
 .song-card:hover {
-    -fx-background-color: rgba(255, 255, 255, 0.45); /* brighten a little */
+    -fx-background-color: rgba(255, 255, 255, 0.45); 
     -fx-translate-y: -3;
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 12, 0, 0, 6);
 }
 
-/* Labels */
+
 .song-title {
     -fx-font-size: 16px;
     -fx-font-weight: bold;
@@ -59,7 +58,7 @@
     -fx-text-fill: #666;
 }
 
-/* Play Button (+) */
+
 .play-button {
     -fx-background-color: transparent;
     -fx-border-color: black;
@@ -71,7 +70,7 @@
     -fx-transition: all 0.2s ease;
 }
 
-/* Play Button hover (pop animation) */
+
 .play-button:hover {
     -fx-background-color: rgba(0,0,0,0.1);
     -fx-scale-x: 1.15;
