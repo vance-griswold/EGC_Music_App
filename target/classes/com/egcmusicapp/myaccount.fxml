@@ -12,14 +12,8 @@
             style="-fx-background-color: #a2a88f;">
 
     <children>
-        <!-- Greeting Label -->
-        <Label fx:id="lblWelcome"
-               text="Hello!"
-               style="-fx-font-size: 24px; -fx-font-weight: bold;"
-               AnchorPane.topAnchor="10"
-               AnchorPane.leftAnchor="30"/>
 
-        <!-- Back Arrow -->
+    <!-- Back Arrow -->
         <HBox spacing="10" alignment="CENTER_LEFT"
               AnchorPane.topAnchor="10"
               AnchorPane.rightAnchor="30">
@@ -29,6 +23,15 @@
                        onMouseClicked="#onBackToHomeClicked"/>
             </children>
         </HBox>
+
+        <!-- Greeting Label -->
+        <Label fx:id="lblWelcome"
+               text="Hello!"
+               style="-fx-font-size: 24px; -fx-font-weight: bold;"
+               AnchorPane.topAnchor="10"
+               AnchorPane.leftAnchor="30"/>
+
+        
 
         <!-- Profile Info -->
         <HBox spacing="20" alignment="CENTER_LEFT"
@@ -65,7 +68,7 @@
             </children>
         </HBox>
 
-        <!-- Created Songs Table -->
+        <!-- Created Songs Table 
         <VBox spacing="10"
               AnchorPane.topAnchor="240"
               AnchorPane.leftAnchor="30"
@@ -94,8 +97,9 @@
                 </TableView>
             </children>
         </VBox>
+        -->
 
-        <!-- Daily Songs Completed -->
+        <!-- Daily Songs Completed 
         <VBox spacing="5" alignment="CENTER"
               AnchorPane.rightAnchor="30"
               AnchorPane.bottomAnchor="20">
@@ -108,5 +112,6 @@
                        style="-fx-font-size: 36px;"/>
             </children>
         </VBox>
+        -->
     </children>
 </AnchorPane>

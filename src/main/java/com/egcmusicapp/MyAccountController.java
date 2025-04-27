@@ -54,7 +54,7 @@ public class MyAccountController implements Initializable {
         xpBar.setProgress(xpToNext > 0 ? (double) currentXP / xpToNext : 0);
         lblXP.setText(currentXP + " / " + xpToNext);
 
-        lblDailySongs.setText("0");  // placeholder
+        //lblDailySongs.setText("0");  // placeholder
     }
 
     @FXML
