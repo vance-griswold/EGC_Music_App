@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!-- Created by kayleigh faus -->
 
 <?import javafx.scene.control.Button?>
@@ -11,96 +12,63 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.egcmusicapp.SignupController"
-            prefWidth="600" prefHeight="500">
+<AnchorPane prefHeight="500" prefWidth="600" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.egcmusicapp.SignupController">
 
     <children>
-        <ImageView fitWidth="400" fitHeight="500" preserveRatio="true" opacity="0.2">
+        <ImageView fitHeight="500" fitWidth="400" opacity="0.2" preserveRatio="true">
             <image>
                 <Image url="@gnome.png" />
             </image>
         </ImageView>
 
         <!-- Sign Up Form -->
-        <VBox fx:id="formPane"
-              spacing="15"
-              alignment="CENTER"
-              AnchorPane.topAnchor="50"
-              AnchorPane.leftAnchor="100"
-              AnchorPane.rightAnchor="100">
+        <VBox fx:id="formPane" alignment="CENTER" spacing="15" AnchorPane.leftAnchor="100" AnchorPane.rightAnchor="100" AnchorPane.topAnchor="50">
             <children>
-                <Label text="♪ Sign Up ♪"
-                       style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+                <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="♪ Sign Up ♪" />
 
                 <!-- Username -->
-                <HBox spacing="5" alignment="CENTER_LEFT"
-                      style="-fx-background-color: #f0f0f0; -fx-padding: 5; -fx-background-radius: 5;">
+                <HBox alignment="CENTER_LEFT" spacing="5" style="-fx-background-color: #f0f0f0; -fx-padding: 5; -fx-background-radius: 5;">
                     <children>
                         <Label text="👤" />
-                        <TextField fx:id="txt_username"
-                                   promptText="Username"
-                                   style="-fx-background-color: transparent;" />
+                        <TextField fx:id="txt_username" promptText="Username" style="-fx-background-color: transparent;" />
                     </children>
                 </HBox>
 
                 <!-- Email -->
-                <HBox spacing="5" alignment="CENTER_LEFT"
-                      style="-fx-background-color: #f0f0f0; -fx-padding: 5; -fx-background-radius: 5;">
+                <HBox alignment="CENTER_LEFT" spacing="5" style="-fx-background-color: #f0f0f0; -fx-padding: 5; -fx-background-radius: 5;">
                     <children>
                         <Label text="✉️" />
-                        <TextField fx:id="txt_email"
-                                   promptText="Email"
-                                   style="-fx-background-color: transparent;" />
+                        <TextField fx:id="txt_email" promptText="Email" style="-fx-background-color: transparent;" />
                     </children>
                 </HBox>
 
                 <!-- Password -->
-                <HBox spacing="5" alignment="CENTER_LEFT"
-                      style="-fx-background-color: #f0f0f0; -fx-padding: 5; -fx-background-radius: 5;">
+                <HBox alignment="CENTER_LEFT" spacing="5" style="-fx-background-color: #f0f0f0; -fx-padding: 5; -fx-background-radius: 5;">
                     <children>
                         <Label text="🔒" />
-                        <PasswordField fx:id="txt_password"
-                                       promptText="Password"
-                                       style="-fx-background-color: transparent;" />
+                        <PasswordField fx:id="txt_password" promptText="Password" style="-fx-background-color: transparent;" />
                     </children>
                 </HBox>
 
                 <!-- Confirm Password -->
-                <HBox spacing="5" alignment="CENTER_LEFT"
-                      style="-fx-background-color: #f0f0f0; -fx-padding: 5; -fx-background-radius: 5;">
+                <HBox alignment="CENTER_LEFT" spacing="5" style="-fx-background-color: #f0f0f0; -fx-padding: 5; -fx-background-radius: 5;">
                     <children>
                         <Label text="✅" />
-                        <PasswordField fx:id="txt_confirmPassword"
-                                       promptText="Confirm Password"
-                                       style="-fx-background-color: transparent;" />
+                        <PasswordField fx:id="txt_confirmPassword" promptText="Confirm Password" style="-fx-background-color: transparent;" />
                     </children>
                 </HBox>
 
-                <Button text="Sign Up"
-                        onAction="#btnSignUpClicked"
-                        style="-fx-background-color: #9ba18f; -fx-text-fill: white; -fx-font-weight: bold;" />
-                <Button text="Back to Login"
-                        onAction="#backToLogin"
-                        style="-fx-background-color: #9ba18f; -fx-text-fill: white;" />
+                <Button onAction="#btnSignUpClicked" style="-fx-background-color: #9ba18f; -fx-text-fill: white; -fx-font-weight: bold;" text="Sign Up" />
+                <Button onAction="#backToLogin" style="-fx-background-color: #9ba18f; -fx-text-fill: white;" text="Back to Login" />
 
-                <Label fx:id="lbl_error"
-                       textFill="red"
-                       style="-fx-font-weight: bold;" />
+                <Label fx:id="lbl_error" style="-fx-font-weight: bold;" textFill="red" />
             </children>
         </VBox>
 
         <!-- Confirmation Section -->
-        <VBox fx:id="profilePane"
-              visible="false"
-              spacing="20"
-              alignment="CENTER"
-              AnchorPane.topAnchor="200"
-              AnchorPane.leftAnchor="100"
-              AnchorPane.rightAnchor="100">
+        <VBox fx:id="profilePane" alignment="CENTER" spacing="20" visible="false" AnchorPane.leftAnchor="100" AnchorPane.rightAnchor="100" AnchorPane.topAnchor="200">
             <children>
-                <Label fx:id="lblUsername"
-                       style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+                <Label fx:id="lblUsername" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
             </children>
         </VBox>
     </children>
